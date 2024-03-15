@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>启用AD域管理 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tasks/active-directory/</link>
+    <description>Recent content in 启用AD域管理 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <atom:link href="https://banbu1118.github.io/docs/tasks/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/tasks/active-directory/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/tasks/active-directory/readme/</guid>
+      <description>1.前言 本手册用于指导管理员实施Deskpool使用域用户管理的快速安装部署手册，管理员需要具备基本的Deskpool和Windows操作系统安装维护经验，拥有AD域管理使用经验，对于理解本手册内容有很大帮。&#xA;本手册只适用于已有域环境的操作，且域控制器与DNS服务都能正常运行。&#xA;2.Deskpool与Active Directory deskpool支持与Active Directory域用户管理的无缝集成。&#xA;当需要使用域管理服务，Deskpool可以无缝的集成AD域管理服务，用户登录Deskpool虚拟桌面系统和虚拟桌面，只需一次AD域用户认。&#xA;3.实施准备 3.1&#x9;Deskpool能正常运行，模板工作正常。&#xA;3.2&#x9;已有Active Directory域环境，且域控制器与DNS服务都能正常运行。&#xA;**注：**如需搭建Deskpool模板，请参考《Deskpool创建Windows7模板快速部署手册》&#xA;Active Directory域环境搭建，请查找参考相关文档&#xA;4.创建域用户以及安全组 4.1&#x9;创建组织单位&#xA;登录AD域，选择”域名”-&amp;gt;”新建”-&amp;gt;”组织单位”。（本文组织单位为云办公，可根据实际情况设置组织结构,可设置多级）&#xA;4.2&#x9;创建安全组&#xA;选择新建的组织单位 “云办公”-&amp;gt;”新建”-&amp;gt;”组” （本文为vdiuser ）&#xA;4.3&#x9;创建域用户&#xA;选择4.2新建的组织单位 ”云办公”-&amp;gt;”新建”-&amp;gt;”用户” （用户名根据实际情况配置，本文以office01-office03为例 新建用户后设置密码时记得勾选“密码永不过期”）如下图：&#xA;4.4&#x9;新建用户添加到组&#xA;选择新建用户-&amp;gt;“添加到组”（vdiuser）&#xA;5.同步Deskpool域用户数据 5.1&#x9;配置用户数据库&#xA;登录Deskpool 选择”用户”-&amp;gt;“配置用户数据库”→选择“使用Microsfot Active Directory”选项，输入“域名称”，域管理员用户密码，新增域服务器IP地址。如下图&#xA;5.2&#x9;新增群组&#xA;选择 “用户”-&amp;gt;”群组”-&amp;gt;”新增”-&amp;gt;”查找群组”-&amp;gt;输入群组名称-&amp;gt;”查找”，选择域创建的安全组点击“添加”。如下图 5.3&#x9;新增用户&#xA;选择“用户”-&amp;gt;”用户列表”-&amp;gt;”批量新增”-&amp;gt;“查找用户”-&amp;gt;输入用户前缀 ，点击查询，选中创建的域用户点击“添加”。如下图&#xA;5.4&#x9;同步域用户&#xA;当配置了有效的域认证服务器时，【同步】按钮变为有效。点击【同步】按钮，Deskpool会将本地存储的用户信息和域服务器同步，如果用户信息在域服务器上发生改变，Deskpool会更新本地的用户信息；如果域用户在服务器上被删除，Deskpool也会清理相应的本地存储的用户信息。在域用户数据库模式下，Deskpool不存储用户的登录密码信息。 在用户表和群组表格的“操作”列，提供了【编辑】和【删除】按钮，可以用于编辑和删除对应的用户或群组。如下图 注意：&#xA;删除用户是指删除Deskpool本地缓存的域用户数据信息，不会删除域服务器上的用户账户，用户删除后，原先分配给该用户的虚拟机的分配状态为“无效”。&#xA;删除群组是指删除Deskpool本地缓存的域群组数据信息，不会删除域服务器上的群组。&#xA;6.模板加入域 6.1&#x9;编辑模板或新增模板&#xA;进入Deskpool管理界面&#xA;a)如果已有模板 ，选择要加入域的模”→编辑→创建临时副本→点击确定继续。如下图&#xA;b)如果不存在模板点击“+”新增模板 ，创建新模板&#xA;6.2&#x9;远程登录模板虚拟机 使用提示的地址，远程登录连接到模板虚拟机。如下图 6.3&#x9;配置虚拟机DNS</description>
+    </item>
+  </channel>
+</rss>

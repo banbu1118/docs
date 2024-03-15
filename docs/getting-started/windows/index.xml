@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装指南【Windows Server】 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/getting-started/windows/</link>
+    <description>Recent content in 安装指南【Windows Server】 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/getting-started/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/getting-started/windows/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/getting-started/windows/readme/</guid>
+      <description>DoraCloud 是一款桌面虚拟化管理软件，支持Hyper-V、XenServer等虚拟化平台。DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。&#xA;本文主要讲述在windows server 2012 R2中快速部署朵拉云系统。&#xA;操作思路：下载window server 2012 R2镜像，制作启动启动盘，按照步骤安装系统，然后在系统中下载并安装 DoraCloud 3.3,进行快速部署。&#xA;DoraCloud 3.3 for Hyper-V支持“模板仓库”的功能，支持从在线仓库中下载模板，只需一次点击，即可为系统创建所需的模板，极大的简化了模板的创建过程。初学者可以无障碍的体验DoraCloud创建和管理虚拟桌面的过程。&#xA;安装前准备 一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”&#xA;网络中开启了 DHCP 服务。&#xA;三种方法下载windows Server 2012 R2 ISO镜像&#xA;1.迅雷下载地址：迅雷精简版下载地址&#xA;迅雷下载ISO文件(复制到迅雷下载)：&#xA;ed2k://|file|cn_windows_server_2012_r2_x64_dvd_2707961.iso|4413020160|010CD94AD1F2951567646C99580DD595|/&amp;gt;&#xA;2.Windows Server 2012 R2 ISO镜像 官方下载地址： http://technet.microsoft.com/zh-cn/evalcenter/dn205286.aspx&#xA;3.另外msdn.itellyou.cn网站也提供了P2P下载Windows Server安装包的地址。 Windows Server 2012R2的 ISO文件：cn_windows_server_2012_r2_vl_x64_dvd_3316795.iso&#xA;U盘制作：&#xA;1）使用rufus制作Windows Server启动U盘。&#xA;1.rufus下载地址：rufus下载地址&#xA;2）使用UltraISO制作Windows Server启动U盘。&#xA;下载并安装 DoraCloud 3.3。&#xA;DoraCloud 3.3 for Hyper-V 的下载地址为：https://www.doracloud.cn/downloads/1-cn.html&#xA;步骤一：安装Windows Server 2012R2 和原厂网卡、主板驱动程序 安装 Windows Server 2012R2的过程比较简单，注意几点：&#xA;选择标准版（带有GUI的服务器）或者 数据中心版本（带有GUI的服务器）。 选择自定义安装，如果有分区，则删除已有的分区。 安装完成后，需要设置管理员账户的密码。 步骤二：安装 Hyper-V 角色，创建虚拟交换机，确保网络中有DHCP服务 Hyper-V角色可以手工通过Windows的“服务器管理”安装，也可以通过DoraCloud向导自动安装Hyper-V。</description>
+    </item>
+  </channel>
+</rss>

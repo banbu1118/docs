@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装指南【Proxmox平台】 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/getting-started/proxmox/</link>
+    <description>Recent content in 安装指南【Proxmox平台】 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/getting-started/proxmox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/getting-started/proxmox/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/getting-started/proxmox/readme/</guid>
+      <description>Proxmox VE是一个完整的企业虚拟化开源平台。借助内置的Web界面，您可以轻松管理虚拟机和容器，软件定义的存储和网络，高可用性集群以及单个解决方案上的多个现成工具。&#xA;DoraCloud是一套多平台、一体化、分布式的桌面虚拟化方案。基于开放架构，支持多种虚拟化平台（Hyper-V，VMware，Proxmox，XenServer），多种桌面协议（RDP，PCoIP，SPICE）。&#xA;本文介绍了基于Proxmox搭建DoraCloud桌面虚拟化系统的过程。&#xA;安装前准备： 1、一台服务器，配置为 :CPU i5 以上，内存 ≥8GB，硬盘为 SSD 。&#xA;2、网络中开启了 DHCP 服务。&#xA;3、Proxmox VE7.4 ISO镜像(本文以Proxmox VE7.4描述)&#xA;官方下载地址： https://www.proxmox.com/en/downloads/category/iso-images-pve&#xA;中科大Mirror： http://mirrors.ustc.edu.cn/proxmox/&#xA;清华大学Mirror： https://mirrors.tuna.tsinghua.edu.cn/proxmox/iso/&#xA;4、U盘制作工具：rufus rufus下载地址&#xA;步骤一：安装Proxmox VE7.4 1、Rufus制作Proxmox7.4系统U盘启动盘&#xA;2、服务器U盘启动安装Proxmox7.4 按照默认提示安装。&#xA;3、安装完成后，浏览器输入https://Proxmox服务器的IP:8006 进入 Proxmox管理后台。&#xA;4、管理页面（Proxmox服务器的IP为安装时设置的IP 本文IP 为192.168.1.169,用户可根据自己需求，自行设置ip）&#xA;5、修改默认存储方式为目录存储,提升运行速度&#xA;5.1从Proxmox Web界面，删除 local-lvm&#xA;5.2第二步：通过命令删除 lvm，新建lvm，并创建文件系统&#xA;umount /dev/pve/data&#xD;lvremove /dev/pve/data -y&#xD;vgdisplay pve | grep Free | awk &amp;#39;{print &amp;#34;lvcreate -l &amp;#34; $5 &amp;#34; -n data pve -y&amp;#34;}&amp;#39; |bash&#xD;mkfs.ext4 /dev/pve/data&#xD;mkdir /mnt/data&#xD;mount /dev/pve/data /mnt/data&#xD;echo &amp;#34;/dev/pve/data /mnt/data ext4 defaults 0 0&amp;#34; &amp;gt;&amp;gt; /etc/fstab 5.</description>
+    </item>
+  </channel>
+</rss>

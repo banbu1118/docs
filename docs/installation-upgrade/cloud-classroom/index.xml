@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>云教室部署安装指南 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/installation-upgrade/cloud-classroom/</link>
+    <description>Recent content in 云教室部署安装指南 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/installation-upgrade/cloud-classroom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/installation-upgrade/cloud-classroom/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/installation-upgrade/cloud-classroom/readme/</guid>
+      <description>1. 概述 本文以部署30用户云教室为范例，描述了朵拉云科技云教室的安装过程。本文档适用于使用朵拉云Deskpool桌面虚拟化系统部署云教室、电子阅览室、电子会议室等应用场景。 Steve Francia 1.1 云教室构成 一个30用户云教室的组网如下图： 云教室组网图 image1 image2 云教室硬件包括：&#xA;30台学生机（云终端，显示器，键鼠）&#xA;1台教师PC机&#xA;一台服务器&#xA;一台交换机&#xA;一台路由器&#xA;云教室的软件系统包括：&#xA;朵拉云Deskpool桌面虚拟化系统。部署在服务器上。&#xA;多媒体教学软件。部署在教师PC上。&#xA;一个典型的30用户的云教室的配置清单如下：&#xA;序号 产品名称 规格 数量 单位 1 服务器 CPU：E5-2620V42&#xA;内存：128GB(16GB DDR4 * 8)&#xA;SSD：240GB * 1 [Intel S4500/S3520]&#xA;硬盘：2TB 7.2K * 1&#xA;网卡：GE4&#xA;电源：双电源 1 台 2 桌面云软件 朵拉云 Deskpool标准版：支持公用桌面、专用桌面； 30 用户授权 3 瘦终端 朵拉云 云终端 JC10, ARM 4核2.0Ghz/1G/4G;1000M RJ45;3.5mm音频input/output;5*USB2.0;三年质保;多协议&#xA;配套显示器、键盘、鼠标。 30 台 4 教学软件 多媒体电子教学软件，支持屏幕广播，学生演示，文件收发，分组教学，作业提交 1 套 5 教师机 I3、4GB内存、500G硬盘、19寸显示器 1 台 6 交换机 48口千兆交换机 1 台 7 路由器 路由器，待机量在50-100用户 1 台 1.</description>
+    </item>
+  </channel>
+</rss>

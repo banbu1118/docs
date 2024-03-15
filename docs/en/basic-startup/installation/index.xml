@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/en/basic-startup/installation/</link>
+    <description>Recent content in Installation on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 29 Dec 2018 11:02:05 +0600</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/en/basic-startup/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installation</title>
+      <link>https://banbu1118.github.io/docs/en/basic-startup/installation/_index.fr/</link>
+      <pubDate>Sat, 29 Dec 2018 11:02:05 +0600</pubDate>
+      <guid>https://banbu1118.github.io/docs/en/basic-startup/installation/_index.fr/</guid>
+      <description>The following steps are here to help you initialize your new website. If you don&amp;rsquo;t know Hugo at all, we strongly suggest you learn more about it by following this great documentation for beginners.&#xA;Create your project Hugo provides a new command to create a new website.&#xA;hugo new site &amp;lt;new_project&amp;gt; Install the theme Install the GoDocs theme by following this documentation&#xA;This theme&amp;rsquo;s repository is: https://github.com/themefisher/godocs.git&#xA;Alternatively, you can download the theme as .</description>
+    </item>
+  </channel>
+</rss>

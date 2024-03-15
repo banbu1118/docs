@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elements on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/en/basic-startup/elements/</link>
+    <description>Recent content in Elements on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 29 Dec 2018 11:02:05 +0600</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/en/basic-startup/elements/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elements</title>
+      <link>https://banbu1118.github.io/docs/en/basic-startup/elements/_index.fr/</link>
+      <pubDate>Sat, 29 Dec 2018 11:02:05 +0600</pubDate>
+      <guid>https://banbu1118.github.io/docs/en/basic-startup/elements/_index.fr/</guid>
+      <description>Here is example of hedings. You can use this heading by following markdownify rules. For example: use # for heading 1 and use ###### for heading 6.&#xA;Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.&#xA;Strong emphasis, aka bold, with asterisks or underscores.&#xA;Combined emphasis with asterisks and underscores.&#xA;Strikethrough uses two tildes. Scratch this.&#xA;Link I&amp;rsquo;m an inline-style link</description>
+    </item>
+  </channel>
+</rss>

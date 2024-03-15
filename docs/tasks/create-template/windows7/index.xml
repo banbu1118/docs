@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>创建Windows7桌面模板 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tasks/create-template/windows7/</link>
+    <description>Recent content in 创建Windows7桌面模板 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <atom:link href="https://banbu1118.github.io/docs/tasks/create-template/windows7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/tasks/create-template/windows7/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/tasks/create-template/windows7/readme/</guid>
+      <description>本文描述在 Deskpool for Hyper-V 平台下，安装 Windows 7 虚拟机，并制作桌面模板的过程。完成整个文档的操作需要1-2个小时。&#xA;如果您仅仅需要一个Deskpool的桌面模板，用于测试Deskpool的功能，建议您根据参考《Deskpool快速部署指导书》，完成Deskpool的安装，以及演示环境的搭建。演示环境内包含有供测试的Windows的模板。&#xA;准备工作： 1、Windows 7 的安装光盘 ISO文件。&#xA;2、服务器已经完成虚拟化系统的安装，以及Deskpool的初始配置。&#xA;步聚一、创建Windows 虚拟机： 1、启动Hyper-V 管理器，创建一个新的虚拟机 Windows7Template，选择 Windows 7的ISO作为可启动的安装盘。&#xA;注意修改虚拟磁盘的空间。建议设置成30-60GB。&#xA;选择 Windows 7的ISO映像文件。&#xA;步聚二、完成 Windows 7 的系统安装。 步聚三、安装Hyper-V 集成服务。 注意：&#xA;1）Windows Server 2016、Hyper-V Server 2016、Windows 10 的Hyper-V集成服务的发行模式发生了变化。不再随 Hyper-V发布，而是通过 Windows Update 发布。&#xA;2）Windows 7 支持 Windows Server 2016的集成服务还没有推出，也许不会推出了。推荐使用 Windows Server 2012R2中的集成服务，在 vmguest.iso 文件中。 3）建议对 Windows Server 2012R2、Hyper-V Server 2012R2 进行Update。 Update会更新 集成服务到较新的版本，然后进行安装。 如果虚拟化平台是 Windows 2012R2或者 Hyper-V Server 2012R2， 在Hyper-V Manager中，连接到虚拟机，在操作中选择 ”插入集成服务安装盘“。</description>
+    </item>
+  </channel>
+</rss>

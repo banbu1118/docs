@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装指南【VMware平台】 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/getting-started/vmware/</link>
+    <description>Recent content in 安装指南【VMware平台】 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/getting-started/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/getting-started/vmware/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/getting-started/vmware/readme/</guid>
+      <description>Deskpool 是一款桌面虚拟化管理软件，支持Hyper-V、vmwarer等虚拟化平台。Deskpool采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度.&#xA;本手册用于在VMware vSphere操作系统上快速部署Deskpool桌面虚拟化管理平台。手册的阅读者，需要具备基本的VMware vSphere操作系统安装维护经验。具有虚拟化平台的使用经验，对于理解本手册的内容有很大帮助。&#xA;本文介绍了如何在已安装VMware® vCenter Server、ESXi6.7的单服务器上的部署Deskpool桌面虚拟化管理平台，不涉及Deskpool集群的部署和配置。&#xA;安装前准备： 1、一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”&#xA;2、网络中开启了 DHCP 服务&#xA;3、将本设施设置一个ip网络规划的表格，各个ip进行规划。这样会更容易部署，且管理员管理更方便&#xA;4、软件安装包已经下载&#xA;安装程序目录的结构:&#xA;名称 类型 下载 说明 VMware ESXi 6.7U1 ISO 下载 VMware-VMvisor-Installer-6.7.0.*.iso(此ISO用作U盘启动) VMware Vcenter6.7 ISO 下载 VMware-VCSA-all-6.7.0-*.iso esxi直接安装包 VMware viewagent 32位 EXE 下载 VMware-Horizon-Agent-x86_64-*.exe VMware viewagent 32位 EXE 下载 VMware-Horizon-Agent-x86_64-*.exe viewagent-direct-connection 64位 EXE 下载 VMware-Horizon-Agent-Direct-Connection-x86_64-*.exe viewagent-direct-connection 64位 EXE 下载 VMware-Horizon-Agent-Direct-Connection-x86_64-*.exe Win7x86base OVF 下载 Windowns7 OVF部署模板 Deskpool_VMware_V320 OVF 下载 Deskpool_V3.2.0 OVA 部署模板 步骤一、ESXi and vCenter Server的安装 ESXi and vCenter Server的安装部署，请参见《2e、ESXi6.</description>
+    </item>
+  </channel>
+</rss>

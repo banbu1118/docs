@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deskpool管理员手册 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/reference/adminguide/</link>
+    <description>Recent content in Deskpool管理员手册 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/reference/adminguide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/reference/adminguide/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/reference/adminguide/readme/</guid>
+      <description>1. 概述 2. 登陆Deskpool系统 2.1 Deskpool的组网 2.2 浏览器需求 2.3 Deskpool管理系统地址 2.4 浏览器需求 3. 模板管理 Deskpool的模板是指安装了桌面操作系统、桌面应用软件和Deskpool桌面代理程序的虚拟机镜像。模板也称为：虚拟机母盘镜像（Golden Image）。Deskpool模板继承了“原始虚拟机镜像”的操作系统和镜像大小。Deskpool管理系统根据模板为桌面池批量创建桌面。通过更新模板内的操作系统或者应用程序，可以实现虚拟桌面的统一升级、统一发布应用。实现高效的桌面管理。&#xA;Deskpool模板的制作过程涉及到操作系统和应用程序的安装和配置，是一个非常繁琐和耗时的过程，需要不断的实践和验证。在Deskpool模板管理的实践中，我们建议先制作一个仅仅包含操作系统的基础模板，然后复制基础模板得到一个桌面模板，然后安装应用程序，用于桌面发布。 在制作包含若干应用的复杂的模板时，我们建议分步骤制作模板。比如软件A、B可能会有冲突，可以先制作模板V1，包含软件A，再复制模板V1到V2，安装软件B。这样如果遇到问题，可以退回到V1重新安装。&#xA;3.1 查看模板 点击菜单中的模板，可以查看当前Deskpool系统的所有模板，如下图所示:&#xA;点击模板列表的属性可以查看，可以查看模板属性。&#xA;3.2 创建模板 Deskpool创建模板的过程分两种：&#xA;标准流程：是指从原始Windows镜像开始，分步完成“导入镜像”、“安装代理”、“编辑模板”、“准备模板”和“测试模板”五个步骤后，生成Deskpool模板。&#xA;快速流程：是指基于备份的Deskpool模板，快速生成模板，只需要“导入镜像”和“测试镜像”两个步骤，就可以快速生成Deskpool模板。快速流程一般在Deskpool系统整机重新安装时采用，避免管理员重新制作桌面模板。&#xA;Deskpool创建模板标准流程：&#xA;1、启动创建模板：点击模板列表中的【+】启动创建模板流程。&#xA;2、导入镜像： 选择“从导入虚拟机镜像开始制作Deskpool模板”。 选择对应服务器、虚拟机并填写新模板名称、描述。如果对应的虚拟机不能被导入，请根据提示信息完成虚拟机设置，再点击刷新，查看虚拟机状态，直至虚拟机成为可以被导入虚拟机。注意：选择的虚拟机默认已经具备模板制作的先决条件，如虚拟机是从头开始，请参考专题任务-&amp;gt;创建桌面模板。&#xA;点击&amp;quot;导入&amp;quot;，在弹窗中输入 Windows 虚拟机的管理员账户跟密码&#xA;系统开始复制虚拟机，并自动安装 Agent。&#xA;3、编辑桌面模板：安装所需的应用程序。在当前的操作计算机上，通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装。&#xA;以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。&#xA;4、准备模板：选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池，点击“准备模板”。&#xA;5、测试和保存模板：模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面，测试模板是否正常以及软件是否已经安装。 然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。&#xA;Deskpool创建快速流程：&#xA;1、启动创建模板。点击模板列表中的【+】启动创建模板流程。&#xA;2、导入镜像。选择“直接导入Deskpool模版”。 选择模板对应的服务器跟对应模板。如下图：&#xA;点击导入，会自动导入模板并显示导入模板进度，如下图：&#xA;3、测试和保存模板: 模板导入成功完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试模板是否正常。然后选择保存模板。&#xA;3.3 编辑模板 模板编辑主要是用于在现有的模板基础上给模板增加软件或删除软件。每次模板编辑会产生一个版本，该版本仅包含本次编辑的增量部分。所以为了性能不应该编辑过多次数，一般最多10次左右，如果超出可以点击复制，“复制”操作会合并编辑产生的版本文件到一个新的模板文件里。&#xA;1、启动模板编辑流程：在模板列表中选择要编辑的模板，点击“编辑”，会弹出确认框点击确认后自动进入编辑模板桌面。&#xA;2、编辑桌面模板：此状态分3步，按下图所示。&#xA;通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装</description>
+    </item>
+  </channel>
+</rss>

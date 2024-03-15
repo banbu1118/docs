@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>青岛市图书馆 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/examples/cloud-classroom/case3/</link>
+    <description>Recent content in 青岛市图书馆 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/examples/cloud-classroom/case3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/examples/cloud-classroom/case3/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/examples/cloud-classroom/case3/readme/</guid>
+      <description>客户背景 青岛市图书馆是青岛市属大型公共图书馆，是青岛市重要的知识性信息枢纽和精神文明建设基地，也是为各级党政机关、企事业团体的科学决策提供服务的公益性、学术性服务机构。青岛市图书馆前身是1924年建立的胶澳商埠公立通俗图书馆。&#xA;业务挑战 图书馆提供的图书电子检索系统是基于浏览器系统开发的。为了便于读者查阅，需要为检索系统配置一台电脑。如果使用传统PC，则PC的维护和管理是一个难题。&#xA;解决方案 青岛图书馆采用朵拉云Deskpool桌面云系统，每个读者的查询终端部署一台朵拉云J60云终端。图书检索系统的客户端直接部署在桌面模板中。通过链接克隆的方式可以快速部署一批桌面。实现业务的快速发放、快速升级。&#xA;客户收益 青岛市图书馆实现了图书电子检索系统的快速上线，避免了PC维护和管理的难题。</description>
+    </item>
+  </channel>
+</rss>

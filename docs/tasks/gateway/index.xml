@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置桌面云网关 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tasks/gateway/</link>
+    <description>Recent content in 配置桌面云网关 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <atom:link href="https://banbu1118.github.io/docs/tasks/gateway/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/tasks/gateway/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/tasks/gateway/readme/</guid>
+      <description>DoraCloud for windows20012R2远程桌面网关配置手册&#xA;一、简介 终端服务网关（TS 网关）是一个终端服务子角色，允许经授权的远程用户通过 Internet 连接到企业网络中的终端服务器和工作站，RDP连接程序基于HTTPS实现客户端与终端服务器之间的通讯。这样，组织可轻松又安全地使远程用户或外出工作 的人员无需使用 VPN 连接就能访问所选的服务器和工作站。&#xA;二、TS 网关的一些主要好处如下：&#xA;使远程用户能通过 Internet 安全连接到企业网络资源，而无需复杂的虚拟专用网络 (VPN) 连接。 利用 HTTPS 协议的安全性和可用性提供终端服务，无需进行客户端配置。 提供了一个全面的安全配置模型，管理员可使用此模型控制对网络中特定资源的访问。 使用户可穿过防火墙和网络地址转换器 (NAT) 远程连接到终端服务器和远程工作站。 提供了一个更加安全的模型，此模型允许用户仅访问所选的服务器和工作站，而不是通过 VPN 访问整个企业网络。 终端服务网关为组织提供了一种安全、轻松的方法，使远程用户无需安装和配置 VPN 连接即可访问网络中的服务器和工作站。使用全面的安全功能，管理员还可以控制对特定资源的访问。&#xA;三、在外网与内网不通信的情况下，本文利用网关服务器来进行外网连接内网桌面。这类连接方式通常会信息安全、远程办公、网络隔离等场景使用。&#xA;本文以192.168.5.x为外网，192.168.4.x为内网。 云终端IP地址为外网/ DoraCloud（192.168.4.167），虚拟桌面为内网/ 网关服务器为两个网卡，分别是192.168.5.17；192.168.5.17&#xA;组网图如下&#xA;步骤一、安装 Windows Server 2012 R2 的步骤 1、使用 Windows Server 2012 R2 产品 CD 启动计算机。&#xA;2、当提示输入计算机名称时，键入 2012RDG。&#xA;3、按照屏幕上显示的其他说明完成安装。&#xA;步骤二、设置静态IP 1、使用 2012RDG\Administrator 帐户登录到 2012RDG。两个网卡，同时插入内网和外网，内网（192.168.4.17）外网（192.168.5.17） 依次单击「开始」、&amp;ldquo;控制面板&amp;rdquo;、&amp;ldquo;网络和 Internet&amp;rdquo;、&amp;ldquo;网络和共享中心&amp;rdquo;、&amp;ldquo;更改适配器设置&amp;rdquo;，右键单击&amp;quot;本地连接&amp;quot;，然后单击&amp;quot;属性&amp;quot;。 如图下&#xA;2、使用 2012RDG\Administrator 帐户登录到 2012RDG。 有域环境先加入域。 3、检测IP静态IP是否修改正确。&#xA;步骤三、安装远程桌面网关服务 若要安装和配置远程桌面网关 服务器，必须添加远程桌面网关 角色服务。Windows Server 2012 R2 包含通过 服务器管理器 安装远程桌面网关 角色服务的选项。</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>深圳石岩公学 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/examples/cloud-classroom/case2/</link>
+    <description>Recent content in 深圳石岩公学 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/examples/cloud-classroom/case2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/examples/cloud-classroom/case2/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/examples/cloud-classroom/case2/readme/</guid>
+      <description>深圳石岩公学 客户背景 石岩公学是深圳市民办学校中第一家广东省一级学校，首批广东省花园式学校，全市民办学校中第一所国家级绿色学校，第一家获得深圳市办学效益奖的学校，是一所政府放心、社会认可、家长信赖、同行尊重、学生喜爱，在广东省乃至中国都具影响力的优质民办学校。&#xA;业务挑战 基于PC的计算机教室每台设备均需要现场维护，平均修复时间为2-4小时。随着PC的增多，维护工作量呈线性增长。&#xA;解决方案 采用朵拉云HyperBox云教室整体解决方案，计算机教室内部署一台服务器和50个ARM云终端，承载学生机房所有的上课桌面。利用模板克隆技术实现桌面快速部署。系统支持自动还原。&#xA;客户收益 满足日常教学要求。机房的管理员的日常维护工作大大减轻了。由于瘦客户机功耗低，体积小，机房的学习环境也得到了改善。</description>
+    </item>
+  </channel>
+</rss>

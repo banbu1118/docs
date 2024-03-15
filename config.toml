@@ -1,0 +1,223 @@
+######################## default configuration ####################
+baseURL = "https://banbu1118.github.io/docs"
+title = "DoraCloud产品文档"
+theme = "godocs-3"
+# google analytics
+googleAnalytics = "" # example : UA-123-45
+# disable language
+disableLanguages = [] # desable language from here
+defaultContentLanguage = "zh-cn"
+alwaysShowLanguageChooser = "true"
+# hugo outputs
+[outputs]
+home = ["HTML", "JSON"]
+
+# render unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+# table of content
+[markup.tableOfContents]
+startLevel = 0
+endLevel = 6
+ordered = false
+
+############################# Plugins ##############################
+
+# CSS Plugin
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/search/auto-complete.css"
+[[params.plugins.css]]
+link = "plugins/featherlight/featherlight.min.css"
+
+# JS Plugin
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/font-awesome/5.15.2/js/all.min.js"
+attributes = "crossorigin='anonymous' defer='defer' data-search-pseudo-elements"
+[[params.plugins.js]]
+link = "plugins/masonry/masonry.min.js"
+[[params.plugins.js]]
+link = "plugins/featherlight/featherlight.min.js"
+[[params.plugins.js]]
+link = "plugins/clipboard/clipboard.min.js"
+[[params.plugins.js]]
+link = "plugins/scrollmenu/scrollmenu.min.js"
+[[params.plugins.js]]
+link = "plugins/search/auto-complete.js"
+[[params.plugins.js]]
+link = "plugins/search/search.js"
+[[params.plugins.js]]
+link = "plugins/search/lunr.min.js"
+[[params.plugins.js]]
+link = "plugins/search/fuse.min.js"
+[[params.plugins.js]]
+link = "plugins/search/mark.js"
+[[params.plugins.js]]
+link = "plugins/search/search-page.js"
+
+# site variables
+[params.variables]
+# Color Variables
+primary_color = "#007BFF"
+text_color = "#333"
+text_color_dark = "#222"
+text_color_light = "#999"
+body_color = "#fff"
+border_color = "#E2E2E2"
+black = "#000"
+white = "#fff"
+light = "#FBFBFB"
+
+# Font Variables
+primary_font = "Montserrat:wght@300;400;500;600;700;800"
+primary_font_type = "sans-serif"                         # [serif/sans-serif]
+secondary_font = ""
+secondary_font_type = ""                                 # [serif/sans-serif]
+icon_font = "Font Awesome 5 Free"
+
+[sitemap]
+ changefreq = 'weekly'
+ filename = 'sitemap.xml'
+ priority = 0.5
+
+#################### default parameters ################################
+[params]
+logo = "images/logo.png"
+favicon = "images/favicon.ico"
+# Meta data
+description = "This is meta description"
+author = "Themefisher"
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# table of content on document page
+table_of_content = true
+custom_js = ["js/custom.js"]
+
+# Preloader
+[params.preloader]
+enable = false
+preloader = "" # use jpg, png, svg or gif format.
+
+# Navigation button
+[[params.nav_button]]
+style = "outline"   # available style: solid, outline
+label = "changelog"
+link = "changelog/"
+
+[[params.nav_button]]
+style = "solid"   # available style: solid, outline
+label = "contact"
+link = "contact/"
+
+
+############################# social site ########################
+
+
+################################### English language #####################################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+weight = 2
+# copyright
+copyright = "Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+contentDir = 'content/en'
+# call to action
+[Languages.en.params.call_to_action]
+enable = true
+title = "Still Didn't Find Your Answer?"
+image = "images/cta-illustration.jpg"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+
+# call to action button
+[Languages.en.params.call_to_action.button]
+enable = true
+label = "Submit a ticket"
+link = "contact/"
+
+
+############## English navigation ###############
+# main menu
+[[Languages.en.menu.main]]
+name = "Home"
+url = ""
+weight = 1
+
+[[Languages.en.menu.main]]
+name = "FAQ"
+url = "faq"
+weight = 2
+
+
+# footer menu
+[[Languages.en.menu.footer]]
+name = "Changelog"
+url = "changelog/"
+weight = 1
+
+[[Languages.en.menu.footer]]
+name = "contact"
+url = "contact/"
+weight = 2
+
+[[Languages.en.menu.footer]]
+name = "Github"
+url = "https://github.com/themefisher/"
+weight = 3
+
+
+################################### Chinese language #####################################
+[Languages.zh-cn]
+languageName = "中文"
+languageCode = "zh-cn"
+weight = 1
+# copyright
+copyright = "版权所有 &copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)"
+contentDir = 'content/zh-cn/'
+
+# call to action
+[Languages.zh-cn.params.call_to_action]
+enable = false
+title = "Still Didn't Find Your Answer?"
+image = "images/cta-illustration.jpg"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+
+# call to action button
+[Languages.zh-cn.params.call_to_action.button]
+enable = false
+label = "Submit a ticket"
+link = "contact/"
+
+
+# Navigation button
+[[Languages.zh-cn.params.nav_button]]
+style = "outline"   # available style: solid, outline
+label = "修改日志"
+link = "changelog/"
+
+
+############## Chinese  navigation ###############
+# main menu
+[[Languages.zh-cn.menu.main]]
+name = "首页"
+url = ""
+weight = 1
+
+[[Languages.zh-cn.menu.main]]
+name = "常见问题"
+url = "faq"
+weight = 2
+
+
+# footer menu
+[[Languages.zh-cn.menu.footer]]
+name = "修改日志"
+url = "changelog/"
+weight = 1
+
+

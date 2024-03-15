@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>创建Kylin桌面模板和UOS桌面模板 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tasks/create-template/kylin%E5%92%8Cuos/</link>
+    <description>Recent content in 创建Kylin桌面模板和UOS桌面模板 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <atom:link href="https://banbu1118.github.io/docs/tasks/create-template/kylin%E5%92%8Cuos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/tasks/create-template/kylin%E5%92%8Cuos/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/tasks/create-template/kylin%E5%92%8Cuos/readme/</guid>
+      <description>本文描述在 DoraCloud for proxmox 平台下，安装 kylin和uos虚拟机，并制作桌面模板的过程。完成整个文档的操作需要30分钟。&#xA;如果您仅仅需要一个DoraCloud的桌面模板，用于测试DoraCloud的功能，建议您根据参考《DoraCloud快速部署指导书》，完成DoraCloud的安装，以及演示环境的搭建。&#xA;DoraCloud提供在线模板库功能，可以在线下载本文制作的模板。&#xA;准备工作 1.镜像文件&#xA;Kylin安装镜像：Kylin-Desktop-V10-SP1-HWE-Release-2303-X86_64.iso&#xA;UOS安装镜像：uos-desktop-20-professional-1060-amd64.iso&#xA;2.proxmox服务器已经完成虚拟化系统的安装，以及DoraCloud的初始配置&#xA;Kylin 步骤一、安装Kylin虚拟机 pve新建kylin虚拟机，选择bios安装，具体如图所示 增加usb设备，音频设备，调整显示模式，具体如果所示 全盘安装kylin选择lvm模式，方便后续虚拟机扩容 配置账户信息，临时配置8位密码，等安装完成再改 完成安装 步骤二、配置Kylin系统 自定义密码策略，修改密码，建议设置为123456，后续由管理平台统一管控 1.1 打开安全中心，自定义密码策略&#xA;1.2 打开设置，修改密码&#xA;配置防火墙和安全策略 2.1 启用专用网络，关闭公用网络，高级配置，添加一条全通过的策略,关闭联网控制，此操作是为了保证云桌面服务正常运行&#xA;关闭所有应用保护，此操作是为了保证云桌面服务正常运行 关闭设备安全，此操作是为了保证云桌面服务正常运行 联网安装云桌面服务需要的包，启动所需服务 #更新系统&#xD;sudo apt update&#xD;#安装qemu-guest-agent服务包&#xD;sudo apt install qemu-guest-agent&#xD;#安装rdp服务包&#xD;sudo apt install xrdp&#xD;#安装spice服务包&#xD;sudo apt intall spice-vdagent&#xD;#安装ssh服务包（选做）&#xD;sudo apt install openssh-server&#xD;#安装cloud-init服务包，用于快速配置系统user，ip和hostname信息&#xD;sudo apt install cloud-init&#xD;#配置开机自启xrdp和ssh服务&#xD;sudo systemctl enable xrdp&#xD;sudo systemctl enable ssh #选做&#xD;#配置ssh登录（选做）&#xD;#编辑/etc/ssh/sshd_config，配置PermitRootLogin yes #配置账户连接权限 #虚拟机环境，银河麒麟远程登录会新开一个工作区,导致产生了两个桌面&#xD;#原因：kylin-mate桌面工作区设置和云桌面rdp策略不兼容&#xD;#解决办法：修改管理权限&#xD;sudo echo &amp;#34;greeter-show-manual-login=true&amp;#34; &amp;gt;&amp;gt; /usr/share/lightdm/lightdm.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic Startup on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/en/basic-startup/</link>
+    <description>Recent content in Basic Startup on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 29 Dec 2018 11:02:05 +0600</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/en/basic-startup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Startup</title>
+      <link>https://banbu1118.github.io/docs/en/basic-startup/_index.fr/</link>
+      <pubDate>Sat, 29 Dec 2018 11:02:05 +0600</pubDate>
+      <guid>https://banbu1118.github.io/docs/en/basic-startup/_index.fr/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

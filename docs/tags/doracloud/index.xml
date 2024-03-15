@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DoraCloud on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tags/doracloud/</link>
+    <description>Recent content in DoraCloud on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Sat, 17 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/tags/doracloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用DoraCloud免费版搭建办公桌面云</title>
+      <link>https://banbu1118.github.io/docs/examples/free-version/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/examples/free-version/</guid>
+      <description>DoraCloud是一款多平台的桌面虚拟化管理软件，支持Hyper-V、VMware、Proxmox、XenServer等多种虚拟化平台。DoraCloud在虚拟化平台上具有极大的灵活性，允许您的组织自由选择合适的IT基础设施来构建桌面云；也允许您的组织重用现有的IT设施基础，而不是抛弃现有的IT基础设施。&#xA;DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。无论是单服务器的桌面云系统，还是数十个节点的桌面云集群，都只需要部署DoraCloud虚拟机镜像。&#xA;DoraCloud提供免费版，可以支持25个用户。 本文介绍了在Proxmox虚拟化平台上部署DoraCloud免费版 ，在Windows上安装DoraClient客户端程序，实现免费的桌面云办公方案。除了DoraClient客户端，也可以购买朵拉云的云终端，接入DoraCloud。&#xA;准备工作 【硬件准备】 按照25用户，人均8G内存，80G系统盘，推荐的服务器配置为：&#xA;处理器：E5-2680V4*2 内存：256G SSD：1.92TB * 2 上述规划中，虚拟机的系统盘放在 SSD。&#xA;【软件准备】 Proxmox 7.3 ISO文件 ： 中科大 Proxmox 7.3 下载地址 DoraCloud for Proxmox ： DoraCloud for PVE下载 Windows平台客户端 ：DoraClient客户端 【网络环境】 局域网环境 网络中有DHCP，可以为桌面虚拟机分配IP 可以访问互联网 安装步骤 第一步：安装DoraCloud管理系统 进入Proxmox的shell，执行如下命令可以完成在线安装。&#xA;cd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl 安装完毕后，系统会提示 DoraCloud 管理系统的IP地址。该地址为DHCP动态分配的IP。如下图：&#xA;如果网络中没有DHCP，那么需要手工修改IP地址，参考如下指导文档。&#xA;https://docs.doracloud.cn/operation-maintenance/kb0001/&#xA;使用浏览器打开 DoraCloud 管理后台，输入账号 admin 密码 DoraCloud，登录DoraCloud管理系统。 第二步：DoraCloud初始化配置 1. 【欢迎页面】 登录后，显示欢迎页面。可以选择系统的语言，然后下一步。&#xA;2. 【配置虚拟化】 选择主机类型为Proxmox，输入Proxmox服务器的IP地址、用户名、密码。&#xA;3. 【配置资源池】 选择存储池、网络池。 镜像存储池、数据盘存储池，默认值是与虚拟机存储池保持一致。</description>
+    </item>
+    <item>
+      <title>Hyper-V搭建免费桌面云</title>
+      <link>https://banbu1118.github.io/docs/examples/hyperv-desktop/</link>
+      <pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/examples/hyperv-desktop/</guid>
+      <description>Hyper-V 是 Microsoft 的硬件虚拟化产品。 它用于创建并运行计算机的软件版本，称为“虚拟机”。 每个虚拟机都像一台完整的计算机一样运行操作系统和程序。 如果需要计算资源，虚拟机可提供更大的灵活性、帮助节省时间和金钱，并且与在物理硬件上运行一个操作系统相比，虚拟机可以更高效地使用硬件。&#xA;Hyper-V 在自己的隔离空间中运行每个虚拟机，这意味着可以同时在同一硬件上运行多个虚拟机。 你可能希望这样做，以避免崩溃影响其他工作负载等问题，或者为不同的人员、组或服务提供对不同系统的访问权限。&#xA;Windows 10，Windows server中都包含了Hyper-V组件。另外，微软也提供免费的Hyper-V Server版本供用户使用。免费的Hyper-V Server与Windows Server内的Hyper-V相比，缺少图形用户界面。但是可以通过安装Web化的Windows Admin Center来实现管理。&#xA;DoraCloud是一款多平台的桌面虚拟化管理软件，支持Hyper-V、VMware、Proxmox、XenServer等多种虚拟化平台。DoraCloud在虚拟化平台上具有极大的灵活性，允许您的组织自由选择合适的IT基础设施来构建桌面云；也允许您的组织重用现有的IT设施基础，而不是抛弃现有的IT基础设施。&#xA;DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。无论是单服务器的桌面云系统，还是数十个节点的桌面云集群，都只需要部署DoraCloud虚拟机镜像。&#xA;DoraCloud提供免费版，可以支持25个用户。&#xA;本文介绍了在Hyper-V虚拟化平台上部署DoraCloud免费版 ，在Windows/Linux桌面上安装DoraClient客户端程序，实现免费的桌面云办公方案。除了DoraClient客户端，也可以购买朵拉云的云终端，接入DoraCloud。&#xA;本文的Hyper-V平台选用 Windows Server（2012R2以上版本）上的Hyper-V。 Windows 10 和 Hyper-V Server上的安装过程有所区别。&#xA;准备工作 【硬件准备】 我们以搭建6人的轻量办公桌面为例，人均8内存，100G系统盘，50G数据盘，推荐的服务器配置为：&#xA;处理器：i3-10100 内存：64G SSD：1TB NVME 上述配置，价格在3000 以内。&#xA;【软件准备】 Windows Server 2019的 ISO文件 ： ed2k://|file|cn_windows_server_2019_x64_dvd_4de40f33.iso|5086887936|7DCDDD6B0C60A0D019B6A93D8F2B6D31|/ DoraCloud for Hyper-V ： DoraCloud for HyperV下载 Windows平台客户端 ：DoraClient客户端 【网络环境】 局域网环境 网络中有DHCP，可以为桌面虚拟机分配IP 可以访问互联网 安装步骤 第一步：安装Windows Server 2019 安装要点：&#xA;安装版本选择 带GUI的标准版 安装时，系统分区选择100GB。&#xA;安装主板和网卡驱动程序。&#xA;推荐去硬件厂家的官网下载硬件驱动程序。 【注意！！】请勿使用第三方驱动安装工具安装驱动。</description>
+    </item>
+  </channel>
+</rss>

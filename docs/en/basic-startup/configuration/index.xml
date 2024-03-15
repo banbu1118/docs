@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/en/basic-startup/configuration/</link>
+    <description>Recent content in Configuration on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Designed by [Themefisher](https://themefisher.com) &amp; Developed by [Gethugothemes](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Sat, 29 Dec 2018 11:02:05 +0600</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/en/basic-startup/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuration</title>
+      <link>https://banbu1118.github.io/docs/en/basic-startup/configuration/_index.fr/</link>
+      <pubDate>Sat, 29 Dec 2018 11:02:05 +0600</pubDate>
+      <guid>https://banbu1118.github.io/docs/en/basic-startup/configuration/_index.fr/</guid>
+      <description>Global site parameters On top of Hugo global configuration, Dot lets you define the following parameters in your config.toml (here, values are default).&#xA;Note that some of these parameters are explained in details in other sections of this documentation.&#xA;# base URL place here baseURL = &amp;#34;https://examplesite.com&amp;#34; # this is your site title title = &amp;#34;Hugo documentation theme&amp;#34; # theme should be `godocs` theme = &amp;#34;godocs&amp;#34; # disable language from here disableLanguages = [&amp;#34;fr&amp;#34;] # now franch language is disabled # add css plugin [[params.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,894 @@
+[
+
+
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/",
+    "title": "创建桌面模板",
+    "description": "介绍了制作桌面模板的过程。包括 Windows 7 和 Windows 10模板的制作
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0001/",
+    "title": "KB0001.修改DoraCloud管理系统的IP地址",
+    "description": "修改DoraCloud管理系统的IP地址
+",
+    "content": "DoraCloud 管理系统是一个CentOS Linux的虚拟机。我们既可以通过DoraCloud后台管理系统修改它的IP地址，也可以通过CentOS命令修改它的IP地址。\n方法1：在DoraCloud的管理系统中修改IP地址 在DoraCloud后台，依次选择【服务器】【属性】【DoraCloud网络】【静态IP配置】，即可修改网络IP地址。\n这种方法修改IP地址有限制。仅仅可以修改成同一子网内的IP地址。\n方法2：在DoraCloud Linux VM中通过nmtui程序修改 进入DoraCloud VM的虚拟机控制台。 登录DoraCloud VM。账号为 root dora@cloud 输入命令 nmtui，即可启动一个程序，修改IP地址。\n然后在nmtui中修改，如下图。\n修改完毕后，选择 save，quit，即可。\n方法3：在DoraCloud Linux VM中通过配置文件修改 该方法需要您掌握基本的Linux命令，如vi的用法。 您可以参考有关 CentOS 7修改IP地址的资料。\n进入DoraCloud VM的虚拟机控制台。 登录DoraCloud VM。账号为 root dora@cloud 进入网络配置文件network-scripts目录下。\n[root@vdimgr ~]# vi /etc/sysconfig/network-scripts/ifcfg-eth0 通过 vi命令，打开 网卡的配置文件\n修改完毕后，输入 :wq! ，即可保存并退出。 然后输入 reboot 重启 DoraCLoud Linux VM 主机。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/overview/",
+    "title": "产品概述",
+    "description": "Deskpool是一套多平台、一体化、分布式的桌面虚拟化方案。适用于教育培训、企业办公、3D设计、信息安全等多种应用场景。
+",
+    "content": "DoraCloud简介 DoraCloud桌面虚拟化方案主要为中小规模的桌面云系统而优化设计，充分考虑了中小企业的现状，以及实施桌面虚拟化中遇到的困难。DoraCloud桌面云解决方案以DoraCloud桌面虚拟化管理系统为核心，基于开放架构，具有多平台、一体化、分布式、多协议的特点，适用于教育培训、政企办公、3D设计、信息安全等多种应用场景。整体方案由DoraCloud桌面虚拟化系统、多种虚拟化平台、多种云终端构成。方案的总体结构如下图：\nDoraCloud特点 DoraCloud桌面云方案在充分了解中小企业桌面云应用的需求基础上，吸取传统桌面云方案的在中小企业应用中的经验和教训，采用了创新的设计理念。构建了DoraCloud桌面云方案的独特亮点和优势。\n多平台（Multiple Hypervisor） 服务器虚拟化（Hypervisor）是桌面虚拟化系统（VDI）的关键组件之一。服务器虚拟化的稳定性、兼容性，直接影响到了桌面云虚拟化业务的稳定性、兼容性。DoraCloud桌面虚拟化系统支持业界主流的虚拟化系统，包括Hyper-V、VMware、XenServer、Proxmox（KVM）。这些虚拟化系统具有良好的稳定性和兼容性，易于部署和维护，在企业内有广泛的用户群体。\nDoraCloud支持多种虚拟化平台，有助于集成商和用户选择自己熟悉虚拟化和硬件基础设施，有助于实现与现有企业IT基础设施的集成。降低部署的难度和维护的成本。这些主流的虚拟化系统本身有自己的生态系统，提供了良好的配套方案，比如存储连接方案，容灾和备份方案，运维和网管方案。\n一体化（All-in-One） DoraCloud虚拟桌面管理方案采用一体化（All-in-One）设计，管理系统运行在一个Linux系统中，并以虚拟机镜像的形式发布。DoraCloud管理系统集成了桌面云系统所需的多种功能模块，包括会话管理、负载均衡、数据库、镜像管理等。系统部署时，只需要部署单一的DoraCloud功能组件即可。不需要像传统的VDI那样部署多个功能组件。\nDoraCloud还支持与服务器硬件打包成一体机交付给客户。DoraCloud的一体机的特点在于集成商可以自主选择服务器硬件和虚拟化系统，实现客户现场的开箱即用。集成商可以根据自己的项目经验，构建适合自身解决方案特点的桌面云一体机。\nDoraCloud的一体化设计，简化了系统的部署，节省了商业的操作系统和数据库的授权费用，让维护更简单。允许集成商自主定制符合自身方案特色的桌面一体机，实现快速的交付。\n分布式（Distributed） DoraCloud集群采用对称集群（Symmetric Clustering）架构，所有的节点都是活动的，所有节点都参与桌面会话请求的处理过程。节点故障时，集群中的其他节点接管工作负载，并继续处理桌面会话。集群的节点之间处于负载均衡的状态。集群中的节点可以共享工作负荷，提升整个集群的性能和伸缩性。\nDoraCloud的对称集群架构为系统的部署、运行、维护带来了一系列的优势。\n部署简单：第一个节点安装时，创建集群，后续节点加入集群即可。每个节点部署的软件一样。\n负载均衡：集群的节点之间共同分担桌面会话的负荷。\n故障备份：一个节点故障，集群其他节点会接管工作负荷。灵活的实现N+1、N+M的冗余备份。\n线性伸缩：增加集群的节点，即可扩容系统的整体容量。\n统一管理：连接集群的任何一个节点，即可对整个集群进行统一管理。\n多协议（Multiple Protocol） DoraCloud管理系统支持多种桌面协议：RDP、SPICE、PCoIP。具体能支持哪种协议与虚拟化平台相关。使用Proxmox虚拟化时，可以支持SPICE、RDP。使用VMware虚拟化时，可以支持PCoIP、RDP。使用Hyper-V、XenServer平台时，支持RDP协议。\n丰富的云终端 DoraCloud桌面云提供了丰富的配套云终端。包括ARM云终端JC10、x86云终端JC30、云终端一体机JC30AIO。另外，通过朵拉云瘦客户机软件系统JYOS，可以把现有的旧PC改造成瘦客户机。DoraCloud虚拟桌面管理系统内置了对于云终端的自动发现和配置，可以实现即插即用。凭借配套的终端管理系统，可以实现都云终端的集中管理。实现远程开关机、配置、升级、监控等功能。提高终端的维护和管理效率。\nDC20云终端 性能强大，内涵丰富\n采用ARM高端Cortex A55四核64位处理器，主频高达2.0GHz，支持1G/2G DDR4内存及8G/16G存储。支持4K分辨率（3840*2160)，内置千兆网口。\n绿色节能，环保静音\n无风扇设计，为您提供无噪音安静办公和教学环境。型功耗仅有5W，超低功耗产品，绿色节能，大大降低电量消耗\n即插即用，便捷管理\n软硬件一体化设计，支持即插即用，无须配置，安装即可使用。部署方便，替换简单，硬件零管理维护量。\n远程唤醒，简单开机\n提供全新远程唤醒功能，可远程开启终端设备。上课简单，下课轻松。\n适用场景：中小学云教室、培训机构、会议室、电子考场办公\nJC30云终端 双模工作，强大灵活 采用Intel 处理器，支持工作做桌面云模式和本地模式。满足多种教学、考试、语音、实训多种使用场景。\n绿色节能，环保静音\n无风扇设计，为您提供无噪音安静办公和教学环境。型功耗10W，超低功耗产品，绿色节能，大大降低电量消耗\n双屏高清\n支持支持双屏高清显示。\n适用场景：大学，职校，考场，语音教室\nJC35云终端 双模工作，强大灵活 采用Intel 处理器，支持工作做桌面云模式和本地模式。满足多种教学、考试、语音、实训多种使用场景。\n绿色节能，环保静音\n无风扇设计，为您提供无噪音安静办公和教学环境。型功耗10W，超低功耗产品，绿色节能，大大降低电量消耗\n双屏高清\n支持支持双屏高清显示。\n适用场景：大学，职校，考场，语音教室\nJC36云终端 双模工作，强大灵活 采用Intel 处理器，支持工作做桌面云模式和本地模式。满足多种教学、考试、语音、实训多种使用场景。\n绿色节能，环保静音\n无风扇设计，为您提供无噪音安静办公和教学环境。型功耗10W，超低功耗产品，绿色节能，大大降低电量消耗\n双屏高清\n支持支持双屏高清显示。\n适用场景：大学，职校，考场，语音教室\nJC30AIO 云终端一体机 DoraBook 云笔电 极致轻薄 轻便机身总重量1.1Kg，机身厚度1.1cm，移动方便，不受工位限制。 性能卓越 采用Intel N4120(四核)，采用14nm工艺，具有领先的CPU性能，更高的媒体能力，增强的图形引擎。适用于办公、3D设计等桌面云场景。 协议丰富 支持RDP8.1、RDP10、PCOIP、ICA/HDX、HDP、SPICE、VNC协议。 便捷管理 软硬件一体化设计，无须配置，开机即用。部署方便，替换简单，硬件零管理维护量。集成管理工具TCManager。\nDoraCloud典型部署 DoraCloud支持不同的组网场景，包括单机部署、高可用集群部署、超融合部署、多节点集群部署。灵活的部署方式能够适应不同应用场景的组网需求。\n单机部署方案 该方案适合于小规模单服务器的部署。该方案的特点是，部署快捷，维护简单。适用于小微企业办公、学校的云教室、呼叫中心等场合。一般建议单服务器用户不超过60。 单机方案适用于以下虚拟化平台：\nHyper-V Server 2012R2、Hyper-V Server 2016、Hyper-V Server 2019 Windows Server 2012R2、Windows Server 2016、Windows Server 2019 VMware vSphere 6.0、6.5、6.7 Proxmox 5.3 以上 XenServer 6.2 高可用集群部署方案 该方案需要配置共享存储。在虚拟化系统中配置高可用群集，形成虚拟化资源池。资源池内的虚拟机可以在不同的服务器上热迁移。当一台服务器故障时，集群的HA机制可以将虚拟机在其他节点上启动。DoraCloud和桌面虚拟机都依赖于虚拟化的HA机制来保证可靠性。 该方案适合于企业办公，以及其他对于数据可靠性要求较高的场合。服务器按照N+1配置，预留一台服务器作为冗余。 该方案适用于以下虚拟化平台：\nHyper-V Server 2012R2、Hyper-V Server 2016 Windows Server 2012R2、Windows Server 2016、Windows Server 2019 VMware vSphere 6.0、6.5、6.7 Proxmox 5.3 以上 超融合部署方案 超融合方案采用分布式存储系统，通过运行在服务器上的分布式存储软件把服务器内的SSD、HDD资源聚合成一个逻辑上统一的存储池，然后提供给虚拟化系统。超融合方案可以节省昂贵的共享存储的费用，具有更好的可靠性、可扩展性。 DoraCloud的超融合部署方案支持以下几种配置： 1、VMware vSphere，启用VSAN实现分布式存储。 2、Windows Server 2016 数据中心版本，启用 Storage Space Direct（S2D）实现分布式存储。 3、采用Proxmox虚拟化，启用Ceph构建分布式存储。 采用超融合部署时，建议服务器通过10GE的以太网连接。 采用超融合方案部署时，虚拟化系统也支持高可用集群。能够实现虚拟桌面和DoraCloud管理节点的高可用。\n对等集群部署方案 管理节点的集群方案可以将套单机部署的桌面云系统聚合成一个逻辑上统一的桌面云系统，实现资源的跨节点分配和调用。采用该部署方案时，DoraCloud管理系统实现了跨节点的高可用性。管理员登录任何一个管理节点，都可以对整体系统进行操作和管理。桌面用户从任何一个管理节点都可以连接到自己的虚拟桌面。当一台服务器故障时，其他的服务器上运行的桌面云服务不受影响。 管理节点集群方案适合于公有桌面池的方案。在服务器故障后，用户可从其他的服务器获得新的桌面，从而保障桌面业务的连续性。专用桌面需要在服务器本地保存用户的个人数据。在服务器故障后，专用桌面池的桌面将无法为用户提供服务，直到服务器恢复。\n"
+  }
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/quickstart/",
+    "title": "朵拉云科技DoraCloud快速部署指导",
+    "description": "本文描述了在Hyper-V虚拟化平台下，通过在线下载模板的方式快速安装DoraCloud桌面虚拟化系统的过程。适合于初次使用DoraCloud的用户入门。教程耗时大约30分钟。
+",
+    "content": "DoraCloud是一款多平台的桌面虚拟化管理软件，支持Hyper-V、VMware、Proxmox、XenServer等多种虚拟化平台。DoraCloud在虚拟化平台上具有极大的灵活性，允许您的组织自由选择合适的IT基础设施来构建桌面云；也允许您的组织重用现有的IT设施基础，而不是抛弃现有的IT基础设施。\nDoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。无论是单服务器的桌面云系统，还是数十个节点的桌面云集群，都只需要部署DoraCloud虚拟机镜像。\nDoraCloud采用对等集群架构设计，多个DoraCloud管理系统可以组织成一个无中心节点的对等集群，实现系统的统一管理、负载均衡、线性扩容。轻松支持1+1、N+1、N+M多种冗余备份模式。\nDoraCloud 3.3 for Hyper-V支持“模板仓库”的功能，支持从在线仓库中下载模板，只需一次点击，即可为系统创建所需的模板，极大的简化了模板的创建过程。初学者可以无障碍的体验DoraCloud创建和管理虚拟桌面的过程。\n安装前准备 一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”\n网络中开启了 DHCP 服务。\n安装了Windows Server 2012R2 或者 Windows Server 2016 或者 Windows Server 2019\n安装了Hyper-V服务角色，配置虚拟交换机名称为vswitch1\n服务器可以访问互联网，并且下载速度不低于5MB/s。\n步骤1：下载和安装DoraCloud桌面虚拟化系统 使用浏览器下载DoraCloudV3.3安装程序。\nhttps://www.doracloud.cn/downloads/1-cn.html\n在Windows Server 上以管理员身份执行安装程序。\n在安装向导中，选择“下一步”，然后选择安装路径，选择“下一步”。 选择 DoraCloud管理系统虚拟机所属的网络，配置DoraCloud的IP地址，为DoraCloud配置存储池。DoraCloud管理系统会安装到存储池1。用户可以在后续配置中指定存储池1,2,3的具体用途。 安装完成后，观察DoraCloud管理系统的IP地址，使用浏览器登录DoraCloud。 安装程序会创建一个 DoraCloudyyyy_mm_dd_hhmmss命名格式的DoraCloud管理虚拟机。系统会自动通过IE打开DoraCloud管理页面。由于DoraCloud启动需要时间，需要关闭浏览器，重新用浏览器打开，才能正确访问。如果出现SSL证书提示，请选择信任未签名的证书。 DoraCloud管理系统的默认账号为 用户名：admin 密码：DoraCloud\nDoraCloud安装后，缺省的地址是DHCP分配的动态地址。您可以通过Hyper-V管理器开启DoraCloud的控制台，在虚拟机的控制台可以看到DoraCloud的IP地址。\nDoraCloud系统的结构图 DoraCloud安装程序在Windows Server上安装了一个 DeskpoolService服务程序，并在Hyper-V虚拟化平台上创建了DoraCloud 管理VM。 DoraCloud通过DeskpoolService对Hyper-V进行控制，负责创建桌面虚拟机，实现对桌面虚拟机的管理。\n步骤2：完成【系统初始化】配置 登陆DoraCloud管理系统后，系统会启动配置向导，如下图所示。 DoraCloud的配置大致包括四个步骤：系统初始化、创建模板、创建桌面池、创建群组和用户。选择【开始】，进入系统初始化配置。 配置虚拟化。 DoraCloud系统会自动检测到所在服务器的配置，并与之建立连接。\n配置资源池。 包括桌面存储池、数据盘存储池、镜像存储池。其中桌面存存储池、镜像存储池最好使用SSD介质的存储，或者高速的RAID磁盘阵列。 网络资源池是 DoraCloud默认所在的网络。 配置集群，选择创建新的DoraCloud集群。 配置用户数据库，选择本地群组数据库。 如果您有AD，可以选择使用AD作为用户数据库。 步骤3：在远程镜像仓库下载模板 在向导的第2步：创建模板时，关闭向导，然后选择【远程镜像仓库】 在远程镜像库中，点击【刷新】，建议选择占用空间较小的 win7x86base 模板下载。下载速度最高约5MB/s。3GB的镜像需要大约10分钟下载。 等待模板下载完毕，然后选择恢复模板。 模板恢复完毕后，可以在模板列表中看到被恢复的模板。 步骤4：创建桌面池 在桌面池菜单中，新建桌面池。 填写【桌面池名称】、【模板】、【虚拟机名称前缀】、【虚拟机名称后缀】、【顺序编号】。不推荐虚拟机前缀使用中文。虚拟机后缀必须是数字。为了管理方便，建议顺序编号。 配置桌面池创建策略，设置最大创建数目、预创建数目。 下图设置预创建3个，最大创建10个。系统会自动创建3个桌面。如果1个桌面被分配，系统会自动再创建一个，保证桌面池有3个空闲的桌面，直到总的桌面数目达到最大创建数目。 对于办公等需要保存数据的应用场景，一般创建【专用桌面池】。对于教学、培训、阅览室等场景，一般采用【公用桌面池】。 如果选择【设置为默认桌面池】，即使用户不签约该桌面池，也能从该桌面池内分配到桌面。 在采用本地用户账户时，DoraCloud桌面云系统的账号与Windows桌面的账号是独立的。为了避免用户输入两次账号，DoraCloud通过账号绑定的方式来避免用户再次输入Windows用户密码。可以设置【自动设置初始绑定账号】可以在用户首次连接桌面池，把Windows模板的默认账号作为填写在用户桌面的绑定账号中。用户如果修改了桌面Windows系统的账号，可以在DoraCloud的门户中修改绑定账号。 配置用户数据盘，然后点击【确定】，保存桌面池。 进入菜单【桌面计算机】，观察桌面池创建状态，状态进入【正在运行】时，桌面计算机才能分配给用户。如果长时间无法创建成功，可以观察事件列表，观察【创建虚拟桌面】任务的状态信息。 步骤5：创建用户和群组 在用户管理菜单中，创建群组 group1，选择桌面池【办公】。 然后批量增加用户 user01 ~ user10，密码 123456，选择所属群组 Group1。 步骤6：使用云终端连接到DoraCloud桌面云 方式1： 使用云终端登录\n支持DoraCloud的云终端包括：朵拉云DC10/DC20、JC35，JC36。如果没有云终端，也可以选择使用旧机器安装DoraOS瘦客户机软件系统。\n在云终端的【配置中心】选择添加Deskpool连接，输入【服务器地址】、【记住账号信息】、【用户名】、【密码】。连接名称，可以任意填写。 在连接界面中，点击 【连接】按钮，即可连接桌面。 连接桌面后，在Windows的开始菜单中，选择【注销】-\u0026gt;【断开】，即可离开桌面。 然后在DoraCloud用户门户右上角选择 【退出】。 方式2： 下载DoraClient客户端登录.\nDoraClient是DoraCloud的客户端，可以用来登录我们的云桌面。\nDoraClient下载地址\n1.下载完毕，打开DoraClient，提示输入服务器地址，就是DoraCloud管理后台的地址。\n2.输入在管理后台创建的用户名：user01，密码：123456,点击登录就会自动下载rdp文件进入云桌面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/userguide/",
+    "title": "Deskpool用户手册",
+    "description": "本手册Deskpool管理系统的用户手册，主要是针对桌面用户。
+",
+    "content": "1. 概述 此手册主要是针对桌面用户。\n2.桌面用户登录 在登录页面输入桌面用户、密码，进入桌面页面,会显示用户所有分配的桌面，且桌面计算图标上方显示所属桌面池跟计算机名称（如果用户已分配到该桌面的桌面，如果未分配），如果是终端且用户左右一个桌面会自动进入虚拟机桌面里。 3.桌面操作 用户选中桌面下方的菜单可以对桌面进行开机、关机、重启、还原等动作，注意虚拟机状态不同显示的操作不同。\n操作包括：\n开机: 点击【启动】菜单，系统会对虚拟机执行开机动作。 还原：此动作只针对公共桌面，执行此动作虚拟机会回滚到桌面初始状态。 连接：点击【连接】或计算机图标，如果是终端，则会自动进入虚拟机，如果是浏览器会下载一个RDP文件，点击下载文件，进入虚拟机里。 绑定账号：可以绑定windows系统的用户密码。注意：用户名、密码、域信息是windows系统的里信息。 关机：此操作会关闭虚拟机 重启：此操作会重启虚拟机 虚拟机下不同操作操作下截图：\n1、虚拟机下关机状态: 2、虚拟机运行状态: 4.退出 点击右上角的【退出】，系统会自动退出到登录页面。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0002/",
+    "title": "KB0002.对DoraCloud的桌面模板系统盘进行扩容",
+    "description": "对DoraCloud的桌面模板系统盘进行扩容
+",
+    "content": "DoraCloud的桌面是根据桌面模板创建的。桌面模板包含了系统盘。有时系统盘的空间不满足需求，就需要对系统盘大小进行调整。\n我们以Hyper-V平台的DoraCloud为例，扩充模板 win7x86base 这个模板的空间。\n首先，在DoraCloud管理后台中编辑模板，进入模板编辑状态。 然后，进入服务器的Hyper-V管理系统，找到正在编辑中的模板，虚拟机名称为 win7x86base，执行【关机】操作，然后点击【设置】。\n选择磁盘驱动器，【编辑】。\n在磁盘编辑菜单中，选择【扩展】，将磁盘容量扩展到 80G。\n之后保存配置，启动 win7x86base ，回到DoraCloud管理界面，mstsc连接正在运行的桌面模板，进入windows。\n选择磁盘0，【扩展卷】操作。\nDoraCloud在线模板库提供的模板，一般在虚拟硬件上配置了50-60GB的系统盘空间。 但是在创建桌面操作系统时，实际分配了大约20-30GB，还有一些预留空间。\n这种情况下，可以直接编辑模板，才模板内执行【扩展卷】操作。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/windows/",
+    "title": "安装指南【Windows Server】",
+    "description": "本文描述了在Hyper-V虚拟化平台下，快速安装DoraCloud桌面虚拟化系统的过程。适合于初次使用DoraCloud的用户入门。教程耗时大约30-60分钟。
+",
+    "content": "DoraCloud 是一款桌面虚拟化管理软件，支持Hyper-V、XenServer等虚拟化平台。DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。\n本文主要讲述在windows server 2012 R2中快速部署朵拉云系统。\n操作思路：下载window server 2012 R2镜像，制作启动启动盘，按照步骤安装系统，然后在系统中下载并安装 DoraCloud 3.3,进行快速部署。\nDoraCloud 3.3 for Hyper-V支持“模板仓库”的功能，支持从在线仓库中下载模板，只需一次点击，即可为系统创建所需的模板，极大的简化了模板的创建过程。初学者可以无障碍的体验DoraCloud创建和管理虚拟桌面的过程。\n安装前准备 一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”\n网络中开启了 DHCP 服务。\n三种方法下载windows Server 2012 R2 ISO镜像\n1.迅雷下载地址：迅雷精简版下载地址\n迅雷下载ISO文件(复制到迅雷下载)：\ned2k://|file|cn_windows_server_2012_r2_x64_dvd_2707961.iso|4413020160|010CD94AD1F2951567646C99580DD595|/\u0026gt;\n2.Windows Server 2012 R2 ISO镜像 官方下载地址： http://technet.microsoft.com/zh-cn/evalcenter/dn205286.aspx\n3.另外msdn.itellyou.cn网站也提供了P2P下载Windows Server安装包的地址。 Windows Server 2012R2的 ISO文件：cn_windows_server_2012_r2_vl_x64_dvd_3316795.iso\nU盘制作：\n1）使用rufus制作Windows Server启动U盘。\n1.rufus下载地址：rufus下载地址\n2）使用UltraISO制作Windows Server启动U盘。\n下载并安装 DoraCloud 3.3。\nDoraCloud 3.3 for Hyper-V 的下载地址为：https://www.doracloud.cn/downloads/1-cn.html\n步骤一：安装Windows Server 2012R2 和原厂网卡、主板驱动程序 安装 Windows Server 2012R2的过程比较简单，注意几点：\n选择标准版（带有GUI的服务器）或者 数据中心版本（带有GUI的服务器）。 选择自定义安装，如果有分区，则删除已有的分区。 安装完成后，需要设置管理员账户的密码。 步骤二：安装 Hyper-V 角色，创建虚拟交换机，确保网络中有DHCP服务 Hyper-V角色可以手工通过Windows的“服务器管理”安装，也可以通过DoraCloud向导自动安装Hyper-V。\n通过“服务器管理”安装的过程如下：\n打开“服务器管理”，管理页面如下图所示 点击勾选的区域“添加角色和功能” 进入安装步骤 选择“基于角色或基于功能的安装” 选择“Hyper-V” 勾选选择“以太网” 向导执行完毕后，会提示需要重启服务器，服务器重启后，可以完成 Hyper-V角色的安装。\n步骤三：下载并安装 DoraCloud 桌面虚拟化管理系统 DoraCloud 3.3 for Hyper-V 的下载地址为：https://www.doracloud.cn/downloads/1-cn.html\n执行安装向导，选择“下一步”，会启动DoraCloud安装程序。 选择存储池和虚拟网络。 完成安装 步骤四：完成【系统初始化】配置 安装完成以后我们会看到DoraCloud的ip地址，去浏览器中访问，注意，是填写DoraCloud管理系统的IP地址，不是Windows Server的IP地址。缺省账号为：用户 admin，密码 DoraCloud。 登陆DoraCloud管理系统后，系统会启动配置向导，如下图所示。 DoraCloud的配置大致包括四个步骤：系统初始化、创建模板、创建桌面池、创建群组和用户。选择【开始】，进入系统初始化配置。 配置虚拟化。 DoraCloud系统会自动检测到所在服务器的配置，并与之建立连接。\n配置资源池。 包括桌面存储池、数据盘存储池、镜像存储池。其中桌面存存储池、镜像存储池最好使用SSD介质的存储，或者高速的RAID磁盘阵列。 网络资源池是 DoraCloud默认所在的网络。 配置集群，选择创建新的DoraCloud集群。 配置用户数据库，选择本地群组数据库。 如果您有AD，可以选择使用AD作为用户数据库。 步骤五：在远程镜像仓库下载模板 在向导的第2步：创建模板时，关闭向导，然后选择【远程镜像仓库】 在远程镜像库中，点击【刷新】，建议选择占用空间较小的 win7x86base 模板下载。下载速度最高约5MB/s。3GB的镜像需要大约10分钟下载。 等待模板下载完毕，然后选择恢复模板。 模板恢复完毕后，可以在模板列表中看到被恢复的模板。 步骤六：创建桌面池 在桌面池菜单中，新建桌面池。 填写【桌面池名称】、【模板】、【虚拟机名称前缀】、【虚拟机名称后缀】、【顺序编号】。不推荐虚拟机前缀使用中文。虚拟机后缀必须是数字。为了管理方便，建议顺序编号。 配置桌面池创建策略，设置最大创建数目、预创建数目。 下图设置预创建3个，最大创建10个。系统会自动创建3个桌面。如果1个桌面被分配，系统会自动再创建一个，保证桌面池有3个空闲的桌面，直到总的桌面数目达到最大创建数目。 对于办公等需要保存数据的应用场景，一般创建【专用桌面池】。对于教学、培训、阅览室等场景，一般采用【公用桌面池】。 如果选择【设置为默认桌面池】，即使用户不签约该桌面池，也能从该桌面池内分配到桌面。 在采用本地用户账户时，DoraCloud桌面云系统的账号与Windows桌面的账号是独立的。为了避免用户输入两次账号，DoraCloud通过账号绑定的方式来避免用户再次输入Windows用户密码。可以设置【自动设置初始绑定账号】可以在用户首次连接桌面池，把Windows模板的默认账号作为填写在用户桌面的绑定账号中。用户如果修改了桌面Windows系统的账号，可以在DoraCloud的门户中修改绑定账号。 配置用户数据盘，然后点击【确定】，保存桌面池。 进入菜单【桌面计算机】，观察桌面池创建状态，状态进入【正在运行】时，桌面计算机才能分配给用户。如果长时间无法创建成功，可以观察事件列表，观察【创建虚拟桌面】任务的状态信息。 步骤七：创建用户和群组 在用户管理菜单中，创建群组 group1，选择桌面池【办公】。 然后批量增加用户 user01 ~ user10，密码 123456，选择所属群组 Group1。 步骤八：通过朵拉云瘦客户机或者DoraOS客户机软件系统连接DoraCloud桌面云 方式1: 旧改Doraos或者使用朵拉云JC10云终端登录云桌面.\n这里以朵拉云DoraCloud专用终端DC20为例，连接DoraCloud系统。\n如果没有朵拉云DC20云终端，可以在一个x86机器上部署DoraoS系统，把机器改造成瘦客户机。DoraoS的下载和部署参考如下链接\nDoraoS下载和安装\n安装好朵拉云瘦客户机，并将瘦客户机连接到网络\n打开朵拉云瘦客户机，进入设置页面,点击第一个“添加Deskpool连接”。\n编辑Deskpool连接，设置服务器地址和连接名称。 填写DoraCloud管理系统的IP地址，不是Windows Server的IP地址 设置完成，点击红框区域的“连接”，进入DoraCloud系统。 然后以 用户名user01 密码123456 登陆，即可连接桌面。 选择桌面，点击即可进入系统。 方式2： 直接在网页登录云桌面.\n用网页登录云桌面，USB使用会受限制，我们可以用网页登录来测试创建的云桌面是否能正常登录，并且测试桌面云的部分功能等.\n1.如图所示，我们正在登录DoraCloud管理后台，点击右上角退出。\n2.在后台登录界面输入之前创建的，用户名：user01 密码：123456，输入完毕点击登录.\n3.登录成功以后，会自动下载RDP文件，点击图中RDP文件，连接用户桌面，进入以后输入用户名：administrator,密码：123456， 点击登录就进入云桌面了。\n方式3： 下载DoraClient客户端登录.\nDoraClient是DoraCloud的客户端，可以用来登录我们的云桌面。\nDoraClient下载地址\n1.下载完毕，打开DoraClient，提示输入服务器地址，就是DoraCloud管理后台的地址。\n2.输入在管理后台创建的用户名：user01，密码：123456,点击登录就会自动下载rdp文件进入云桌面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/",
+    "title": "入门指南",
+    "description": "在四个虚拟化平台（Hyper-V、VMware、XenServer、Proxmox）上部署DoraCloud系统的安装指南。便于您快速了解DoraCloud桌面云系统，并进行测试和评估。
+",
+    "content": "我们假设您具有相关的虚拟化平台的技术背景，并且已经搭建了虚拟化基础设施。建议您选择熟悉的虚拟化平台来搭建DoraCloud桌面云系统。如果您缺少虚拟化平台的基础知识，我们建议你选择Hyper-V平台来搭建Deskpool桌面云系统。\n一台服务器，配置为 :CPU i5 以上，内存 ≥8GB，硬盘最好为 SSD。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”\n入门指南如果您有相关的虚拟化平台的技术背景，可以在30-60分钟内完成DoraCloud桌面虚拟化系统的搭建。\n硬件环境基本要求 硬件环境 CPU ：≥i5\n内存：≥16GB 硬盘：≥SSD120GB 网络环境 可用的DHCP服务 说明 本配置仅支持3－4用户体验使用\n软件要求： Hyper-V平台： Windows Server DoraCloud for Hyper-V Windows模板\nVMware平台： ESXi vCenter DoraCloud for Hyper-V Windows模板\nProxmox平台： Proxmox VE DoraCloud for Proxmox Windows模板\nXenServer平台： XenServer平台 DoraCloud for XenServer Windows模板\n客户端： 1）朵拉云DC10/DC20/JC35/JC36云终端。 2）DoraOS瘦客户机系统。 3）DoraClient客户端软件(windows \u0026amp; Linux)\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/hypervserver/",
+    "title": "安装指南【Hyper-V Server】",
+    "description": "本文Hyper-V Server上部署DoraCloud安装指南，快速安装DoraCloud桌面虚拟化系统的过程.
+",
+    "content": "DoraCloud 是一款桌面虚拟化管理软件，支持Hyper-V、XenServer等虚拟化平台。DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。\n本文主要讲述最简单的免费虚拟化方案：Hyper-V Server + Windows Admin Center,并且在Hyper-v server中快速部署朵拉云系统。\n安装前准备：\n1.一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”\n2.下载所需软件（Hper-v server,windows Admin Center,chrome,DoraCloud），保存到U盘中.\nHyper-v Server下载地址\n谷歌下载地址\nwindows Admin Center下载地址\nhyperv.ps1脚本下载地址\nDoraCloud下载地址\n注意事项：\n虚拟机存储池禁止存放C盘中，否则会出现无法创建虚拟机的错误提示。\n步骤一：安装Hyper-v server 1.开机提示按F11进入Boot Menu界面。 2.进入菜单选择第三个usb启动。\n3.进入安装界面，默认下一步，分盘方式选择自定义安装。\n4.先分出C盘20G安装Hyper-v server系统。\n5.其余划分成D盘，划分完成后格式化D盘，以防有其他文件残留。\n6.最后选择分出的20G安装系统，进度条加载完，等待重新启动。\n步骤二：执行脚本，自动安装windows Admin Center,chrome. 1.第一步：切换到E盘也就是U盘命令行输入dir,查看U盘是否放入了脚本文件。脚本包括（修改计算机名称，开启远程桌面,安装windows Admin Cennter,chrome。）\n2.第二步：执行脚本输入 powershell -f hyperv.ps1 , 脚本需要执行两遍，执行第一遍会自动重启，执行第二遍等待脚本执行完毕，会自动加载到windows Admin Center，点击连接，进入管理页面。\n步骤三：安装DoraCloud管理后台。 1.在命令行，可以看到E盘目录下有DoraCloud， 输入D + [TAB]键 就会自动补全路径，然后回车安装。\n2.执行安装向导，选择“下一步”，会启动DoraCloud安装程序。\n3.选择创建网卡，存储位置选择D盘。\n4.进入windows Admin Center，点击【虚拟机】，然后连接DoraCloud，就能看到管理后台的IP地址，\n步骤四：完成【系统初始化】配置。 在浏览器访问IP地址，用户名admin , 密码DoraCloud. 1.登陆DoraCloud管理系统后，系统会启动配置向导，如下图所示。 DoraCloud的配置大致包括四个步骤：系统初始化、创建模板、创建桌面池、创建群组和用户。选择【开始】，进入系统初始化配置。 2.配置虚拟化。 DoraCloud系统会自动检测到所在服务器的配置，并与之建立连接。 3.配置资源池。 包括桌面存储池、数据盘存储池、镜像存储池。其中桌面存存储池、镜像存储池最好使用SSD介质的存储，或者高速的RAID磁盘阵列。 网络资源池是 DoraCloud默认所在的网络。 4.配置集群，选择创建新的DoraCloud集群。 5.配置用户数据库，选择本地群组数据库。 如果您有AD，可以选择使用AD作为用户数据库。 步骤五：在远程镜像仓库下载模板 在向导的第2步：创建模板时，关闭向导，然后选择【远程镜像仓库】 在远程镜像库中，点击【刷新】，建议选择占用空间较小的 win7x86base 模板下载。下载速度最高约5MB/s。3GB的镜像需要大约10分钟下载。 等待模板下载完毕，然后选择恢复模板。 模板恢复完毕后，可以在模板列表中看到被恢复的模板。 步骤六：创建桌面池 在桌面池菜单中，新建桌面池。 填写【桌面池名称】、【模板】、【虚拟机名称前缀】、【虚拟机名称后缀】、【顺序编号】。不推荐虚拟机前缀使用中文。虚拟机后缀必须是数字。为了管理方便，建议顺序编号。 配置桌面池创建策略，设置最大创建数目、预创建数目。 下图设置预创建3个，最大创建10个。系统会自动创建3个桌面。如果1个桌面被分配，系统会自动再创建一个，保证桌面池有3个空闲的桌面，直到总的桌面数目达到最大创建数目。 对于办公等需要保存数据的应用场景，一般创建【专用桌面池】。对于教学、培训、阅览室等场景，一般采用【公用桌面池】。 如果选择【设置为默认桌面池】，即使用户不签约该桌面池，也能从该桌面池内分配到桌面。 在采用本地用户账户时，DoraCloud桌面云系统的账号与Windows桌面的账号是独立的。为了避免用户输入两次账号，DoraCloud通过账号绑定的方式来避免用户再次输入Windows用户密码。可以设置【自动设置初始绑定账号】可以在用户首次连接桌面池，把Windows模板的默认账号作为填写在用户桌面的绑定账号中。用户如果修改了桌面Windows系统的账号，可以在DoraCloud的门户中修改绑定账号。 配置用户数据盘，然后点击【确定】，保存桌面池。 进入菜单【桌面计算机】，观察桌面池创建状态，状态进入【正在运行】时，桌面计算机才能分配给用户。如果长时间无法创建成功，可以观察事件列表，观察【创建虚拟桌面】任务的状态信息。 步骤七：创建用户和群组 在用户管理菜单中，创建群组 group1，选择桌面池【办公】。 然后批量增加用户 user01 ~ user10，密码 123456，选择所属群组 Group1。 步骤八：通过朵拉云瘦客户机或者DoraOS瘦客户机软件系统连接DoraCloud桌面云 方式1: 旧改Doraos或者使用朵拉云DC20云终端登录云桌面.\n这里以朵拉云DoraCloud专用终端DC20为例，连接DoraCloud系统。如果没有朵拉云JC10云终端，可以在一个x86机器上部署DoraoS系统，把机器改造成瘦客户机。DoraoS的下载和部署参考如下链接DoraoS下载和安装。\n安装好朵拉云瘦客户机，并将瘦客户机连接到网络\n打开朵拉云瘦客户机，进入设置页面,点击第一个“添加Deskpool连接”。\n编辑Deskpool连接，设置服务器地址和连接名称。 填写DoraCloud管理系统的IP地址，不是Windows Server的IP地址 设置完成，点击红框区域的“连接”，进入DoraCloud系统。 然后以 用户名user01 密码123456 登陆，即可连接桌面。 选择桌面，点击即可进入系统。 方式2： 直接在网页登录云桌面.\n用网页登录云桌面，USB使用会受限制，我们可以用网页登录来测试创建的云桌面是否能正常登录，并且测试桌面云的部分功能等.\n1.如图所示，我们正在登录DoraCloud管理后台，点击右上角退出。\n2.在后台登录界面输入之前创建的，用户名：user01 密码：123456，输入完毕点击登录.\n3.登录成功以后，会自动下载RDP文件，点击图中RDP文件，连接用户桌面，进入以后输入用户名：administrator,密码：123456， 点击登录就进入云桌面了。\n方式3： 下载DoraClient客户端登录.\nDoraClient是DoraCloud的客户端，可以用来登录我们的云桌面。\nDoraClient下载地址\n1.下载完毕，打开DoraClient，提示输入服务器地址，就是DoraCloud管理后台的地址。\n2.输入在管理后台创建的用户名：user01，密码：123456,点击登录就会自动下载rdp文件进入云桌面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0003/",
+    "title": "KB0003.申请和加载DoraCloud的软件许可",
+    "description": "如何申请和加载DoraCloud的软件许可
+",
+    "content": "DoraCloud安装后，默认处于30天试用状态。如果您购买了软件授权，可以申请许可证。\n在【系统】【License管理】【获取License文件】位置，可以看到“本地特征码”。\n请拷贝以上的【本地特征码】信息，按照如下的模板提交给DoraCloud销售商，获取商业授权License文件。\n【授权对象】： 填写单位名称，如果购买了多套，请填写 单位名称+机房名称，或者 单位名称 + 项目名称。\r【授权数量】： 项目购买的桌面授权数量。\r【特征码】：请从上面的本地特征码中拷贝过来。 销售商会根据您反馈的特征码，提供软件授权文件。\n【系统】【License管理】【更新License文件】，选择【浏览】，选择收到的授权文件，然后点击【更新】。 License更新完成后，查看许可信息，是否正确。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/proxmox/",
+    "title": "安装指南【Proxmox平台】",
+    "description": "本文描述了在Proxmox虚拟化平台下安装DoraCloud桌面虚拟化的过程。
+",
+    "content": "Proxmox VE是一个完整的企业虚拟化开源平台。借助内置的Web界面，您可以轻松管理虚拟机和容器，软件定义的存储和网络，高可用性集群以及单个解决方案上的多个现成工具。\nDoraCloud是一套多平台、一体化、分布式的桌面虚拟化方案。基于开放架构，支持多种虚拟化平台（Hyper-V，VMware，Proxmox，XenServer），多种桌面协议（RDP，PCoIP，SPICE）。\n本文介绍了基于Proxmox搭建DoraCloud桌面虚拟化系统的过程。\n安装前准备： 1、一台服务器，配置为 :CPU i5 以上，内存 ≥8GB，硬盘为 SSD 。\n2、网络中开启了 DHCP 服务。\n3、Proxmox VE7.4 ISO镜像(本文以Proxmox VE7.4描述)\n官方下载地址： https://www.proxmox.com/en/downloads/category/iso-images-pve\n中科大Mirror： http://mirrors.ustc.edu.cn/proxmox/\n清华大学Mirror： https://mirrors.tuna.tsinghua.edu.cn/proxmox/iso/\n4、U盘制作工具：rufus rufus下载地址\n步骤一：安装Proxmox VE7.4 1、Rufus制作Proxmox7.4系统U盘启动盘\n2、服务器U盘启动安装Proxmox7.4 按照默认提示安装。\n3、安装完成后，浏览器输入https://Proxmox服务器的IP:8006 进入 Proxmox管理后台。\n4、管理页面（Proxmox服务器的IP为安装时设置的IP 本文IP 为192.168.1.169,用户可根据自己需求，自行设置ip）\n5、修改默认存储方式为目录存储,提升运行速度\n5.1从Proxmox Web界面，删除 local-lvm\n5.2第二步：通过命令删除 lvm，新建lvm，并创建文件系统\numount /dev/pve/data\rlvremove /dev/pve/data -y\rvgdisplay pve | grep Free | awk \u0026#39;{print \u0026#34;lvcreate -l \u0026#34; $5 \u0026#34; -n data pve -y\u0026#34;}\u0026#39; |bash\rmkfs.ext4 /dev/pve/data\rmkdir /mnt/data\rmount /dev/pve/data /mnt/data\recho \u0026#34;/dev/pve/data /mnt/data ext4 defaults 0 0\u0026#34; \u0026gt;\u0026gt; /etc/fstab 5.3在Proxmox 将注册目录为存储\n！注意添加存储选择目录存储，挂载点信息如图所示\n步骤二：下载安装DoraCloud和Windwos虚拟机模板 方式1：一键在线安装： 1、下载安装DoraCloud3.4，选择pve节点，在shell里复制执行此命令：\ncd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl 安装完成，查看DoraCloud的ip地址，在浏览器输入ip地址。\n方式2：下载后离线安装 1、下载 DoraCloud vm的备份。\nDoraCloud VM 下载链接\n2、拷贝备份档到 Proxmox 主机的 /var/lib/vz/dump 目录。\n3、在Proxmox管理界面中，然后选择恢复。\n4、恢复完毕后，启动 DoraCloud虚拟机。\n步骤三：DoraCloud系统初始化 1、启动DoraCloud虚拟机,启动完成后查看DoraCloud的IP（如下图DoraCloud为192.168.1.169）\n2、浏览器输入https://DoraCloudIP（DoraCloud IP上一步看到的IP 本文输入为https://192.168.1.169 ）\n注：DoraCloud管理平台默认采用https安全访问协议，在首次访问DoraCloud URL时，需要根据不同的浏览器提示，设置对该链接的信任。\n默认的管理员登录账户为：用户名：admin 密码：deskpool 如果产品显示为DoraCloud的版本，默认的管理员登录账户为：用户名：admin 密码：DoraCloud 3、点击导航提示窗口中的开始按钮，进入系统初始化导航任务，如下图所示，提示用户系统初始化配置的主要内容，点击【继续】，开始系统初始化配置。\n配置虚拟化： 选择Proxmox 输入Proxmox 服务器IP地址和用户(root)以及密码、输入完成后点击下一步，进入配置资源池\n配置资源池： 桌面存储池选择 local-lvm 网络资源池配置Proxmox虚拟网络 一般为vmbr0 如下图所示，配置完成后点击下一步进入集群配置。\n配置集群： 选择创建一个新的DoraCloud集群。点击下一步进入配置用户数据库\n配置用户数据库： 选择本地用户数据库，点击下一步。\n设定固定IP： 选择\u0026quot;是\u0026quot; 点击完成按钮\n步骤四：在远程镜像仓库下载模板 完成系统初始化设置后退出\n1、 点击模板，选择远程镜像仓库 2、 切换到如图所示的地址，并且点击刷新 3、 选择如图所示win7x64base模板进行下载，下载完成以后恢复模板 步骤五：创建桌面池 桌面池是DoraCloud自动化管理桌面的基本模型，是指基于相同模板创建的，规格相同，类型相同、维护策略相同的桌面虚拟机集合。 模板创建成功后， DoraCloud导航接着提示用户开始创建桌面池，如下图所示。点击继续进入配置桌面池页面。\n基本信息： 输入桌面池的名称，为桌面池选择模板和网络资源 并输入输入虚拟机的命名前缀和后缀。如下图 点击下一步进入配置桌面池策略。\n重点强调，需要设置绑定账号。 从模板库下载的模板内置的账号为 administrator 123456 配置桌面池策略： 输入桌面池最大桌面虚拟机数和预创建桌面虚拟机参数，选择桌面类型。点击下一步进入配置存储。\n配置存储： 设置是否启用用户数据盘，配置用户数据盘名称和容量。用户数据盘的存储池在系统初始化阶段指定。\n步骤六：创建用户 创建桌面池后， DoraCloud导航会直接引导用户进入账户管理页面。\n1、创建群组（用户-\u0026gt;群组点击新增） 填写群组名称 并选择桌面池\n2、批量创建用户（可以单独创建）\n步骤七：建议使用朵拉云瘦客户机（JC10 JC30）登陆DoraCloud系统，连接桌面。 方式1: 旧改Doraos或者使用朵拉云JC10云终端登录云桌面.\n这里以朵拉云DoraCloud专用终端JC10为例，连接DoraCloud系统。如果没有朵拉云JC10云终端，可以在一个x86机器上部署DoraoS系统，把机器改造成瘦客户机。DoraoS的下载和部署参考如下链接DoraoS下载和安装。\n安装好朵拉云瘦客户机，并将瘦客户机连接到网络\n打开朵拉云瘦客户机，进入设置页面，点击第一个“添加Deskpool连接”。\n编辑Deskpool连接，设置服务器地址和连接名称。 填写DoraCloud管理系统的IP地址，不是Windows Server的IP地址 设置完成，点击红框区域的“连接”，进入DoraCloud系统。 然后以 用户名user01 密码123456 登陆，即可连接桌面。 选择桌面，点击即可进入系统。 方式2： 直接在网页登录云桌面.\n用网页登录云桌面，USB使用会受限制，我们可以用网页登录来测试创建的云桌面是否能正常登录，并且测试桌面云的部分功能等.\n1.如图所示，我们正在登录DoraCloud管理后台，点击右上角退出。\n2.在后台登录界面输入之前创建的，用户名：user01 密码：123456，输入完毕点击登录.\n3.登录成功以后，会自动下载RDP文件，点击图中RDP文件，连接用户桌面，进入以后输入用户名：administrator,密码：123456， 点击登录就进入云桌面了。\n方式3： 下载DoraClient客户端登录.\nDoraClient是DoraCloud的客户端，可以用来登录我们的云桌面。\nDoraClient下载地址\n1.下载完毕，打开DoraClient，提示输入服务器地址，就是DoraCloud管理后台的地址。\n2.输入在管理后台创建的用户名：user01，密码：123456,点击登录就会自动下载rdp文件进入云桌面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/installation-upgrade/",
+    "title": "安装升级",
+    "description": "本章节包括 云教室、云办公场景的部署指南。升级指导书。补丁安装指导。
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0004/",
+    "title": "KB0004.如何进行DoraCloud版本升级？",
+    "description": "KB0004.如何进行DoraCloud版本升级？
+",
+    "content": "升级过程为：\n1）.现有版本，进入维护模式，导出系统数据。 2）.记录现当前版本DoraCloud VM 的IP地址，子网掩码、网关、DNS信息，将VM关机。 3）.安装新版本DoraCloud，在向导的第一步，选择“系统迁移”，选择之前导出的数据导入。 4）.根据向导提示，完成向导。 5）.然后设置 DoraCloud VM的IP地址为固定IP。 6）.退出维护模式。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/vmware/",
+    "title": "安装指南【VMware平台】",
+    "description": "本文描述了在VMware虚拟化平台下安装DoraCloud桌面虚拟化的过程。
+",
+    "content": "DoraCloud是一款桌面虚拟化管理软件，支持Hyper-V、vmware等虚拟化平台。DoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度.\n本手册用于在VMware vSphere操作系统上快速部署DoraCloud桌面虚拟化管理平台。手册的阅读者，需要具备基本的VMware vSphere操作系统安装维护经验。具有虚拟化平台的使用经验，对于理解本手册的内容有很大帮助。\n本文介绍了如何在已安装VMware® vCenter Server、ESXi6.7的单服务器上的部署DoraCloud桌面虚拟化管理平台，不涉及DoraCloud集群的部署和配置。\n安装前准备： 1、一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”\n2、网络中开启了 DHCP 服务\n3、将本设施设置一个ip网络规划的表格，各个ip进行规划。这样会更容易部署，且管理员管理更方便\n4、软件安装包已经下载\n安装程序目录的结构:\n名称 类型 下载 说明 VMware ESXi 6.7U1 ISO 下载 VMware-VMvisor-Installer-6.7.0.*.iso(此ISO用作U盘启动) VMware Vcenter6.7 ISO 下载 VMware-VCSA-all-6.7.0-*.iso esxi直接安装包 VMware viewagent 32位 EXE 下载 VMware-viewagent-7.1.0-5170901.exe VMware viewagent 32位 EXE 下载 VMware-viewagent-x86_64-7.1.0-5170901.exe viewagent-direct-connection 32位 EXE 下载 VMware-viewagent-direct-connection-7.1.0-5170113.exe viewagent-direct-connection 64位 EXE 下载 VMware-viewagent-direct-connection-x86_64-7.1.0-5170113.exe DoraCloud_VMware_V320 OVF 下载 DoraCloud_V3.2.0 OVA 部署模板 步骤一、ESXi and vCenter Server的安装 一.ESXi的安装部署，请参见《2e、ESXi6.0 安装》或者查阅vmware官方文档\n二.安装vCenter Server\n1、下载好cVenter镜像后右击点击装载，再进入文件vcsa-ui-installer\\win32，进入后双击应用程序，如图下\n2、我们先将vCenter进行阶段一安装配置设置，点击Install。如图下\n3、点击下一步，如图下\n4、勾选接受许可协议条款，点击确认。如图下\n5、点击下一步，如图下\n6、输入ESXI主机的ip地址以及用户名与密码，点击下一步。如图下\n7、设置cVenter虚拟机名以及密码，点击下一步。如图下\n8、点击下一步。如图下\n9、将cVenter安装在自己所规划的储存盘里，如图下\n10、设置cVenter静态ip，并点击下一步。如图下\n11、如图所示。\n12、已完成阶段一安装设置，正在安装部署vCenter服务器设备。等待完成。如图下\n13、完成安装后，输入vCenter给到的部署网址，如图下\n14、进入vCenter管理界面后，此时需要对此vCenter进行阶段二的安装设置，点击设置。如图下\n15、进入设置需要输入阶段一设置时的密码，进入后，根据安装导向点击下一步，如图下\n16、设备配置这里注意，需要将系统名称改为vCenter的ip地址，并点击下一步。如图下\n17、在SSO配置中，设置vCenter的用户名与密码，并点击下一步。如图下\n18、根据向导，完成安装配置。如图下\n步骤二、导入DoraCloud模板 DoraCloud 3.3 for VMware模板文件为安装程序目录中的DoraCloud_VMware_V320\n1、在刚部署的vCenter Server是没有数据中心以及主机的，这时先进行添加，先新建数据中心，如图下\n2、再为vCenter新建数据中心添加主机，如图下\n3、输入ESXI主机的ip地址，并点击下一步。如图下\n4、输入ESXI用户名以及密码，并点击下一步\n5、根据导向进行下一步，如图下\n6、登录vCenter Server 选中要部署DoraCloud虚拟机的主机，右键选择“部署OVF模板”\n注：选择DoraCloudOVF模板，注意选择OVF模板时,3个文件都需要选择，选择完后点击“NEXT”。如下图\n7、在“选择名称和文件夹”页面上,点击“NEXT”\n8、 在“选择计算资源”点击“NEXT”\n9、 在“查看详细信息”点击“NEXT”\n10、 在“选择存储”页面上，选择对应存储后点击“NEXT”\n11、 在“选择网络”页面上，选择网络后点击“NEXT”\n12、在“即将完成”页面点击“FINISH”\n13、 启动DoraCloud虚拟机如下图\n14、 记录下DoraCloud IP地址 如下图： 注： 如果网络中无DHCP，需手动设置DoraCloud的IP地址\n步骤三、快速部署DoraCloud桌面虚拟化系统 DoraCloud桌面管理系统提供了完整的初始化导航，用户第一次安装DoraCloud，可以在导航的引导下完成DoraCloud的快速安装。\n在浏览器的地址栏输入DoraCloud虚拟机IP地址：错误!超链接引用无效。，进入登录页面。\n注：DoraCloud管理平台默认采用https安全访问协议，在首次访问DoraCloud URL时，需要根据不同的浏览器提示，设置对该链接的信任。\n默认的管理员登录账户为：用户名：admin密码：DoraCloud\n如下图所示，第一次登录DoraCloud系统，自动显示导航提示窗口，管理员可以在这个窗口右下角，选择语言，目前版本支持简体中文和英文：\nDeskpool管理系统的导航包括四个大任务，每个任务会包含若干步骤，用户可以根据导航的引导，按顺序完成：\n（1）系统初始化\n（2）创建模板\n（3）创建桌面池\n（4）创建用户\n系统初始化 点击导航提示窗口中的“开始”按钮，进入系统初始化导航任务，如下图，提示用户系统初始化配置的主要内容，点击【继续】，开始系统初始化配置。\n四个步骤完成系统初始化：\n配置虚拟化： 有Xen Server，Hyper-V和VMware vCenter三个主机类型。选择VMware vCenter 输入IP地址和vCenter 的管理员账户。(如：administrator@vsphere.local)\n配置资源池： 用户可以为桌面虚拟机、用户数据盘、模板镜像选择不同的存储池，提供差异化的存储性能。网络资源池是指配置缺省的虚拟网络。如下图所示\n配置集群： 缺省选择创建一个新的Deskpool集群，注意Deskpool集群和Hyper-V故障转移群集（Failover Cluster）是不同集群概念，如下图所示\n配置用户数据库： 缺省选择本地用户数据库，如果选择Active Directory域用户数据库，请参考《DoraCloud管理员手册》。如下图\n设置网络： 选择是，后面可以自定义设置DoraCloud管理后台的ip地址。如下图操作。\n步骤四、在远程镜像仓库下载模板 1.完成系统初始化设置后退出，如下图操作。\n2.点击远程镜像仓库，进行下载模板，观察下面的时间列表，进度到100%，模板下载完毕，如下图操作。\n步骤五、 配制桌面池 云教室的桌面虚拟机是通过配置桌面池自动创建的。桌面池定义了创建桌面所需要的模板，虚拟机规格，桌面创建策略等信息。在云教室中，桌面池类型配置为公用桌面。\n配置桌面池时，需要考虑服务器总的资源。云教室的资源配置为每个用户 2GB-4GB内存，处理器资源按照人均0.8 ~ 1.0个线程配置。云教室的总内存需求大致为： 8GB + 每桌面内存 * 用户数。\n6.1 创建桌面池 进入桌面池，点击“属性”。如下图所示。\n6.2 填写桌面池信息 填写基本信息:【桌面池名称：云教室】、【模板：win7x64Base】、【选择网络：缺省网络资源】、【前缀：VM】、 【后缀：01】、【内存：2048MB】、【虚拟机CPU数：1】。如下图所示。\n配置策略: 填写信息。【最大虚拟机数：30】、【预创建虚拟机：30】、【用户名：administrator】、【密码：123456】。选择公用桌面池。本步骤的自动绑定账号的用户名、密码，必须与模板中的Windows账号相同。否则桌面用户登陆会出现认证错误，导致无法登陆。如下图所示。\n配置存储: 勾选“启用用户数据盘”。填写信息，【数据盘名：Data】、【容量：20GB】。点击“确定”完成。如图（6-4）所示。\n在桌面池配置后，DoraCloud桌面虚拟化系统会自动创建桌面虚拟机。你可以在DoraCloud管理系统的“桌面计算机”菜单中，查看“桌面计算机列表”，了解桌面计算机的创建情况。通常10分钟左右可以创建完成60个虚拟机。\n步骤六、 创建桌面用户，启用终端自动配置 6.1创建桌面池后， DoraCloud导航会直接引导用户进入账户管理页面。 1、创建群组（用户-\u0026gt;群组点击新增） 填写群组名称 并选择桌面池\n2.批量创建用户（可以单独创建）\n在配置DoraCloud桌面虚拟化系统的用户账户，需要明确几个概念：\n【只能从桌面池分配桌面】\n1、DoraCloud的用户是从桌面池自动分配桌面的。不需要也不能手动为每个用户分配桌面计算机。\n2、用户在连接桌面池时，会自动从桌面池中分配可用的桌面计算机。 3、自动配置策略启用后，搜索范围内的云终端将会被自动配置。自动连接DoraCloud系统。 如果您的云教室内已经安装好了云终端，并且云终端已经上电联网，网络中有DHCP服务，您会观察到这些终端会在重启一次后，自动进入桌面云系统。\n步骤七：通过朵拉云瘦客户机或者DoraOS瘦客户机软件系统连接DoraCloud桌面云 方式1: 旧改Doraos或者使用朵拉云JC10云终端登录云桌面.\n这里以朵拉云DoraCloud专用终端JC10为例，连接DoraCloud系统。如果没有朵拉云JC10云终端，可以在一个x86机器上部署DoraoS系统，把机器改造成瘦客户机。DoraoS的下载和部署参考如下链接DoraoS下载和安装。\n安装好朵拉云瘦客户机，并将瘦客户机连接到网络\n打开朵拉云瘦客户机，进入设置页面,点击第一个“添加Deskpool连接”。\n编辑Deskpool连接，设置服务器地址和连接名称。 填写DoraCloud管理系统的IP地址，不是Windows Server的IP地址 设置完成，点击红框区域的“连接”，进入DoraCloud系统。 然后以 用户名user01 密码123456 登陆，即可连接桌面。 选择桌面，点击即可进入系统。 方式2： 直接在网页登录云桌面.\n用网页登录云桌面，USB使用会受限制，我们可以用网页登录来测试创建的云桌面是否能正常登录，并且测试桌面云的部分功能等.\n1.如图所示，我们正在登录DoraCloud管理后台，点击右上角退出。\n2.在后台登录界面输入之前创建的，用户名：user01 密码：123456，输入完毕点击登录.\n3.登录成功以后，会自动下载RDP文件，点击图中RDP文件，连接用户桌面，进入以后输入用户名：administrator,密码：123456， 点击登录就进入云桌面了。\n方式3： 下载DeskpoolClient客户端登录.\nDeskpoolClient是Deskpool、DoraCloud的客户端，可以用来登录我们的云桌面。\nDeskpoolClient下载地址\n1.下载完毕，打开DeskpoolClient，提示输入服务器地址，就是DoraCloud管理后台的地址。\n2.输入在管理后台创建的用户名：user01，密码：123456,点击登录就会自动下载rdp文件进入云桌面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/getting-started/xenserver/",
+    "title": "安装指南【XenServer平台】",
+    "description": "本文描述了在XenServer虚拟化平台下安装Deskpool桌面虚拟化的过程。
+",
+    "content": "To be done\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/free-version/",
+    "title": "使用DoraCloud免费版搭建办公桌面云",
+    "description": "使用DoraCloud免费版搭建办公桌面云
+",
+    "content": "DoraCloud是一款多平台的桌面虚拟化管理软件，支持Hyper-V、VMware、Proxmox、XenServer等多种虚拟化平台。DoraCloud在虚拟化平台上具有极大的灵活性，允许您的组织自由选择合适的IT基础设施来构建桌面云；也允许您的组织重用现有的IT设施基础，而不是抛弃现有的IT基础设施。\nDoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。无论是单服务器的桌面云系统，还是数十个节点的桌面云集群，都只需要部署DoraCloud虚拟机镜像。\nDoraCloud提供免费版，可以支持25个用户。 本文介绍了在Proxmox虚拟化平台上部署DoraCloud免费版 ，在Windows上安装DoraClient客户端程序，实现免费的桌面云办公方案。除了DoraClient客户端，也可以购买朵拉云的云终端，接入DoraCloud。\n准备工作 【硬件准备】 按照25用户，人均8G内存，80G系统盘，推荐的服务器配置为：\n处理器：E5-2680V4*2 内存：256G SSD：1.92TB * 2 上述规划中，虚拟机的系统盘放在 SSD。\n【软件准备】 Proxmox 7.3 ISO文件 ： 中科大 Proxmox 7.3 下载地址 DoraCloud for Proxmox ： DoraCloud for PVE下载 Windows平台客户端 ：DoraClient客户端 【网络环境】 局域网环境 网络中有DHCP，可以为桌面虚拟机分配IP 可以访问互联网 安装步骤 第一步：安装DoraCloud管理系统 进入Proxmox的shell，执行如下命令可以完成在线安装。\ncd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl 安装完毕后，系统会提示 DoraCloud 管理系统的IP地址。该地址为DHCP动态分配的IP。如下图：\n如果网络中没有DHCP，那么需要手工修改IP地址，参考如下指导文档。\nhttps://docs.doracloud.cn/operation-maintenance/kb0001/\n使用浏览器打开 DoraCloud 管理后台，输入账号 admin 密码 DoraCloud，登录DoraCloud管理系统。 第二步：DoraCloud初始化配置 1. 【欢迎页面】 登录后，显示欢迎页面。可以选择系统的语言，然后下一步。\n2. 【配置虚拟化】 选择主机类型为Proxmox，输入Proxmox服务器的IP地址、用户名、密码。\n3. 【配置资源池】 选择存储池、网络池。 镜像存储池、数据盘存储池，默认值是与虚拟机存储池保持一致。\n4. 【配置集群】 创建一个新的DoraCloud集群\n5. 【配置用户数据库】 选择使用DoraCloud本地群组数据库\n6. 【为DoraCloud配置静态IP】 将DoraCloud管理系统的IP从DHCP修改成静态IP\n网络设置界面如下，web界面可以在同一子网内修改IP地址。如果需要修改成其他网段的IP配置，就需要手工修改。\nDoraCloud管理系统VM为 CentOS，请参考CentOS的静态IP设置方法。\n也可以参见知识库KB0001的文档。\nhttps://docs.doracloud.cn/operation-maintenance/kb0001/\n第三步：下载模板，创建桌面池，用户 1. 在线下载基础模板 进入【模板】主菜单，选择 win10ltsc2021v1 这个模板下载。\n下载成功后，模板菜单中可以看到 win10ltsc2021v1 模板信息\n2. 制作办公模板 从仓库下载的模板，不要直接使用。一个原因是仓库下载的模板只有基本的Windows系统，没有办公所需的应用软件。另一个原因是如果直接使用，后续仓库里的模板有更新时，就无法再下载到本地了。 因为本地已经有同名的模板存在了，不能进行覆盖。\n推荐的做法是：对模板win10ltsc2021v1执行复制操作，创建一个名为win10office的模板。后续会在这个新的模板中安装办公所需的应用程序。\n根据模板制作向导，进行模板的制作。\n按照提示信息，登录编辑中的模板虚拟机。在Windows开始菜单中，启动运行，输入 mstsc -v 192.168.1.204\n接下来登录模板虚拟机。 登录的账号为 administrator 123456 。这个账号是模板 win10ltsc2021v1 的缺省账号。 复制出来的新模板也继承了这个账号。\n接下来的过程是在 Windows 模板中安装应用程序，比如Office，浏览器等。安装的过程，我们省去了截图。\n应用程序安装完毕后，我们回到DoraCloud管理后台的模板制作向导，确认如下信息。\n然后按下一步，选择模板类型为【专用和公用桌面】，接下来开始准备模板。\n模板准备完毕后，可以测试模板，也可以选择保存模板，完成模板 win10office 的制作。\n3. 创建桌面池 根据项目规划，需要创建25个桌面，人均8G内存。接下来，我们选择 创建 桌面池。 内存设置为8G、处理器设置为1个处理器，4个核心。模板选择前一步创建好的 win10office 模板。 其他参数保持默认状态即可。\n设置桌面池的创建策略。【最大创建】、【预创建】都设置成25。绑定账号设置成 administrator 123456 。 桌面池类型选择为【专用桌面】。\n由于免费版不支持配置数据盘，在【配置存储】这个页面，直接选择下一步。\n在桌面池创建后，可以从【桌面计算机】菜单中观察桌面计算机状态。可以看到DoraCloud系统已经开始创建虚拟桌面。\n5. 创建群组和用户 首先创建一个群组group，这个群组签约了前面创建的桌面池。\n然后创建一个测试用户 user01 。 user01 属于群组 group。\n由于 group1 已经签约了桌面池，user01继承了group签约的桌面池。 不需要单独为user01 配置签约的桌面池。 点击提交，完成用户user01的创建。\n第四步：启用DoraCloud免费版，使用DoraClient连接桌面 1. 启用免费版许可 DoraCloud安装后，缺省处于试用状态。如果你希望测试 DoraCloud 功能，可以在试用状态下测试。如果你希望长期免费试用，可以将软件许可切换成免费版。如下图操作。\n下图是切换免费版之后的许可信息。切换成免费版本后，界面最上面的红色的试用信息会消失。\n2. 使用DoraClient连接桌面 DoraCloud桌面云可以通过多种方式的客户端登录。包括：\n云终端/瘦客户机，如DC20、JC35、JC36等。 朵拉云DoraOS瘦客户机软件系统，用于将x86机器转换成基于Linux的瘦客户机。 Windows平台的客户端 DoraClient。 直接浏览器访问，调用本地RDP客户端。 本方案采用的DoraClient。DoraClient是DoraCloud桌面云在Windows平台下的客户端软件。可以免费下载使用。\nDoraClient下载地址\nDoraClient 推荐在Windows 10以上版本使用，需要64位版本。不支持32位系统。\n如果安装在 Windows 7 sp1 64位上，请先安装 kb3125574 。\n安装完毕后运行 DoraClient，首先配置服务器地址。\n然后设置输入账号，进行登录\n下图为DoraClient成功连接桌面。\n由于免费版本对登录的终端有限制，没有激活的DoraOS系统连接免费版的DoraCloud时，系统会自动注销。如果直接通过RDP客户端连接DoraCloud创建的桌面虚拟机，也会被自动注销。\n如果使用 DoraClient 连接 DoraCloud 时，也遇到连接后自动注销的问题，请将 DoraClient 和 DoraCloud 都升级到 2022-12-15 后的版本。\n除了使用 DoraClient登录，也可以购买朵拉云的云终端作为客户的端。或者购买DoraOS瘦客户机系统，将x86主机改造成云终端。\n方案总结 DoraCloud免费版搭配DoraClient客户端可以构成完全免费的解决方案。 适合如下一些应用场景：\n现有的PC，旧PC，安装DoraClient作为客户端，接入桌面云。 购买廉价的x86盒子，安装Windows和DoraClient作为瘦客户机，接入桌面云。 员工出差，或者居家办公，使用笔记本或者家用电脑安装DoraClient远程接入。 简单的桌面云应用场景，用户有一定的动手能力。 DoraCloud免费版是一款超值的桌面云方案。如果需要如下特性，可以考虑付费的商业版本。\n需要原厂的方案设计、部署和技术支持服务。 需要支持用户数据盘。 需要支持USB重定向。 并发用户超过25。 需要配置桌面网关，实现网络隔离。 需要支持3D应用，需要配置vGPU。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0005/",
+    "title": "KB0005.如何把数据拷贝到桌面虚拟机内？",
+    "description": "如何把数据拷贝到桌面虚拟机内？
+",
+    "content": "KB0005.如何把数据拷贝到桌面虚拟机内？ 第一步.在同一个网络内找一台PC机，把需要拷贝的文件放到这台PC机里。 第二步.开启网络共享文件夹，最后在文件夹输入需要需要拷贝的地址\\192.168.1.243\\C$ "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/",
+    "title": "典型案例",
+    "description": "桌面云案例
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case3/",
+    "title": "青岛市图书馆",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": "客户背景 青岛市图书馆是青岛市属大型公共图书馆，是青岛市重要的知识性信息枢纽和精神文明建设基地，也是为各级党政机关、企事业团体的科学决策提供服务的公益性、学术性服务机构。青岛市图书馆前身是1924年建立的胶澳商埠公立通俗图书馆。\n业务挑战 图书馆提供的图书电子检索系统是基于浏览器系统开发的。为了便于读者查阅，需要为检索系统配置一台电脑。如果使用传统PC，则PC的维护和管理是一个难题。\n解决方案 青岛图书馆采用朵拉云Deskpool桌面云系统，每个读者的查询终端部署一台朵拉云J60云终端。图书检索系统的客户端直接部署在桌面模板中。通过链接克隆的方式可以快速部署一批桌面。实现业务的快速发放、快速升级。\n客户收益 青岛市图书馆实现了图书电子检索系统的快速上线，避免了PC维护和管理的难题。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case5/",
+    "title": "山西财经大学华商学院",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": "客户背景 山西财经大学华商学院，位于山西省太原市，是经国家教育部正式批准设立，由山西财经大学在2002年举办的一所全日制本科院校，学院紧邻山西财经大学主校区，在校学生4500余人。\n业务挑战 学院的计算机教室需要满足多种场景的教学和考试需求。包括支持计算机等级考试，满足英语四六级口语考试需求，满足日常计算机教学，英语教学的需求。\n解决方案 结合华商学院计算机房的业务需求和特点，朵拉云科技设计出了融合的云教室方案。整体云教室方案融合了VDI（虚拟桌面基础设施）和IDV（智能桌面虚拟化）两套方案。方案采用x86一体机。通过IDV系统对x86终端进行部署和管理。允许x86终端可以部署多套本地桌面系统和一套瘦客户机系统。在进行考试时，IDV系统控制终端切换到本地模式，运行本地操作系统；在平时的教学中，IDV系统控制终端切换到瘦客户机系统，接入桌面云，允许学生自由选择多个不同的教学模板，满足不同课程教学的需求。\n在VDI系统方面，采用了超融合的架构，使用4台服务器构建一个大的资源池，支持150个桌面。实现3+1的容灾和备份。\n客户收益 华商学院计算机房通过部署朵拉云云桌面，极大的改善了整体教学环境，提升了教学效率，降低了管理维护成本。每年耗电量相比与传统PC节省80%以上，节省了电费 资金并实现了节能环保。满足了计算机等级考试，英语四六级口语考试的业务需求。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case2/",
+    "title": "深圳石岩公学",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": "深圳石岩公学 客户背景 石岩公学是深圳市民办学校中第一家广东省一级学校，首批广东省花园式学校，全市民办学校中第一所国家级绿色学校，第一家获得深圳市办学效益奖的学校，是一所政府放心、社会认可、家长信赖、同行尊重、学生喜爱，在广东省乃至中国都具影响力的优质民办学校。\n业务挑战 基于PC的计算机教室每台设备均需要现场维护，平均修复时间为2-4小时。随着PC的增多，维护工作量呈线性增长。\n解决方案 采用朵拉云HyperBox云教室整体解决方案，计算机教室内部署一台服务器和50个ARM云终端，承载学生机房所有的上课桌面。利用模板克隆技术实现桌面快速部署。系统支持自动还原。\n客户收益 满足日常教学要求。机房的管理员的日常维护工作大大减轻了。由于瘦客户机功耗低，体积小，机房的学习环境也得到了改善。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case4/",
+    "title": "太湖县职教中心",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": "客户背景 太湖县职教中心于1997年秋由三所学校合并组建而成，1999年成功申办为市重点职业学校。2005年元月被教育部批准为“国家级重点中等职业学校”。\n业务挑战 一直以来，太湖县职业教育中心机房采用功能全面的“胖客户端”PC，为学校提供教学平台。但是，在使用实际使用情况中，胖客户端 PC 暴露出来很多问题，主要有以下三个：\n管理：分散部署，没有一个统一的管理平台方便管理员对PC机进行实时的监管和控制，教学软件升级等需要逐台操作，管理复杂。 维护：日常维护上管理员不能及时对损坏的PC机进行及时的维护和升级工作。 投资高：传统PC更新换代快，每年都要投入资金进行更新。\n解决方案 针对太湖县职业教育中心对新一代电子教室提出的功能和性能要求，Deskpool云教室产品从提升教学效率、便捷运维、降低硬件使用成本及改善使用环境等方面为太湖县职业教育中心提供完整的解决方案。在云计算的时代浪潮下，将桌面云技术应用于教学，云教室应运而生。\nDeskpool云教室方案将不同使用场景所需要的桌面环境固化在服务器里，相互隔离，更为精确地适应每次教学或者不同的使用场景，提升用户的使用体验。\n客户收益 太湖县职业教育中心部署了两个电子云教室，极大的改善了整体教学环境，提升了教学效率，降低了管理维护成本。每年耗电量相比与传统PC节省80%以上，节省了电费 资金并实现了节能环保。使用云终端，电子教室室温普遍降低约4摄氏度，学生桌位不再拥挤，座位空间明显改善，空间释放约40%，还有效的消除了噪声，为师生提供一个安静的教学环境。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/",
+    "title": ":云教室案例",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case1/",
+    "title": "中山大学新华学院",
+    "description": "Deskpool应用于云教室的案例
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/",
+    "title": "专题任务",
+    "description": "本章节描述了一些高级课题。包括：“桌面云容量规划”、“配置对等集群”、“创建桌面模板”、“启用AD域管理”、“配置桌面云网关”
+",
+    "content": "桌面云容量规划：描述了云教室、云办公场景下，服务器的配置。\n创建桌面模板：描述了Windows桌面模板的制作过程。\n配置对等集群：描述了对等集群的组网和配置\n启用AD域管理：描述了Deskpool使用 AD 域作为用户认证系统的配置。\n配置桌面云网关：如果终端无法直接访问云桌面，需要配置桌面云网关。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/hyperv-desktop/",
+    "title": "Hyper-V搭建免费桌面云",
+    "description": "本文描述了使用DoraCloud免费版，在Hyper-V平台上搭建免费的桌面云的过程。适用于云教室、电子图书馆、部队学习室、电子语音室、生产看板、无纸化会议室、呼叫中心等场合。
+",
+    "content": "Hyper-V 是 Microsoft 的硬件虚拟化产品。 它用于创建并运行计算机的软件版本，称为“虚拟机”。 每个虚拟机都像一台完整的计算机一样运行操作系统和程序。 如果需要计算资源，虚拟机可提供更大的灵活性、帮助节省时间和金钱，并且与在物理硬件上运行一个操作系统相比，虚拟机可以更高效地使用硬件。\nHyper-V 在自己的隔离空间中运行每个虚拟机，这意味着可以同时在同一硬件上运行多个虚拟机。 你可能希望这样做，以避免崩溃影响其他工作负载等问题，或者为不同的人员、组或服务提供对不同系统的访问权限。\nWindows 10，Windows server中都包含了Hyper-V组件。另外，微软也提供免费的Hyper-V Server版本供用户使用。免费的Hyper-V Server与Windows Server内的Hyper-V相比，缺少图形用户界面。但是可以通过安装Web化的Windows Admin Center来实现管理。\nDoraCloud是一款多平台的桌面虚拟化管理软件，支持Hyper-V、VMware、Proxmox、XenServer等多种虚拟化平台。DoraCloud在虚拟化平台上具有极大的灵活性，允许您的组织自由选择合适的IT基础设施来构建桌面云；也允许您的组织重用现有的IT设施基础，而不是抛弃现有的IT基础设施。\nDoraCloud采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。无论是单服务器的桌面云系统，还是数十个节点的桌面云集群，都只需要部署DoraCloud虚拟机镜像。\nDoraCloud提供免费版，可以支持25个用户。\n本文介绍了在Hyper-V虚拟化平台上部署DoraCloud免费版 ，在Windows/Linux桌面上安装DoraClient客户端程序，实现免费的桌面云办公方案。除了DoraClient客户端，也可以购买朵拉云的云终端，接入DoraCloud。\n本文的Hyper-V平台选用 Windows Server（2012R2以上版本）上的Hyper-V。 Windows 10 和 Hyper-V Server上的安装过程有所区别。\n准备工作 【硬件准备】 我们以搭建6人的轻量办公桌面为例，人均8内存，100G系统盘，50G数据盘，推荐的服务器配置为：\n处理器：i3-10100 内存：64G SSD：1TB NVME 上述配置，价格在3000 以内。\n【软件准备】 Windows Server 2019的 ISO文件 ： ed2k://|file|cn_windows_server_2019_x64_dvd_4de40f33.iso|5086887936|7DCDDD6B0C60A0D019B6A93D8F2B6D31|/ DoraCloud for Hyper-V ： DoraCloud for HyperV下载 Windows平台客户端 ：DoraClient客户端 【网络环境】 局域网环境 网络中有DHCP，可以为桌面虚拟机分配IP 可以访问互联网 安装步骤 第一步：安装Windows Server 2019 安装要点：\n安装版本选择 带GUI的标准版 安装时，系统分区选择100GB。\n安装主板和网卡驱动程序。\n推荐去硬件厂家的官网下载硬件驱动程序。 【注意！！】请勿使用第三方驱动安装工具安装驱动。\n主板驱动程序 ，可以到Intel官网去下载。\n网卡驱动程序 ，可以到网卡芯片厂家下载。\n比如Realtek的驱动，可以去 https://www.realtek.com/en/downloads 下载 或者Intel的网卡驱动，可以去 https://www.intel.com/content/www/us/en/download-center/home.html 选择Enternet类别，下载网卡驱动。\n安装Hyper-V角色。 下载如下的powershell脚本。第一次运行会安装Hyper-V角色自动重启动。重启后，再运行一次该脚本。\nhttp://www1.deskpool.com:9000/software/Pre-Setup.ps1\n如果你不运行上述脚本，也可以启动服务器管理，手工添加Hyper-V角色。\n第二步：安装DoraCloud管理系统 在Windows Server上运行DoraCloud安装程序。 DoraCloud安装程序会在 Hyper-V 管理器中创建一个DoraCloud管理虚拟机。\n安装程序运行过程中，会提示用户输入 DoraCloud管理系统的网络配置，以及存储池的位置。存储池是指桌面模板、虚拟机、数据盘的存放路径。\n安装程序仅仅创建存储池（目录）。存储池的具体用途，需要在DoraCloud安装后的初始化配置中设置。\n安装结束后，DoraCloud 管理系统开启一个浏览器，连接到DoraCloud管理系统，并显示登录页面。\n第三步：DoraCloud初始化配置 1. 【欢迎页面】 DoraCloud管理后台的默认账号为： admin DoraCloud。\n登录DoraCloud管理后台，显示欢迎页面。可以选择系统的语言，然后下一步。\n2. 【配置虚拟化】 选择主机类型为Proxmox，输入Proxmox服务器的IP地址、用户名、密码。\n3. 【配置资源池】 选择存储池、网络池。 镜像存储池、数据盘存储池，默认值是与虚拟机存储池保持一致。\n4. 【配置集群】 创建一个新的DoraCloud集群\n5. 【配置用户数据库】 选择使用DoraCloud本地群组数据库\n6. 【为DoraCloud配置静态IP】 将DoraCloud管理系统的IP从DHCP修改成静态IP\n网络设置界面如下，web界面可以在同一子网内修改IP地址。如果需要修改成其他网段的IP配置，就需要手工修改。\nDoraCloud管理系统VM为 CentOS，请参考CentOS的静态IP设置方法。\n也可以参见知识库KB0001的文档。\nhttps://docs.doracloud.cn/operation-maintenance/kb0001/\n第四步：下载模板，创建桌面池，用户 1. 在线下载基础模板 进入【模板】主菜单，选择 win10ltsc2021v1 这个模板下载。\n下载成功后，模板菜单中可以看到 win10ltsc2021v1 模板信息\n2. 制作办公模板 从仓库下载的模板，不要直接使用。一个原因是仓库下载的模板只有基本的Windows系统，没有办公所需的应用软件。另一个原因是如果直接使用，后续仓库里的模板有更新时，就无法再下载到本地了。 因为本地已经有同名的模板存在了，不能进行覆盖。\n推荐的做法是：对模板win10ltsc2021v1执行复制操作，创建一个名为win10office的模板。后续会在这个新的模板中安装办公所需的应用程序。\n根据模板制作向导，进行模板的制作。\n按照提示信息，登录编辑中的模板虚拟机。在Windows开始菜单中，启动运行，输入 mstsc -v 192.168.1.204\n接下来登录模板虚拟机。 登录的账号为 administrator 123456 。这个账号是模板 win10ltsc2021v1 的缺省账号。 复制出来的新模板也继承了这个账号。\n接下来的过程是在 Windows 模板中安装应用程序，比如Office，浏览器等。安装的过程，我们省去了截图。\n应用程序安装完毕后，我们回到DoraCloud管理后台的模板制作向导，确认如下信息。\n然后按下一步，选择模板类型为【专用和公用桌面】，接下来开始准备模板。\n模板准备完毕后，可以测试模板，也可以选择保存模板，完成模板 win10office 的制作。\n3. 创建桌面池 根据项目规划，需要创建25个桌面，人均8G内存。接下来，我们选择 创建 桌面池。 内存设置为8G、处理器设置为1个处理器，4个核心。模板选择前一步创建好的 win10office 模板。 其他参数保持默认状态即可。\n设置桌面池的创建策略。【最大创建】、【预创建】都设置成25。绑定账号设置成 administrator 123456 。 桌面池类型选择为【专用桌面】。\n由于免费版不支持配置数据盘，在【配置存储】这个页面，直接选择下一步。\n在桌面池创建后，可以从【桌面计算机】菜单中观察桌面计算机状态。可以看到DoraCloud系统已经开始创建虚拟桌面。\n5. 创建群组和用户 首先创建一个群组group，这个群组签约了前面创建的桌面池。\n然后创建一个测试用户 user01 。 user01 属于群组 group。\n由于 group1 已经签约了桌面池，user01继承了group签约的桌面池。 不需要单独为user01 配置签约的桌面池。 点击提交，完成用户user01的创建。\n第五步：启用DoraCloud免费版，使用DoraClient连接桌面 1. 启用免费版许可 DoraCloud安装后，缺省处于试用状态。如果你希望测试 DoraCloud 功能，可以在试用状态下测试。如果你希望长期免费试用，可以将软件许可切换成免费版。如下图操作。\n下图是切换免费版之后的许可信息。切换成免费版本后，界面最上面的红色的试用信息会消失。\n2. 使用DoraClient连接桌面 DoraCloud桌面云可以通过多种方式的客户端登录。包括：\n云终端/瘦客户机，如DC20、JC35、JC36等。 朵拉云DoraOS瘦客户机软件系统，用于将x86机器转换成基于Linux的瘦客户机。 Windows平台的客户端 DoraClient。 直接浏览器访问，调用本地RDP客户端。 本方案采用的DoraClient。DoraClient是DoraCloud桌面云在Windows平台下的客户端软件。可以免费下载使用。\nDoraClient下载地址\nDoraClient 推荐在Windows 10以上版本使用，需要64位版本。不支持32位系统。\n如果安装在 Windows 7 sp1 64位上，请先安装 kb3125574 。\n安装完毕后运行 DoraClient，首先配置服务器地址。\n然后设置输入账号，进行登录\n下图为DoraClient成功连接桌面。\n由于免费版本对登录的终端有限制，没有激活的DoraOS系统连接免费版的DoraCloud时，系统会自动注销。如果直接通过RDP客户端连接DoraCloud创建的桌面虚拟机，也会被自动注销。\n如果使用 DoraClient 连接 DoraCloud 时，也遇到连接后自动注销的问题，请将 DoraClient 和 DoraCloud 都升级到 2022-12-15 后的版本。\n除了使用 DoraClient登录，也可以购买朵拉云的云终端作为客户的端。或者购买DoraOS瘦客户机系统，将x86主机改造成云终端。\n方案总结 在Hyper-V虚拟化平台上可以使用DoraCloud免费版搭建云桌面解决方案。如果搭配DoraClient客户端可以构成完全免费的解决方案。 适合如下一些应用场景：\n现有的PC，旧PC，安装DoraClient作为客户端，接入桌面云。 购买廉价的x86盒子，安装Windows和DoraClient作为瘦客户机，接入桌面云。 员工出差，或者居家办公，使用笔记本或者家用电脑安装DoraClient远程接入。 简单的桌面云应用场景，用户有一定的动手能力。 如果是小微企业或者创业团队，可以购置朵拉云终端，连接到云桌面系统。 使用本文推荐的服务器（i3-10100，64G，1TB），可以构建一个4-6人的云桌面环境。\nDoraCloud免费版是一款超值的桌面云方案。如果需要如下特性，可以考虑付费的商业版本。\n需要原厂的方案设计、部署和技术支持服务。 需要支持用户数据盘。 需要支持USB重定向。 并发用户超过25。 需要配置桌面网关，实现网络隔离。 需要支持3D应用，需要配置vGPU。 "
+  }
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/userprofile/",
+    "title": "使用FSLogix管理用户配置",
+    "description": "本文介绍了使用 FSLogix 在 DoraCloud 桌面云环境中增强和启用用户配置文件的过程。
+",
+    "content": "1.介绍 在桌面云办公的使用场景中，经常会遇到如下需求：\n镜像更新 ：需要对用户的桌面进行统一更新。比如系统进行更新，或者安装新的应用。\n桌面修复 ：用户的桌面系统出现故障，管理员希望在不破坏用户数据的情况下快速修复桌面系统。\n对于需求1，如果是非持久化桌面，可以通过编辑桌面模板镜像后，重新创建用户的桌面来实现。 但是如果用户在桌面中保存有用户配置，那么管理员更新镜像后，无法对用户的桌面系统进行重建。因为重建用户桌面会丢失用户配置数据。\n对于需求2，如果非持久桌化桌面，管理员可以通过还原桌面，或者重建桌面，快速恢复桌面系统。 对于持久化桌面，删除现有桌面重新创建会导致用户配置丢失。\nFSLogix是一套用户配置管理的解决方案。它支持配置文件容器，可以将用户的配置保存在桌面系统盘之外的位置。 在启用FSLogix管理用户配置文件后，管理员可以像维护非持久化桌面一样维护办公桌面。 管理员可以更新镜像，然后重建桌面，每个用户可以得到新的桌面系统，同时不丢失用户的配置。 在遇到桌面故障时，也可以通过删除重新创建桌面，快速恢复用户的桌面系统。\nDoraCloud桌面云使用FSlogix有两种方式。 一种是DoraCloud启用AD认证的情况下，使用文件共享服务来集中保存用户的配置。第二种方式是直接将用户配置保存在用户的数据盘（D盘）。第二种方式不需要AD认证。\n本文主要介绍第二种方式的配置。\n2.安装步骤 2.1. 下载FSlogix\n下载地址： https://aka.ms/fslogix-latest\n2.2. 编辑模板，安装 FSlogix\n在DoraCloud中，选择桌面模板-\u0026gt;编辑，进入模板编辑状态。\n进入桌面模板Windows，打开安装包，然后运行FSLogixAppsSetup.exe，即可完成安装。\n2.3. 【本地模式】配置FSlogix\nFSLogix提供了两种配置FSLogix的方法。一种是运行ConfigurationTool.exe；另一种是通过组策略修改。 由于ConfigurationTool修改的参数不全，这里通过组策略修改。\n从FSLogix安装包中提取“fslogix.adml”、“fslogix.admx”两个文件。\n将 fslogix.adml 文件复制到当前正在编辑的桌面模板的 C:\\Windows\\PolicyDefinitions\\en-US 文件夹中；\n将 fslogix.admx 文件复制到当前正在编辑的桌面模板的 C:\\Windows\\PolicyDefinitions\\ 文件夹中；\n然后启用本地组策略编辑器 gpedit.msc ，找到如下图 FSLogix组策略位置 依次配置“Enabled”、“VHD Location”、“Dynamic VHD(x) Allocation”、“Delete local profile when FSlogix Profile should apply” 这4个选项。 配置完毕后，，关闭组策略编辑器，进入cmd命令窗口，执行更新组策略。\ngpupdate /force 这里需要说明一下，由于桌面的数据盘是动态分配的，编辑模板的时候，模板虚拟机没有D盘。 因此FSLogix对于用户配置的重定向是不会生效的。\n为了验证这个FSLogix配置是否有效，可以在虚拟化平台中为模板新增一个D盘，然后重启模板虚拟机进行测试。操作步骤如下：\n1、先对模板虚拟机做一个快照。\n2、为模板虚拟机增加一个的D盘。\n3、重启模板虚拟机，然后登录桌面，检查是否生效。如果FSLogix配置生效，在登录时会提示进行个性化设置。\n4、恢复快照，删除快照。\n接下来继续模板编辑操作。将模板保存。\n3.桌面池启用支持 FSLogix的模板 在DoraCloud后台创建桌面池。桌面池启用上一步安装了 FSLogix 的模板。 桌面池启用用户数据盘。 根据需求创建桌面池。\n4.测试 FSLogix 的用户配置管理功能 在 DoraCloud 后台创建用户，为用户分配第3步创建的桌面池。然后登录桌面。\n测试用例1：删除桌面，重新分配桌面，用户数据配置仍然保留。\n测试步骤：\n1）用户登录桌面。\n2）用户修改桌面配置，比如执行如下操作：\n在桌面创建文件。 在我的文档中创建文件。 安装 WPS 应用程序，桌面出现WPS图标。 3）删除用户的桌面。\n4）用户重新登录，分配新的桌面，用户的配置不变。\n测试用例2：统一更新用户的桌面系统\n测试步骤：\n1）桌面池已经分配给若干用户在使用。\n2）管理原编辑桌面模板，添加新的应用软件。\n3）管理员删除用户的桌面，然后系统使用模板的新版本自动创建新的桌面。\n4）用户重新登录，分配新的桌面，用户连接桌面windows后，确认用户的配置都还在。\n上述测试步骤中，用户自己安装的应用能否被FSLogix配置管理保存，取决于应用的安装程序的处理机制。比如WPS的安装程序会将自己安装到用户的配置文件中。这样桌面删除重新分配时，WPS程序仍然存在。 另外一个应用程序会将程序安装在系统区域中。如果用户安装了这类程序，在桌面重新分配时，这类程序会丢失。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/adminguide/",
+    "title": "Deskpool管理员手册",
+    "description": "本手册用于指导管理员实施Deskpool桌面虚拟化系统的管理，管理员需要具备基本的Windows操作系统安装维护经验。拥有常见虚拟化平台的使用经验（如XenServer、ESXi、Hyper-V或者KVM等），对于理解本手册内容有很大帮助。",
+    "content": "1. 概述 2. 登陆Deskpool系统 2.1 Deskpool的组网 2.2 浏览器需求 2.3 Deskpool管理系统地址 2.4 浏览器需求 3. 模板管理 Deskpool的模板是指安装了桌面操作系统、桌面应用软件和Deskpool桌面代理程序的虚拟机镜像。模板也称为：虚拟机母盘镜像（Golden Image）。Deskpool模板继承了“原始虚拟机镜像”的操作系统和镜像大小。Deskpool管理系统根据模板为桌面池批量创建桌面。通过更新模板内的操作系统或者应用程序，可以实现虚拟桌面的统一升级、统一发布应用。实现高效的桌面管理。\nDeskpool模板的制作过程涉及到操作系统和应用程序的安装和配置，是一个非常繁琐和耗时的过程，需要不断的实践和验证。在Deskpool模板管理的实践中，我们建议先制作一个仅仅包含操作系统的基础模板，然后复制基础模板得到一个桌面模板，然后安装应用程序，用于桌面发布。 在制作包含若干应用的复杂的模板时，我们建议分步骤制作模板。比如软件A、B可能会有冲突，可以先制作模板V1，包含软件A，再复制模板V1到V2，安装软件B。这样如果遇到问题，可以退回到V1重新安装。\n3.1 查看模板 点击菜单中的模板，可以查看当前Deskpool系统的所有模板，如下图所示:\n点击模板列表的属性可以查看，可以查看模板属性。\n3.2 创建模板 Deskpool创建模板的过程分两种：\n标准流程：是指从原始Windows镜像开始，分步完成“导入镜像”、“安装代理”、“编辑模板”、“准备模板”和“测试模板”五个步骤后，生成Deskpool模板。\n快速流程：是指基于备份的Deskpool模板，快速生成模板，只需要“导入镜像”和“测试镜像”两个步骤，就可以快速生成Deskpool模板。快速流程一般在Deskpool系统整机重新安装时采用，避免管理员重新制作桌面模板。\nDeskpool创建模板标准流程：\n1、启动创建模板：点击模板列表中的【+】启动创建模板流程。\n2、导入镜像： 选择“从导入虚拟机镜像开始制作Deskpool模板”。 选择对应服务器、虚拟机并填写新模板名称、描述。如果对应的虚拟机不能被导入，请根据提示信息完成虚拟机设置，再点击刷新，查看虚拟机状态，直至虚拟机成为可以被导入虚拟机。注意：选择的虚拟机默认已经具备模板制作的先决条件，如虚拟机是从头开始，请参考专题任务-\u0026gt;创建桌面模板。\n点击\u0026quot;导入\u0026quot;，在弹窗中输入 Windows 虚拟机的管理员账户跟密码\n系统开始复制虚拟机，并自动安装 Agent。\n3、编辑桌面模板：安装所需的应用程序。在当前的操作计算机上，通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装。\n以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板：选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池，点击“准备模板”。\n5、测试和保存模板：模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面，测试模板是否正常以及软件是否已经安装。 然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\nDeskpool创建快速流程：\n1、启动创建模板。点击模板列表中的【+】启动创建模板流程。\n2、导入镜像。选择“直接导入Deskpool模版”。 选择模板对应的服务器跟对应模板。如下图：\n点击导入，会自动导入模板并显示导入模板进度，如下图：\n3、测试和保存模板: 模板导入成功完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试模板是否正常。然后选择保存模板。\n3.3 编辑模板 模板编辑主要是用于在现有的模板基础上给模板增加软件或删除软件。每次模板编辑会产生一个版本，该版本仅包含本次编辑的增量部分。所以为了性能不应该编辑过多次数，一般最多10次左右，如果超出可以点击复制，“复制”操作会合并编辑产生的版本文件到一个新的模板文件里。\n1、启动模板编辑流程：在模板列表中选择要编辑的模板，点击“编辑”，会弹出确认框点击确认后自动进入编辑模板桌面。\n2、编辑桌面模板：此状态分3步，按下图所示。\n通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装\n以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n3、准备模板：选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池，点击“准备模板”。\n4、测试和保存模板模板：模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n3.4 复制模板 从原始的虚拟机创建模板的过程是比较复杂的。在模板管理实践中，通常会先创建一个仅仅包含操作系统的基础模板。然后复制基础模板到一个新模板，在新模板中安装应用软件。 另外一种情况是一个模板编辑过若干次后，产生了较多版本，影响效率。通过将现有模板复制一次，可以实现模板的多个版本的合并。\n1、在模板列表中选择要复制的模板，点击“复制”。\n2、弹窗中填写新模板的名称,点击\u0026quot;确定”,会弹出进度条，等待进度条完成。\n3、编辑桌面模板，安装所需的应用程序。\n在当前的操作计算机上，通过 mstsc -v ipaddress ，通过远程访问完成应用程序的安装。 以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板，点击“准备模板”。\n5、测试和保存模板，模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。 然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n3.5 删除模板 1、在模板列表中选择要删除的模板，点击“删除”，弹窗中确认。\n3.6 副本管理 在对等集群环境中，当模板在某台服务器创建完成后，Deskpool会自动把创建完成模板拷贝到集群的其他服务器上，从而保证集群中的每台服务器都存在相同模板，副本管理主要是针对进群，如果不是集群环境不应该对副本进行操作。\n注：移除操作只删除数据记录，不会删除服务器上的模板文件； 删除操作将同时删除服务器上的模板文件，此操作应该谨慎。\n4. 桌面池管理 4.1 桌面池概念 桌面池是Deskpool进行桌面自动化管理的基本单位，是桌面虚拟机的分组容器，桌面池内的桌面虚拟机拥有相同的属性，包括：相同的模板、相同的桌面类型、相同的vCPU、vGPU和内存的配置规格、相同命名规则、相同外设开关策略、相同的初始配置、相同的桌面回收策略、使用相同的虚拟网络资源。\n4.2 桌面池属性 进入桌面池列表中选择要查看的桌面池，点击“属性” 可以查看到桌面池属性,桌面池属性主要涉及基本信息、配置策略、配置存储三部分。\n4.2.1 基本信息： 基本信息包括:\n桌面池名称： 全局唯一的桌面池名称。 选择模板： 为桌面池选择Deskpool桌面模板，桌面池中的所有桌面将基于该模板来创建。 选择网络资源： 缺省使用系统初始化时配置的网络资源，用户也可以为每个桌面池指定特定的网络资源。注意：由于Deskpool虚拟机需要与每个桌面虚拟机进行通信。在为每个桌面池指定特定网络资源时，请确保该网络与Deskpool虚拟机所在的网络能够互通。 描述： 桌面池的描述信息。 虚拟机名称前缀： 虚拟机名称由前缀和后缀两部分组成，在此处输入桌面池中所有桌面虚拟机的前缀名称。 虚拟机名称后缀： Deskpool桌面池内的桌面虚拟机后缀名称由数字编号组成，按顺序递增，此处输入起始编号。例如：名称前缀填写“Test”，后缀填写“01”，那么第一个被创建的桌面虚拟机将被命名为Test01，第二个桌面虚拟机将被命名为Test02，以此类推。\n内存：是指桌面池内每个桌面虚拟机被创建时，分配的内存资源。 虚拟机CPU个数： 是指桌面池内每个桌面虚拟机被创建时，分配的CPU资源数量。 每个CPU的核数： 是指分配给每个桌面虚拟机的CPU的核数，虚拟机的vCPU数目等于“虚拟机CPU个数”乘以“每个CPU的核数”。 外设重定向： 外设重定向包括两类，RDP资源重定向（硬盘、打印机、数据端口、智能卡）和Deskpool USB设备重定向（其它USB设备）。 启用RemoteFX： 共享GPU选项，当选择的模板配置了RemoteFX 3D视频适配器时，会出现该选项。选择启动RemoteFX，桌面池内的虚拟机都会配置RemoetFX 3D视频适配器，除非GPU资源分配完。 选择色彩： 两种色深选择：16位和32位，桌面池内所有桌面采用该色深参数；如果选择了启用RemoteFX，色深自动被设置为32位。 绑定IP： 可以对要创建的虚拟机进行静态IP设置，前提条件是需要勾选“顺序编号”。 4.2.2 配置策略 桌面池的配置策略包括：\n最大创建虚拟机数： 是指该桌面池最大的桌面虚拟机配额，系统在自动化发放桌面时，确保该桌面池的桌面虚拟机总数不超过该值。桌面池实际能创建的最大桌面虚拟机数量，还受系统容量和存储容量限制。 预创建虚拟机数： 是指在系统资源允许的前提下，为该桌面池维护的未分配的桌面虚拟机数量，该数值不能大于“最大创建虚拟机数”。 桌面池类型： 设置桌面池内桌面虚拟机的类型，公用桌面池内的桌面全部是公用桌面，主要用于教学等需要定时还原的场景；专用桌面池内的桌面全部是专用桌面，主要是用于办公等固定的场景。\n对于公用桌面池，还可以配置桌面虚拟机的回收策略和再分配策略： 注销时回收： 指用户注销Windows登录时，回收虚拟桌面。关机和重启时，也会触发注销事件，导致系统回收桌面。 手工回收： 指用户注销Windows登录时，系统不自动回收虚拟桌面，只能管理员通过手工删除桌面的方式进行回收。 服务器关机时回收： 服务器关机时，回收虚拟机桌面。 允许再分配未使用的桌面： 指桌面池的空闲桌面不足时，系统可以将处于“未登录”状态的桌面分配给其他用户。 允许计划调度： 可以对桌面池的虚拟机进行定时还原操作。 保留给当前用户: 虚拟机还原时，不清除与分配用户的关系。 强制后缀匹配： 根据用户的后缀匹配相同后缀的虚拟机。 4.2.3 基本存储 桌面池的配置存储，为桌面池虚拟机配置用户数据盘（D盘）。用户 数据盘在分配用户的时候创建，归用户所有。也可以配置已有的用户数据盘。分配桌面的时候，会自动挂载见下图。\n4.3 创建桌面池 在桌面池列表中点击【+】号图标，启动创建桌面池流程。具体参数设置可以根据“4.2 桌面池属性设置”。\n4.4 修改桌面池 在桌面池列表中，选择要修改的桌面池，点击“属性”。具体参数设置可以根据“4.2 桌面池属性设置”。\n4.5 删除桌面池 点击桌面池大图标上的【删除】按钮，Deskpool启动桌面池删除任务，如果桌面池内还有虚拟机，系统会提示管理员，不能删除该桌面池。\n4.6 桌面池还原 还原只适用于公用桌面池，并只会清除系统文件，一般为C盘数据。点击桌面池大图标上的【还原】按钮，Deskpool启动桌面池还原任务，桌面池内所有虚拟机还原到创建时的状态，适用于清除所有虚拟机的用户数据，保持所有虚拟机的“创建时”状态。\n4.7 桌面池重建 重建只适用于公用桌面池，点击桌面池大图标上的【重建】按钮，Deskpool启动桌面池重建任务，如果桌面池内还有虚拟机被删除，重新创建虚拟机，适用于桌面池的模板发生变化或需要更改桌面池模板，更新所有虚拟机的场景。如下图：\n4.8 桌面池调度 桌面池主要是针对公用桌面中需要定时还原的桌面进行定时还原，如果是专有桌面，则不支持此操作。\n1、选择要定时还原的桌面池，在桌面池“配置策略”中勾选“允许桌面池调度”。\n2、在“桌面池调度”中“新增调度表”。\n3、设置课程表，选择新增或修改的调度，点击周几，可以选择要还原的桌面池，并设置开始结束时间。注：开始-结束是指这段时间内需要使用虚拟机，此时间段不会还原，这段时间之外如果虚拟机使用过就会自动还原到初始状态。\n4.9 桌面池任务管理 任务管理可以对桌面进行定时开关机以及重启，可以指定周期，桌面池，什么时间进行开关机、重启动作。\n5. 服务器管理 5.1 服务器属性 如果是对等进群，服务器列表会显示多个服务器，如果是单机版则只有一台服务器。\n服务器大图标展示信息：\n服务器主机名称： 显示服务器的主机名称，该名称和虚拟化管理平台的服务器名称一致。 服务器状态： 显示服务器当前运行状态，有“正在运行”或者“离线”，“Master”。 服务器系统容量： 显示服务器的计算资源占用情况，Deskpool会综合分析服务器的CPU和内存资源的占用情况，评估当前系统容量的使用比例。管理 员可以在系统页面调整系统容量的计算因子。注意：由于Deskpool采用链接克隆的方式创建虚拟机，存储容量的消耗和虚拟机的数量没有正比关系，在计算系统容量消耗时，不会参考存储资源的容量。 服务器存储容量信息： 显示服务器的存储资源占用情况。 虚拟桌面池概览： 统计了服务器内部桌面虚拟机总数、已启动桌面虚拟机数量以及正在启动的桌面虚拟机数量。 选择服务器点击“属性”按钮，会弹出服务器属性窗口，用户可以通过该窗口了解服务器的基本信息、Deskpool服务信息，还可以对Deskpool执行配置和操作操作，见下图：\n服务器基本信息包括： 名称、内存、服务器IP、CPU、主频、虚拟化版本。 Deskpool服务： 存储配置、网络配置、Deskpool地址、状态、Deskpool MAC地址、Deskpool版本。 Deskpool系统配置： 可以对Deskpool网络跟 服务器存储进行设置。 Deskpool服务控制： 重启Deskpool的服务进程、关闭服务进程、重启Deskpool虚拟机、恢复出厂设置操作。 5.2 Deskpool系统配置 Deskpool系统配置主要有Deskpool的网络设置跟资源池配置两个动作。\n5.2.1 Deskpool的网络设置 点击服务器属性中的“Deskpool网络”对Deskpool的IP进行修改，确定后Deskpool会自动重启，重启后输入修改的IP地址，重新登陆管理系统。\n5.2.2 资源池配置 点击服务器属性中的“资源池配置”可以对服务器的资源进行修改,如桌面存储池、数据盘存储池，模板存储池，网络资源池等。\n5.3 Deskpool服务控制 Deskpool服务器控制主要操作有：\n关闭服务器进程： 执行此操作后，Deskpool管理系统就停止服务。 重启虚拟机： Deskpool管理系统就自动重启。 恢复出厂设置： Deskpool管理系统将自动清除数据库信息，注此操作不会清除模板文件，只针对Deskpool中存储的数据信息。 离开集群： 主要是针对集群中，此操作后，选中的服务器将作为一个单机的服务器存在，集群中改服务器的桌面信息将自动清除。 5.4 查看服务器的桌面 选择服务器列表中要查看的服务器，点击“桌面”，会弹出该服务器上的所有虚拟机桌面以及桌面池信息。\n5.5 查看服务器的模板 选择服务器列表中要查看的服务器，点击“模板”，会弹出该服务器上的所有模板列表。\n5.6 对等集群管理（TBD） 6. 用户和终端管理 6.1 配置用户数据库 Deskpool提供两种用户管理模式：本地数据库模式和域用户数据库模式：\n6.1.1 本地数据库模式 **本地数据库模式：**是指使用Deskpool本地数据库存储用户账户信息，用户登录Deskpool时，由Deskpool认证用户身份的合法性。\n如下图所示在用户管理中点击“配置用户数据库”，弹窗中选择“使用Deskpool本地群组数据库”即可启用本地数据库模式。\n6.1.2 域用户数据库模式配置 **域用户数据库模式：**是指使用域用户管理服务器进行用户认证，Deskpool系统本身不对用户身份认证，用户登录Deskpool时，Deskpool首先检查本地数据库中是否有相应的用户信息，如果有就向域服务器发起认证请求，等服务器返回认证结果。 如下图所示，在用户管理中点击“配置用户数据库”，弹窗中“选择使用Microsoft Active Directory 域用户数据库”，输入服务器IP地址、域名称、域管理员用户、域管理员密码即可启用域用户数据库模式配置。\n6.2 群组管理 群组具有桌面池权限，属于群组的用户在连接桌面池时会自动根据群组的桌面池选择自动分配桌面。群组的存在相对于单个用户而言能更能方便的批量切换桌面池。所以我们一般把要分配相同桌面池虚拟机的用户归属于同一个群组。\n6.2.1 新增群组 点击群组页面的【新增】按钮,添加群组\n注:\n群组名称： Deskpool本地数据库内的群组名称（不可以为空） 选择桌面池： 为群组选择桌面池。如果群组配置多个桌面池，群组的每个用户可以从每个桌面池中申请一个桌面虚拟机。 认证方式: 支持三种模式。用户名+密码、ID、ID+用户名+密码。其中的选择ID认证时，可以使用ID或者用户账号登陆。选择ID+用户名+密码时， 系统会同时对ID和账号认证。该模式可以限定用户只能从特定的终端登录，提供更高的安全性。 云教室中，推荐采用ID认证，简化云终端的配置和管理。并勾选“自动绑定终端标识”、“禁止用户修改密码”。 调度模式： 自由选课跟指定桌面池主要是用于一个用户分配多个桌面而服务器资源（内存、CPU）不足以启动所有桌面的场景，主要是用于一个电子教室可能需要多个模板（如不同课程模板不同）的情况。选择自由选课时， 用户可以在分配的桌面中不停切换，未选择的桌面将自动进入关机备用。选择指定桌面池时，是由管理员给属于此群组的用户指定桌面池中，其他桌面池的桌面进入关机备用。 自动绑定终端标识: 用户在终端上登录时，会自动把终端的ID保存用户里面。如果认证方式为ID、ID+用户名+密码，必须勾选此项。 禁止用户修改密码： 勾选此项后，使用用户不能在页面上修改密码。 生成教室端页面: 点击此项会自动生成一个连接，教师可以根据无需登录直接在此页面上对此群组进行修改。 描述： 群组的描述信息，用户描述群组的详细信息 6.2.2 群组单操作 在群组列表重的“操作”列，提供了【编辑】、【禁用】、【删除】跟【清除记录】按钮，可以用于编辑，禁止和删除对应的群组,清除记录主要是针对调度模式自由选课时用户指定桌面池的记录。\n。\n6.3 用户管理 6.3.1 查找用户 在用户列表的上方，点击【查找】按钮，会展开条件查询窗口，管理员可以输入查询条件。\n6.3.1 新增用户 点击用户表上方的【新增】按钮，将弹出新增用户界面。\n用户详细页面包括：\n用户名：登录Deskpool桌面系统的用户名 密码：登录Deskpool桌面系统的密码 姓氏：标识用户真实身份 名称：用户名称 所属群组：指定用户的群组。用户可以不属于任何群组，也可以配置多个群组，如果为用户指定了群组，用户会继承群组的属性，包括群组的桌面池属性。 选择桌面池：为用户选择桌面池。用户的桌面池信息可以继承群组的配置，也可以单独为用户选择桌面池。如果一个用户配置多个桌面池，用户可以从每个桌面池中申请一个桌面虚拟机，此项注意如果单独指定后续无法批量更改。 终端ID：可以给用户指定终端,用于绑定用户跟终端的关系 6.3.1 批量新增用户 点击用户表上方的【批量新增】按钮，将弹出新增用户界面。\n批量新增属性包括：\n用户名： 用户名前缀 后缀： 用户名开始后缀 数量： 批量新增用户个数 所属群组： 指定用户的群组。用户可以不属于任何群组，也可以配置多个群组，如果为用户指定了群组，用户会继承群组的属性，包括群组的桌面池属性。 选择桌面池： 为用户选择桌面池。用户的桌面池信息可以继承群组的配置，也可以单独为用户选择桌面池。如果一个用户配置多个桌面池，用户可以从每个桌面池中申请一个桌面虚拟机，此项注意如果单独指定后续无法批量更改。 6.3.1 用户导入 点击用户表上方的【批量导入】按钮，将弹出导入用户界面，格式可以点击弹窗中的帮助。\n6.3.1 单个用户操作 在用户表的“操作”列，提供了【编辑】、【禁用】和【删除】按钮，可以用于对单个用户进行编辑，禁止和删除操作。当点击禁止时，用户将无法登录。\n6.3.1 用户批量操作 选择多个用户，点击用户表下方的【删除】、【禁用】、【启用】和【终端解绑】按钮,可以对用户进行批量操作，点击【终端解绑】按钮会清除用户登录时绑定的终端ID信息。\n6.4 用户数据盘管理 6.4.1 用户数据盘查找 在用户磁盘的点击“查找”，可根据用户名跟桌面查询\n6.4.2 用户数据盘单操作 点击用户数据盘列表【操作】，会显示能操作的操作：\n永久删除：将删除用户数据盘。 归档并删除：将数据盘备份会再删除用户数据盘。 卸载:解除磁盘跟虚拟机的绑定，从而使用户数据盘进入脱机状态，此操作只针对联机的用户数据盘。 6.4.3 用户数据盘批量操作 选择多个要操作的用户数据盘、点击列表下方的操作，弹窗确定即可。\n删除选中： 将删除用户数据盘。 归档并删除： 将数据盘备份会再删除用户数据盘 。 卸载选中： 解除磁盘跟虚拟机的绑定，从而使用户数据盘进入脱机状态，此操作只针对联机的用户数据盘。 6.5 终端管理 终端管理主要是用于云教室的场景，通过终端管理，管理系统会把配置自动下发到终端而无需在终端手动改配置。\n点击列表上方的新增，进入新增环节，详细页面如下。\n6.6 云教室配置范例 6.7 云办公配置范例 6.8 使用AD用户数据库 6.8.1\t配置用户数据库 登录Deskpool 选择”用户”-\u0026gt;“配置用户数据库”→选择“使用Microsfot Active Directory”选项，输入“域名称”，域管理员用户密码，新增域服务器IP地址。如下图\n6.8.2\t新增群组 选择 “用户”-\u0026gt;”群组”-\u0026gt;”新增”-\u0026gt;”查找群组”-\u0026gt;输入群组名称-\u0026gt;”查找”，选择域创建的安全组点击“添加”。如下图\n6.8.3\t新增用户 选择“用户”-\u0026gt;”用户列表”-\u0026gt;”批量新增”-\u0026gt;“查找用户”-\u0026gt;输入用户前缀 ，点击查询，选中创建的域用户点击“添加”。如下图\n6.8.4\t同步域用户 当配置了有效的域认证服务器时，【同步】按钮变为有效。点击【同步】按钮，Deskpool会将本地存储的用户信息和域服务器同步，如果用户信息在域服务器上发生改变，Deskpool会更新本地的用户信息；如果域用户在服务器上被删除，Deskpool也会清理相应的本地存储的用户信息。在域用户数据库模式下，Deskpool不存储用户的登录密码信息。\n在用户表和群组表格的“操作”列，提供了【编辑】和【删除】按钮，可以用于编辑和删除对应的用户或群组。如下图\n注意：\n删除用户是指删除Deskpool本地缓存的域用户数据信息，不会删除域服务器上的用户账户，用户删除后，原先分配给该用户的虚拟机的分配状态为“无效”。 删除群组是指删除Deskpool本地缓存的域群组数据信息，不会删除域服务器上的群组。\r7．桌面计算机管理 点击“桌面计算机”进入桌面计算机列表页面，如下图：\n桌面计算机列表中状态说明：\n准备启动： 创建桌面虚拟机的任务已经排队，等待执行。 正在创建： 正在采用克隆或者复制方式创建桌面虚拟机。 正在开机： 虚拟化管理系统（Hypervisor）正在对桌面虚拟机执行开机操作。 启动网络： 虚拟机内的Windows操作系统正在启动中，等待网络可用。 启动服务： 网络已经可用，等待RDP服务端口启用。如果是新创建桌面虚拟机，还要执行准备操作，包括：修改计算机名、加入域操作，都是在该状态下执行的。 正在运行： 桌面虚拟机进入运行状态，可以远程登录。 正在重启： 对桌面虚拟机进行重启动操作，可能正在重启，也可能重启任务被排队，等待重启。 准备关机： 对桌面虚拟机执行关机操作，可能正在关机，也可能是关机任务被排队，等待执行。 已关机： 桌面虚拟机已经关机。 服务中断： 桌面虚拟机的服务中断，需要管理员手工处理。 正在删除： 桌面虚拟机被标记为删除。删除任务正在排队，或者正在执行。 7.1 条件查询 桌面计算机列表支持条件查询，点击【查找】展开如下图所示的条件查询窗口，多个查询条件可以同时选择，Deskpool会查询出满足全部查询条件的桌面计算机。\n7.2 桌面池统计 桌面池统计页面以表格的形式列举了Deskpool系统中各桌面池的桌面虚拟机统计信息，在表头第一行，显示了全部桌面池的总的统计结果，管理员可以通过该列表，迅速了解当前桌面计算机的使用情况。其中：\n最大可创建： 指桌面池的“最大创建虚拟机数”属性值。 预创建： 指桌面池的“预创建虚拟机数”属性值。 已登录： 指已经启动并且被分配，当前时刻用户远程登录了的桌面虚拟机数量。 未登录： 指已经被分配，但当前没有用户登录的桌面虚拟机数量。 空闲： 指已经启动，当前没有被分配到的桌面虚拟机数量。 正在启动： 指正在创建的桌面虚拟机，包括新创建的桌面虚拟机和正在启动的空闲桌面虚拟机。 其它： 指当前处于不能使用状态的虚拟机，例如正在删除的虚拟机，服务中断的虚拟机等。 7.3 桌面计算机的操作 管理系统支持对单个进行开机、关机、重启、删除、还原、连接、还原等操作（不同状态的虚拟机显示操作不同），选中要进行操作的虚拟机，点击“操作”，见下图：\n注：如果虚拟机属于专用桌面，删除需要谨慎，删除虚拟机后虚拟机系统文件丢失。\n个别操作说明：\n连接： 弹窗输入windows管理员用户、密码会自动生成一个rdp连接文件、点击下载文件进入虚拟机里面。 还原: 此操作会把桌面虚拟机还原到初始状态。 7.3 桌面计算机批量操作 管理系统支持对多个操作进行批量操作，选择要操作的计算机，点击列表下方要进行的操作，弹窗点确定即可，下图以批量重启为例。\n注：如果选中的虚拟机中有一台不支持进行的操作，“操作”会自动变成灰色。\n8．系统功能 8.1 系统设置 系统设置子页面如下图所示，提供一系列的Deskpool全局参数配置功能和系统级操作功能，主要包括：常规设置、集群管理、VNC设置、服务器容量计算参数设置、系统工具。\n8.1.1常规设置 常规设置功能区可设置：\n设置系统时间： 点击对应右侧的【设置】按钮保存新的日期和时间，Deskpool会按新的日期和时间记录日志和时间。 服务器最大负载：指服务器容量的最大负载，缺省为80%，Deskpool在服务器的CPU或内存占用率负载达到该阀值时，停止启动桌面虚拟机 最大并发启动桌面数：指Deskpool最多一次向虚拟化平台提交的启动虚拟机请求的数量，默认10个。 用户连接保持时间：用户登录后登录页面退出保持时间，0为无限。 8.1.2 集群管理 集群管理中主要是针对集群设置浮动IP，设置页面如下图，设置完成后，通过浮动IP访问的服务器会一直是主节点，如果主节点在集群节点中漂移，浮动IP也会跟着漂移。\n8.1.3 VNC设置 VNC设置功能区如下图所示，管理员可以设置VNC相关的功能（当前只适用于XenServer平台）:\n桌面窗口截图功能： 用户登录时是否启动截取桌面缩略图功能，参考等5章桌面用户登录了解桌面缩略图功能。 窗口截图刷新频率： 当启动了桌面窗口截图功能时，设定窗口截图的刷新频率，缺省5秒刷新一次。 桌面自助维护功能： 是否允许用户通过VNC接入桌面虚拟机，设置了桌面自助维护功能，用户可以通过VNC远程连接桌面虚拟机。 VNC端口号：Deskpool提供VNC服务器端口，对外提供桌面虚拟机的VNC接入功能，缺省为8081。 注意： VNC功能是提供给终端用户，在通过远程桌面协议不能登录桌面虚拟机时，临时接入桌面虚拟机进行桌面维护的手段，例如查看远程桌面接入的功能是否被关闭，系统长时间不能启动或关机时，查看进度等。管理员需要了解，当大量的终端同时启动使用VNC连接，会对Deskpool服务造成性能压力。\n8.1.4 服务器容量计算参数设置 服务器容量计算参数设置功能区如下图所示，管理员可以设置Deskpool系统中服务器容量的计算参数，主要是CPU和内存容量的计算参数：\nvCPU计算因子： 设置服务器物理CPU的单核支持的vCPU数量，如果物理CPU有超线程特性，就可以提供上限的处理能力；预留的CPU核个数：在计算系统总容量时，需要预留的CPU资源，缺省0.5个物理CPU核； 预留的内存容量： 在计算系统总容量时，需要预留的内存资源，缺省1024M字节： 内存放大因子： 服务器物理内存与虚拟机内存的折算系数（虚拟内存/物理内存）。该参数当前建议设置为1。 注意，服务器容量的计算方法为：\n服务器实际负载会在服务器的大图标上显示出来，同时Deskpool管理系统会确保服务器实际负载小于等于“服务器最大负载”。如果实际负载接近最大负载，Deskpool会停止创建或启动新的桌面虚拟机。 服务器实际负载计算举例：\n比如服务器的配置为 12个CPU，96GB内存。系统创建了2个虚拟机，规格为2个vCPU，2GB内存。容量计算参数采用系统缺省值。\n单个虚拟机的资源占比：MAX（2/（96-1）, 2/{（12-0.5）*5}） = 0.0348\n服务器的负载为：0.0348X 2 = 0.0696\n服务器的容量约为：7%\n8.1.5 系统工具 设置维护模式：设置系统进入维护模式，系统处于维护模式时，会停止执行后台的调度任务。\n导出数据：用于导出系统配置数据，用于系统升级或迁移。\n更改Admin密码：修改admin管理员登录密码。\n8.2 日志管理 日志管理子页面如下图所示，提供了导出系统调试信息的功能： 导出系统调试信息：系统默认保存30天的调试信息，支持按事件段导出调试信息，调试信息是当系统运行出现异常时，辅助维护人员排除故障的事件信息，导出的是csv格式的文本文件。\n8.3 License管理 License管理子页面如下图所示，包含了三个功能区：License文件信息、获取License文件、更新License文件。 License文件信息区域显示了当前系统License信息，Deskpool安装后缺省带有试用版License授权，试用版授权不会对系统的功能做任何限制；用户在试用授权到期前，可以更新到商业授权。\n如果当前使用了商业版License，管理员可以点击“删除License”按钮，系统会把当前商业License替换成试用版License。\n注意：Deskpool的商业License授权会和服务器硬件特征码绑定，如果用户更换了服务器硬件平台，可以先删除原商业License，启用试用版授权，在试用授权到期前重新申请商业授权。\n8.3.1 获取License文件 展开获取License文件页可以查看到license信息。 8.3.2 更新Licesne 更新License文件功能，用户按以下步骤更新License：\n加载License：点击【浏览】按钮，选择有效的License文件； 更新License：点击【更新License】，Deskpool将上一步加载的License文件替换系统现有的License。 8.4 桌面云网关 如Deskpool桌面管理系统可以结合Deskpool的桌面网关产品，实施跨网络的远程桌面安全访问。详情说明请参考《Deskpool桌面云网关指南》。\n8.5 升级和补丁 如下图 所示，Deskpool桌面管理系统可以通过补丁包的形式，对系统进行缺陷修复。管理员通过上传补丁文件，系统自动完成补丁升级并且重启Deskpool虚拟机。\n9．事件管理 9.1 事件查询 Deskpool支持按条件显示指定类型的事件，如下图所示，指定按事件主体类型显示，包括：桌面、模板和服务器3种类型；也可以指定按事件级别显示，包括：普通、错误、警告和任务4种级别。\n9.2 事件详情 选中要查看的事件，点击状态内容，会弹出事件详情。\n9.3 事件导出 点击事件列表下方的导出，弹窗中输入起止时间可以导出事件内容\n10 集群的操作 详情请参考 配置对等集群.\n11 AD 详情请参考 启用AD域管理.\n12 网关 详情请参考 配置桌面云网关.\n13 补丁升级 如下图 所示，Deskpool桌面管理系统可以通过补丁包的形式，对系统进行缺陷修复。管理员通过上传补丁文件，系统自动完成补丁升级并且重启Deskpool虚拟机。\n14 授权 授权主要是分为两步\n第一步：获取本地特征码，发送给厂商。在“系统”-\u0026gt;\u0026ldquo;License管理中\u0026rdquo;-\u0026gt;\u0026ldquo;展开获取License文件\u0026rdquo;,复制本地特征码给厂商，如下图：\n第二步：更新厂商提供的licnese文件，用户按以下步骤更新License\n加载License：点击【浏览】按钮，选择有效的License文件； 更新License：点击【更新License】，Deskpool将上一步加载的License文件替换系统现有的License。 15 备份恢复 15.1 模板备份 模板备份是指备份Deskpool的桌面模板镜像文件；备份模板的步骤包括：\n第一步，在模板属性窗口中，获取模板文件的名称。\n第二步，在虚拟化管理系统中，导出相应的模板，并保存。请参考XenCenter、VMWare vSphere Client和Hyper-V Manager了解各种虚拟化平台的导出模板操作。\n15.2 模板导入 模板导入，是指管理员重新安装Deskpool虚拟桌面系统（包括重新安装虚拟化平台）时， 利用备份的模板镜像文件，快速制作Deskpool模板；模板导入的步骤包括：\n第一步，在虚拟化管理系统中，导入备份的Deskpool模板文件。请参考XenCenter、VMWare vSphere Client和Hyper-V Manager了解各种虚拟化平台的模板导入操作\n第二步，请参考本手册关于Deskpool创建模板快速流程的相关说明，执行快速模板制作流程。\n15.3 导出数据 导出数据是指将Deskpool当前的数据库数据，以文件的形式保存，一般用于系统迁移前的数据准备，参考本手册第7章了解系统迁移。导出系统数据的步骤如下：\n第一步：在一台PC主机运行浏览器，打开Deskpool的系统管理页面。\n第二步：在系统工具栏，点击【设置维护模式】按钮，让系统进入维护模式。\n第三步：在系统工具栏，点击【导出数据】按钮，将数据文件保存到PC主机。 第四步：在系统工具栏，点击【退出维护模式】按钮，让系统回到工作模式。\n16系统迁移 系统迁移是指原Deskpool虚拟机的管理功能，需要被新的Deskpool虚拟机替换的时候，实施的维护任务。系统迁移是指同一台服务器上两个Deskpool虚拟机之间的管理功能迁移，不支持跨服务器的Deskpool虚拟机之间的迁移。\n管理员按照以下步骤实施系统迁移：\n参考本手册15.3节所述，在原Deskpool系统，执行“导出数据”操作，得到系统数据文件。 启动新（版本）的Deskpool虚拟机，在系统初始化导航窗口，点击【执行系统迁移】，进入系统迁移任务导航。 系统迁移包含四个步骤：\n1、导入数据：管理员需要根据提示完成信息确认，选择需要导入的数据文件。该数据文件是从原Deskpool系统上导出的，包含被导出时刻的系统配置数据、状态数据、日志和事件数据。\n注意：如果系统提示导入数据失败，请检查Deskpool版本的兼容性，数据文件的完整性。\n2、修改配置：主要是完成新的Deskpool虚拟机的网络配置，确保和被迁移的原Deskpool虚拟机保持一致，包括IP地址、网络高级配置以及DHCP的MAC地址绑定等。\n注意：当前Deskpool系统的IP地址被修改后，管理员需要使用新的IP地址，重新登录 Deskpool，会回到修改配置阶段。完成其它信息项确认后，点击【下一步】。\n3、完成迁移：提示用户为了确保迁移后的系统能正常运行，需要完成的各项任务：对于原Deskpool虚拟机需要确保它不会被重新启用；新的Deskpool虚拟机需要退出维护模式才能正常提供服务。\n注意：在系统迁移过程中，点击导航窗口的【取消迁移】，当前Deskpool虚拟机回到未初始化状态。\n4、退出维护模式: 在系统-》系统设置-》系统工具中，点击【退出维护模式】进入工作状态。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/staticip/",
+    "title": "Deskpool静态ip组网",
+    "description": "本文描述了使用静态ip配置部署桌面云的过程和注意事项。
+",
+    "content": "1.前言 Deskpool桌面云系统一般使用DHCP机制来分配桌面的IP地址。在一些项目中，不允许使用DHCP，采用静态IP的管理方式。本文描述了Deskpool使用静 态IP组网时的注意事项。 本文假定您已经了解了Deskpool的安装和使用。本文不详细描述Deskpool的完整配置过程，仅描述使用静态IP组网的配置要点。 本文以配置一个50用户的云教室为例，描述了使用静态IP组网的配置过程。\n2.网络规划 在使用静态IP配置前，需要进行网络IP地址的规划。\n一个50用户云教室中有如下主机需要配置IP地址： 物理服务器、Deskpool管理VM、50个桌面、50个终端、至少一个模板。 上述物理或者虚拟主机都需要分配独立的IP。 我们假定网段为 192.168.1.x/24，网关和DNS为 192.168.1.1。我们对该桌面云系统的IP规划如下\n对局域网进行网段规划，以192.168.1.1/24为例，我们需要对哪些网络分别给到不同的IP地址，例如我们把192.168.1.20这个网络给物理服务器作为ip地址，192.168.1.21给到deskpool云桌面系统，192.168.1.150\u0026ndash;192.168.1.200的网络给到云桌面，192.168.1.201—192.168.1.250的网络 给到云终端。 网段 192.168.1.X 掩码 255.255.255.0 网关 192.168.1.1 DNS 192.168.1.1 物理服务器IP 192.168.1.20 Deskpool IP 192.168.1.21 虚拟桌面IP 192.168.1.150\u0026ndash;192.168.1.200 云终端IP 192.168.1.201\u0026ndash;192.168.1.250 教师机IP 192.168.1.24 云桌面模板IP 192.168.1.22 3.设置物理服务器IP 3.1. 物理服务器安装系统后，我们首先要进行设置固定ip，如图下\n4.设置deskpool虚拟化系统ip 4.1\t在安装deskpool中会弹出deskpool设置窗口，我们根据网络规划表来设置。如图下\n4.2\t进入deskpool虚拟管理系统将ip改成规划ip。如图下\n4.3 设置好ip后，再次登陆（输入修改后的ip地址）。注意，我们接下来恢复模板的时候也需要deskpool的ip。如图下\n5.设置模板IP 5.1 首先在模板的菜单栏里剪辑模板的编辑，由于没有设置静态IP，是无法正常进入；我们需要打开hyper-V管理器，找到该模板的虚拟机，连接进入虚拟机设置成静态IP，如图下\n6.设置桌面池IP 6.1 在桌面池菜单栏里，点击属性进入桌面池设置，将IP绑定成固定IP。如图下\n7.设置云终端IP 7.1 最后，我们将云终端上的IP设置为固定IP。如图下\n8.常见问题 8.1 模板一定要设置好固定IP，不然在保存模板时会出现错误导指保存不了。\n8.2 在云教室搭建布置时，一定要先将网络规划表做一个规划。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/doracloud/",
+    "title": "DoraCloud管理员手册",
+    "description": "本手册用于指导管理员实施DoraCloud桌面虚拟化系统的管理，管理员需要具备基本的Windows操作系统安装维护经验。拥有常见虚拟化平台的使用经验（如XenServer、ESXi、Hyper-V或者KVM等），对于理解本手册内容有很大帮助。",
+    "content": "1. 概述 2. 登陆DoraCloud系统 2.1 DoraCloud的组网 2.2 浏览器需求 2.3 DoraCloud管理系统地址 2.4 浏览器需求 3. 模板管理 DoraCloud的模板是指安装了桌面操作系统、桌面应用软件和DoraCloud桌面代理程序的虚拟机镜像。模板也称为：虚拟机母盘镜像（Golden Image）。DoraCloud模板继承了“原始虚拟机镜像”的操作系统和镜像大小。DoraCloud管理系统根据模板为桌面池批量创建桌面。通过更新模板内的操作系统或者应用程序，可以实现虚拟桌面的统一升级、统一发布应用。实现高效的桌面管理。\nDoraCloud模板的制作过程涉及到操作系统和应用程序的安装和配置，是一个非常繁琐和耗时的过程，需要不断的实践和验证。在DoraCloud模板管理的实践中，我们建议先制作一个仅仅包含操作系统的基础模板，然后复制基础模板得到一个桌面模板，然后安装应用程序，用于桌面发布。 在制作包含若干应用的复杂的模板时，我们建议分步骤制作模板。比如软件A、B可能会有冲突，可以先制作模板V1，包含软件A，再复制模板V1到V2，安装软件B。这样如果遇到问题，可以退回到V1重新安装。\n3.1 查看模板 点击菜单中的模板，可以查看当前DoraCloud系统的所有模板，如下图所示:\n点击模板列表的属性可以查看，可以查看模板属性。\n3.2 创建模板 DoraCloud创建模板的过程分两种：\n标准流程：是指从原始Windows镜像开始，分步完成“导入镜像”、“安装代理”、“编辑模板”、“准备模板”和“测试模板”五个步骤后，生成DoraCloud模板。\n快速流程：是指基于备份的DoraCloud模板，快速生成模板，只需要“导入镜像”和“测试镜像”两个步骤，就可以快速生成DoraCloud模板。快速流程一般在DoraCloud系统整机重新安装时采用，避免管理员重新制作桌面模板。\nDoraCloud创建模板标准流程：\n1、启动创建模板：点击模板列表中的【+】启动创建模板流程。\n2、导入镜像： 选择“从导入虚拟机镜像开始制作DoraCloud模板”。 选择对应服务器、虚拟机并填写新模板名称、描述。如果对应的虚拟机不能被导入，请根据提示信息完成虚拟机设置，再点击刷新，查看虚拟机状态，直至虚拟机成为可以被导入虚拟机。注意：选择的虚拟机默认已经具备模板制作的先决条件，如虚拟机是从头开始，请参考专题任务-\u0026gt;创建桌面模板。\n点击\u0026quot;导入\u0026quot;，在弹窗中输入 Windows 虚拟机的管理员账户跟密码\n系统开始复制虚拟机，并自动安装 Agent。\n3、编辑桌面模板：安装所需的应用程序。在当前的操作计算机上，通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装。\n以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板：选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池，点击“准备模板”。\n5、测试和保存模板：模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面，测试模板是否正常以及软件是否已经安装。 然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\nDoraCloud创建快速流程：\n1、启动创建模板。点击模板列表中的【+】启动创建模板流程。\n2、导入镜像。选择“直接导入DoraCloud模版”。 选择模板对应的服务器跟对应模板。如下图：\n点击导入，会自动导入模板并显示导入模板进度，如下图：\n3、测试和保存模板: 模板导入成功完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试模板是否正常。然后选择保存模板。\n3.3 编辑模板 模板编辑主要是用于在现有的模板基础上给模板增加软件或删除软件。每次模板编辑会产生一个版本，该版本仅包含本次编辑的增量部分。所以为了性能不应该编辑过多次数，一般最多10次左右，如果超出可以点击复制，“复制”操作会合并编辑产生的版本文件到一个新的模板文件里。\n1、启动模板编辑流程：在模板列表中选择要编辑的模板，点击“编辑”，会弹出确认框点击确认后自动进入编辑模板桌面。\n2、编辑桌面模板：此状态分3步，按下图所示。\n通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装\n以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n3、准备模板：选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池，点击“准备模板”。\n4、测试和保存模板模板：模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n3.4 复制模板 从原始的虚拟机创建模板的过程是比较复杂的。在模板管理实践中，通常会先创建一个仅仅包含操作系统的基础模板。然后复制基础模板到一个新模板，在新模板中安装应用软件。 另外一种情况是一个模板编辑过若干次后，产生了较多版本，影响效率。通过将现有模板复制一次，可以实现模板的多个版本的合并。\n1、在模板列表中选择要复制的模板，点击“复制”。\n2、弹窗中填写新模板的名称,点击\u0026quot;确定”,会弹出进度条，等待进度条完成。\n3、编辑桌面模板，安装所需的应用程序。\n在当前的操作计算机上，通过 mstsc -v ipaddress ，通过远程访问完成应用程序的安装。 以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板，点击“准备模板”。\n5、测试和保存模板，模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。 然后选择保存模板。 如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n3.5 删除模板 1、在模板列表中选择要删除的模板，点击“删除”，弹窗中确认。\n3.6 副本管理 在对等集群环境中，当模板在某台服务器创建完成后，DoraCloud会自动把创建完成模板拷贝到集群的其他服务器上，从而保证集群中的每台服务器都存在相同模板，副本管理主要是针对进群，如果不是集群环境不应该对副本进行操作。\n注：移除操作只删除数据记录，不会删除服务器上的模板文件； 删除操作将同时删除服务器上的模板文件，此操作应该谨慎。\n4. 桌面池管理 4.1 桌面池概念 桌面池是DoraCloud进行桌面自动化管理的基本单位，是桌面虚拟机的分组容器，桌面池内的桌面虚拟机拥有相同的属性，包括：相同的模板、相同的桌面类型、相同的vCPU、vGPU和内存的配置规格、相同命名规则、相同外设开关策略、相同的初始配置、相同的桌面回收策略、使用相同的虚拟网络资源。\n4.2 桌面池属性 进入桌面池列表中选择要查看的桌面池，点击“属性” 可以查看到桌面池属性,桌面池属性主要涉及基本信息、配置策略、配置存储三部分。\n4.2.1 基本信息： 基本信息包括:\n桌面池名称： 全局唯一的桌面池名称。 选择模板： 为桌面池选择DoraCloud桌面模板，桌面池中的所有桌面将基于该模板来创建。 选择网络资源： 缺省使用系统初始化时配置的网络资源，用户也可以为每个桌面池指定特定的网络资源。注意：由于DoraCloud虚拟机需要与每个桌面虚拟机进行通信。在为每个桌面池指定特定网络资源时，请确保该网络与DoraCloud虚拟机所在的网络能够互通。 描述： 桌面池的描述信息。 虚拟机名称前缀： 虚拟机名称由前缀和后缀两部分组成，在此处输入桌面池中所有桌面虚拟机的前缀名称。 虚拟机名称后缀： DoraCloud桌面池内的桌面虚拟机后缀名称由数字编号组成，按顺序递增，此处输入起始编号。例如：名称前缀填写“Test”，后缀填写“01”，那么第一个被创建的桌面虚拟机将被命名为Test01，第二个桌面虚拟机将被命名为Test02，以此类推。\n内存：是指桌面池内每个桌面虚拟机被创建时，分配的内存资源。 虚拟机CPU个数： 是指桌面池内每个桌面虚拟机被创建时，分配的CPU资源数量。 每个CPU的核数： 是指分配给每个桌面虚拟机的CPU的核数，虚拟机的vCPU数目等于“虚拟机CPU个数”乘以“每个CPU的核数”。 外设重定向： 外设重定向包括两类，RDP资源重定向（硬盘、打印机、数据端口、智能卡）和DoraCloud USB设备重定向（其它USB设备）。 启用RemoteFX： 共享GPU选项，当选择的模板配置了RemoteFX 3D视频适配器时，会出现该选项。选择启动RemoteFX，桌面池内的虚拟机都会配置RemoetFX 3D视频适配器，除非GPU资源分配完。 选择色彩： 两种色深选择：16位和32位，桌面池内所有桌面采用该色深参数；如果选择了启用RemoteFX，色深自动被设置为32位。 绑定IP： 可以对要创建的虚拟机进行静态IP设置，前提条件是需要勾选“顺序编号”。 4.2.2 配置策略 桌面池的配置策略包括：\n最大创建虚拟机数： 是指该桌面池最大的桌面虚拟机配额，系统在自动化发放桌面时，确保该桌面池的桌面虚拟机总数不超过该值。桌面池实际能创建的最大桌面虚拟机数量，还受系统容量和存储容量限制。 预创建虚拟机数： 是指在系统资源允许的前提下，为该桌面池维护的未分配的桌面虚拟机数量，该数值不能大于“最大创建虚拟机数”。 桌面池类型： 设置桌面池内桌面虚拟机的类型，公用桌面池内的桌面全部是公用桌面，主要用于教学等需要定时还原的场景；专用桌面池内的桌面全部是专用桌面，主要是用于办公等固定的场景。\n对于公用桌面池，还可以配置桌面虚拟机的回收策略和再分配策略： 注销时回收： 指用户注销Windows登录时，回收虚拟桌面。关机和重启时，也会触发注销事件，导致系统回收桌面。 手工回收： 指用户注销Windows登录时，系统不自动回收虚拟桌面，只能管理员通过手工删除桌面的方式进行回收。 服务器关机时回收： 服务器关机时，回收虚拟机桌面。 允许再分配未使用的桌面： 指桌面池的空闲桌面不足时，系统可以将处于“未登录”状态的桌面分配给其他用户。 允许计划调度： 可以对桌面池的虚拟机进行定时还原操作。 保留给当前用户: 虚拟机还原时，不清除与分配用户的关系。 强制后缀匹配： 根据用户的后缀匹配相同后缀的虚拟机。 4.2.3 基本存储 桌面池的配置存储，为桌面池虚拟机配置用户数据盘（D盘）。用户 数据盘在分配用户的时候创建，归用户所有。也可以配置已有的用户数据盘。分配桌面的时候，会自动挂载见下图。\n4.3 创建桌面池 在桌面池列表中点击【+】号图标，启动创建桌面池流程。具体参数设置可以根据“4.2 桌面池属性设置”。\n4.4 修改桌面池 在桌面池列表中，选择要修改的桌面池，点击“属性”。具体参数设置可以根据“4.2 桌面池属性设置”。\n4.5 删除桌面池 点击桌面池大图标上的【删除】按钮，DoraCloud启动桌面池删除任务，如果桌面池内还有虚拟机，系统会提示管理员，不能删除该桌面池。\n4.6 桌面池还原 还原只适用于公用桌面池，并只会清除系统文件，一般为C盘数据。点击桌面池大图标上的【还原】按钮，DoraCloud启动桌面池还原任务，桌面池内所有虚拟机还原到创建时的状态，适用于清除所有虚拟机的用户数据，保持所有虚拟机的“创建时”状态。\n4.7 桌面池重建 重建只适用于公用桌面池，点击桌面池大图标上的【重建】按钮，DoraCloud启动桌面池重建任务，如果桌面池内还有虚拟机被删除，重新创建虚拟机，适用于桌面池的模板发生变化或需要更改桌面池模板，更新所有虚拟机的场景。如下图：\n4.8 桌面池调度 桌面池主要是针对公用桌面中需要定时还原的桌面进行定时还原，如果是专有桌面，则不支持此操作。\n1、选择要定时还原的桌面池，在桌面池“配置策略”中勾选“允许桌面池调度”。\n2、在“桌面池调度”中“新增调度表”。\n3、设置课程表，选择新增或修改的调度，点击周几，可以选择要还原的桌面池，并设置开始结束时间。注：开始-结束是指这段时间内需要使用虚拟机，此时间段不会还原，这段时间之外如果虚拟机使用过就会自动还原到初始状态。\n4.9 桌面池任务管理 任务管理可以对桌面进行定时开关机以及重启，可以指定周期，桌面池，什么时间进行开关机、重启动作。\n5. 服务器管理 5.1 服务器属性 如果是对等进群，服务器列表会显示多个服务器，如果是单机版则只有一台服务器。\n服务器大图标展示信息：\n服务器主机名称： 显示服务器的主机名称，该名称和虚拟化管理平台的服务器名称一致。 服务器状态： 显示服务器当前运行状态，有“正在运行”或者“离线”，“Master”。 服务器系统容量： 显示服务器的计算资源占用情况，DoraCloud会综合分析服务器的CPU和内存资源的占用情况，评估当前系统容量的使用比例。管理 员可以在系统页面调整系统容量的计算因子。注意：由于DoraCloud采用链接克隆的方式创建虚拟机，存储容量的消耗和虚拟机的数量没有正比关系，在计算系统容量消耗时，不会参考存储资源的容量。 服务器存储容量信息： 显示服务器的存储资源占用情况。 虚拟桌面池概览： 统计了服务器内部桌面虚拟机总数、已启动桌面虚拟机数量以及正在启动的桌面虚拟机数量。 选择服务器点击“属性”按钮，会弹出服务器属性窗口，用户可以通过该窗口了解服务器的基本信息、DoraCloud服务信息，还可以对DoraCloud执行配置和操作操作，见下图：\n服务器基本信息包括： 名称、内存、服务器IP、CPU、主频、虚拟化版本。 DoraCloud服务： 存储配置、网络配置、DoraCloud地址、状态、DoraCloud MAC地址、DoraCloud版本。 DoraCloud系统配置： 可以对DoraCloud网络跟 服务器存储进行设置。 DoraCloud服务控制： 重启DoraCloud的服务进程、关闭服务进程、重启DoraCloud虚拟机、恢复出厂设置操作。 5.2 DoraCloud系统配置 DoraCloud系统配置主要有DoraCloud的网络设置跟资源池配置两个动作。\n5.2.1 DoraCloud的网络设置 点击服务器属性中的“DoraCloud网络”对DoraCloud的IP进行修改，确定后DoraCloud会自动重启，重启后输入修改的IP地址，重新登陆管理系统。\n5.2.2 资源池配置 点击服务器属性中的“资源池配置”可以对服务器的资源进行修改,如桌面存储池、数据盘存储池，模板存储池，网络资源池等。\n5.3 DoraCloud服务控制 DoraCloud服务器控制主要操作有：\n关闭服务器进程： 执行此操作后，DoraCloud管理系统就停止服务。 重启虚拟机： DoraCloud管理系统就自动重启。 恢复出厂设置： DoraCloud管理系统将自动清除数据库信息，注此操作不会清除模板文件，只针对DoraCloud中存储的数据信息。 离开集群： 主要是针对集群中，此操作后，选中的服务器将作为一个单机的服务器存在，集群中改服务器的桌面信息将自动清除。 5.4 查看服务器的桌面 选择服务器列表中要查看的服务器，点击“桌面”，会弹出该服务器上的所有虚拟机桌面以及桌面池信息。\n5.5 查看服务器的模板 选择服务器列表中要查看的服务器，点击“模板”，会弹出该服务器上的所有模板列表。\n5.6 对等集群管理（TBD） 6. 用户和终端管理 6.1 配置用户数据库 DoraCloud提供两种用户管理模式：本地数据库模式和域用户数据库模式：\n6.1.1 本地数据库模式 **本地数据库模式：**是指使用DoraCloud本地数据库存储用户账户信息，用户登录DoraCloud时，由DoraCloud认证用户身份的合法性。\n如下图所示在用户管理中点击“配置用户数据库”，弹窗中选择“使用DoraCloud本地群组数据库”即可启用本地数据库模式。\n6.1.2 域用户数据库模式配置 **域用户数据库模式：**是指使用域用户管理服务器进行用户认证，DoraCloud系统本身不对用户身份认证，用户登录DoraCloud时，DoraCloud首先检查本地数据库中是否有相应的用户信息，如果有就向域服务器发起认证请求，等服务器返回认证结果。 如下图所示，在用户管理中点击“配置用户数据库”，弹窗中“选择使用Microsoft Active Directory 域用户数据库”，输入服务器IP地址、域名称、域管理员用户、域管理员密码即可启用域用户数据库模式配置。\n6.2 群组管理 群组具有桌面池权限，属于群组的用户在连接桌面池时会自动根据群组的桌面池选择自动分配桌面。群组的存在相对于单个用户而言能更能方便的批量切换桌面池。所以我们一般把要分配相同桌面池虚拟机的用户归属于同一个群组。\n6.2.1 新增群组 点击群组页面的【新增】按钮,添加群组\n注:\n群组名称： DoraCloud本地数据库内的群组名称（不可以为空） 选择桌面池： 为群组选择桌面池。如果群组配置多个桌面池，群组的每个用户可以从每个桌面池中申请一个桌面虚拟机。 认证方式: 支持三种模式。用户名+密码、ID、ID+用户名+密码。其中的选择ID认证时，可以使用ID或者用户账号登陆。选择ID+用户名+密码时， 系统会同时对ID和账号认证。该模式可以限定用户只能从特定的终端登录，提供更高的安全性。 云教室中，推荐采用ID认证，简化云终端的配置和管理。并勾选“自动绑定终端标识”、“禁止用户修改密码”。 调度模式： 自由选课跟指定桌面池主要是用于一个用户分配多个桌面而服务器资源（内存、CPU）不足以启动所有桌面的场景，主要是用于一个电子教室可能需要多个模板（如不同课程模板不同）的情况。选择自由选课时， 用户可以在分配的桌面中不停切换，未选择的桌面将自动进入关机备用。选择指定桌面池时，是由管理员给属于此群组的用户指定桌面池中，其他桌面池的桌面进入关机备用。 自动绑定终端标识: 用户在终端上登录时，会自动把终端的ID保存用户里面。如果认证方式为ID、ID+用户名+密码，必须勾选此项。 禁止用户修改密码： 勾选此项后，使用用户不能在页面上修改密码。 生成教室端页面: 点击此项会自动生成一个连接，教师可以根据无需登录直接在此页面上对此群组进行修改。 描述： 群组的描述信息，用户描述群组的详细信息 6.2.2 群组单操作 在群组列表重的“操作”列，提供了【编辑】、【禁用】、【删除】跟【清除记录】按钮，可以用于编辑，禁止和删除对应的群组,清除记录主要是针对调度模式自由选课时用户指定桌面池的记录。\n。\n6.3 用户管理 6.3.1 查找用户 在用户列表的上方，点击【查找】按钮，会展开条件查询窗口，管理员可以输入查询条件。\n6.3.1 新增用户 点击用户表上方的【新增】按钮，将弹出新增用户界面。\n用户详细页面包括：\n用户名：登录DoraCloud桌面系统的用户名 密码：登录DoraCloud桌面系统的密码 姓氏：标识用户真实身份 名称：用户名称 所属群组：指定用户的群组。用户可以不属于任何群组，也可以配置多个群组，如果为用户指定了群组，用户会继承群组的属性，包括群组的桌面池属性。 选择桌面池：为用户选择桌面池。用户的桌面池信息可以继承群组的配置，也可以单独为用户选择桌面池。如果一个用户配置多个桌面池，用户可以从每个桌面池中申请一个桌面虚拟机，此项注意如果单独指定后续无法批量更改。 终端ID：可以给用户指定终端,用于绑定用户跟终端的关系 6.3.1 批量新增用户 点击用户表上方的【批量新增】按钮，将弹出新增用户界面。\n批量新增属性包括：\n用户名： 用户名前缀 后缀： 用户名开始后缀 数量： 批量新增用户个数 所属群组： 指定用户的群组。用户可以不属于任何群组，也可以配置多个群组，如果为用户指定了群组，用户会继承群组的属性，包括群组的桌面池属性。 选择桌面池： 为用户选择桌面池。用户的桌面池信息可以继承群组的配置，也可以单独为用户选择桌面池。如果一个用户配置多个桌面池，用户可以从每个桌面池中申请一个桌面虚拟机，此项注意如果单独指定后续无法批量更改。 6.3.1 用户导入 点击用户表上方的【批量导入】按钮，将弹出导入用户界面，格式可以点击弹窗中的帮助。\n6.3.1 单个用户操作 在用户表的“操作”列，提供了【编辑】、【禁用】和【删除】按钮，可以用于对单个用户进行编辑，禁止和删除操作。当点击禁止时，用户将无法登录。\n6.3.1 用户批量操作 选择多个用户，点击用户表下方的【删除】、【禁用】、【启用】和【终端解绑】按钮,可以对用户进行批量操作，点击【终端解绑】按钮会清除用户登录时绑定的终端ID信息。\n6.4 用户数据盘管理 6.4.1 用户数据盘查找 在用户磁盘的点击“查找”，可根据用户名跟桌面查询\n6.4.2 用户数据盘单操作 点击用户数据盘列表【操作】，会显示能操作的操作：\n永久删除：将删除用户数据盘。 归档并删除：将数据盘备份会再删除用户数据盘。 卸载:解除磁盘跟虚拟机的绑定，从而使用户数据盘进入脱机状态，此操作只针对联机的用户数据盘。 6.4.3 用户数据盘批量操作 选择多个要操作的用户数据盘、点击列表下方的操作，弹窗确定即可。\n删除选中： 将删除用户数据盘。 归档并删除： 将数据盘备份会再删除用户数据盘 。 卸载选中： 解除磁盘跟虚拟机的绑定，从而使用户数据盘进入脱机状态，此操作只针对联机的用户数据盘。 6.5 终端管理 终端管理主要是用于云教室的场景，通过终端管理，管理系统会把配置自动下发到终端而无需在终端手动改配置。\n点击列表上方的新增，进入新增环节，详细页面如下。\n6.6 云教室配置范例 6.7 云办公配置范例 6.8 使用AD用户数据库 6.8.1\t配置用户数据库 登录DoraCloud 选择”用户”-\u0026gt;“配置用户数据库”→选择“使用Microsfot Active Directory”选项，输入“域名称”，域管理员用户密码，新增域服务器IP地址。如下图\n6.8.2\t新增群组 选择 “用户”-\u0026gt;”群组”-\u0026gt;”新增”-\u0026gt;”查找群组”-\u0026gt;输入群组名称-\u0026gt;”查找”，选择域创建的安全组点击“添加”。如下图\n6.8.3\t新增用户 选择“用户”-\u0026gt;”用户列表”-\u0026gt;”批量新增”-\u0026gt;“查找用户”-\u0026gt;输入用户前缀 ，点击查询，选中创建的域用户点击“添加”。如下图\n6.8.4\t同步域用户 当配置了有效的域认证服务器时，【同步】按钮变为有效。点击【同步】按钮，DoraCloud会将本地存储的用户信息和域服务器同步，如果用户信息在域服务器上发生改变，DoraCloud会更新本地的用户信息；如果域用户在服务器上被删除，DoraCloud也会清理相应的本地存储的用户信息。在域用户数据库模式下，DoraCloud不存储用户的登录密码信息。\n在用户表和群组表格的“操作”列，提供了【编辑】和【删除】按钮，可以用于编辑和删除对应的用户或群组。如下图\n注意：\n删除用户是指删除DoraCloud本地缓存的域用户数据信息，不会删除域服务器上的用户账户，用户删除后，原先分配给该用户的虚拟机的分配状态为“无效”。 删除群组是指删除DoraCloud本地缓存的域群组数据信息，不会删除域服务器上的群组。\r7．桌面计算机管理 点击“桌面计算机”进入桌面计算机列表页面，如下图：\n桌面计算机列表中状态说明：\n准备启动： 创建桌面虚拟机的任务已经排队，等待执行。 正在创建： 正在采用克隆或者复制方式创建桌面虚拟机。 正在开机： 虚拟化管理系统（Hypervisor）正在对桌面虚拟机执行开机操作。 启动网络： 虚拟机内的Windows操作系统正在启动中，等待网络可用。 启动服务： 网络已经可用，等待RDP服务端口启用。如果是新创建桌面虚拟机，还要执行准备操作，包括：修改计算机名、加入域操作，都是在该状态下执行的。 正在运行： 桌面虚拟机进入运行状态，可以远程登录。 正在重启： 对桌面虚拟机进行重启动操作，可能正在重启，也可能重启任务被排队，等待重启。 准备关机： 对桌面虚拟机执行关机操作，可能正在关机，也可能是关机任务被排队，等待执行。 已关机： 桌面虚拟机已经关机。 服务中断： 桌面虚拟机的服务中断，需要管理员手工处理。 正在删除： 桌面虚拟机被标记为删除。删除任务正在排队，或者正在执行。 7.1 条件查询 桌面计算机列表支持条件查询，点击【查找】展开如下图所示的条件查询窗口，多个查询条件可以同时选择，DoraCloud会查询出满足全部查询条件的桌面计算机。\n7.2 桌面池统计 桌面池统计页面以表格的形式列举了DoraCloud系统中各桌面池的桌面虚拟机统计信息，在表头第一行，显示了全部桌面池的总的统计结果，管理员可以通过该列表，迅速了解当前桌面计算机的使用情况。其中：\n最大可创建： 指桌面池的“最大创建虚拟机数”属性值。 预创建： 指桌面池的“预创建虚拟机数”属性值。 已登录： 指已经启动并且被分配，当前时刻用户远程登录了的桌面虚拟机数量。 未登录： 指已经被分配，但当前没有用户登录的桌面虚拟机数量。 空闲： 指已经启动，当前没有被分配到的桌面虚拟机数量。 正在启动： 指正在创建的桌面虚拟机，包括新创建的桌面虚拟机和正在启动的空闲桌面虚拟机。 其它： 指当前处于不能使用状态的虚拟机，例如正在删除的虚拟机，服务中断的虚拟机等。 7.3 桌面计算机的操作 管理系统支持对单个进行开机、关机、重启、删除、还原、连接、还原等操作（不同状态的虚拟机显示操作不同），选中要进行操作的虚拟机，点击“操作”，见下图：\n注：如果虚拟机属于专用桌面，删除需要谨慎，删除虚拟机后虚拟机系统文件丢失。\n个别操作说明：\n连接： 弹窗输入windows管理员用户、密码会自动生成一个rdp连接文件、点击下载文件进入虚拟机里面。 还原: 此操作会把桌面虚拟机还原到初始状态。 7.3 桌面计算机批量操作 管理系统支持对多个操作进行批量操作，选择要操作的计算机，点击列表下方要进行的操作，弹窗点确定即可，下图以批量重启为例。\n注：如果选中的虚拟机中有一台不支持进行的操作，“操作”会自动变成灰色。\n8．系统功能 8.1 系统设置 系统设置子页面如下图所示，提供一系列的DoraCloud全局参数配置功能和系统级操作功能，主要包括：常规设置、集群管理、VNC设置、服务器容量计算参数设置、系统工具。\n8.1.1常规设置 常规设置功能区可设置：\n设置系统时间： 点击对应右侧的【设置】按钮保存新的日期和时间，DoraCloud会按新的日期和时间记录日志和时间。 服务器最大负载：指服务器容量的最大负载，缺省为80%，DoraCloud在服务器的CPU或内存占用率负载达到该阀值时，停止启动桌面虚拟机 最大并发启动桌面数：指DoraCloud最多一次向虚拟化平台提交的启动虚拟机请求的数量，默认10个。 用户连接保持时间：用户登录后登录页面退出保持时间，0为无限。 8.1.2 集群管理 集群管理中主要是针对集群设置浮动IP，设置页面如下图，设置完成后，通过浮动IP访问的服务器会一直是主节点，如果主节点在集群节点中漂移，浮动IP也会跟着漂移。\n8.1.3 VNC设置 VNC设置功能区如下图所示，管理员可以设置VNC相关的功能（当前只适用于XenServer平台）:\n桌面窗口截图功能： 用户登录时是否启动截取桌面缩略图功能，参考等5章桌面用户登录了解桌面缩略图功能。 窗口截图刷新频率： 当启动了桌面窗口截图功能时，设定窗口截图的刷新频率，缺省5秒刷新一次。 桌面自助维护功能： 是否允许用户通过VNC接入桌面虚拟机，设置了桌面自助维护功能，用户可以通过VNC远程连接桌面虚拟机。 VNC端口号：DoraCloud提供VNC服务器端口，对外提供桌面虚拟机的VNC接入功能，缺省为8081。 注意： VNC功能是提供给终端用户，在通过远程桌面协议不能登录桌面虚拟机时，临时接入桌面虚拟机进行桌面维护的手段，例如查看远程桌面接入的功能是否被关闭，系统长时间不能启动或关机时，查看进度等。管理员需要了解，当大量的终端同时启动使用VNC连接，会对DoraCloud服务造成性能压力。\n8.1.4 服务器容量计算参数设置 服务器容量计算参数设置功能区如下图所示，管理员可以设置DoraCloud系统中服务器容量的计算参数，主要是CPU和内存容量的计算参数：\nvCPU计算因子： 设置服务器物理CPU的单核支持的vCPU数量，如果物理CPU有超线程特性，就可以提供上限的处理能力；预留的CPU核个数：在计算系统总容量时，需要预留的CPU资源，缺省0.5个物理CPU核； 预留的内存容量： 在计算系统总容量时，需要预留的内存资源，缺省1024M字节： 内存放大因子： 服务器物理内存与虚拟机内存的折算系数（虚拟内存/物理内存）。该参数当前建议设置为1。 注意，服务器容量的计算方法为：\n服务器实际负载会在服务器的大图标上显示出来，同时DoraCloud管理系统会确保服务器实际负载小于等于“服务器最大负载”。如果实际负载接近最大负载，DoraCloud会停止创建或启动新的桌面虚拟机。 服务器实际负载计算举例：\n比如服务器的配置为 12个CPU，96GB内存。系统创建了2个虚拟机，规格为2个vCPU，2GB内存。容量计算参数采用系统缺省值。\n单个虚拟机的资源占比：MAX（2/（96-1）, 2/{（12-0.5）*5}） = 0.0348\n服务器的负载为：0.0348X 2 = 0.0696\n服务器的容量约为：7%\n8.1.5 系统工具 设置维护模式：设置系统进入维护模式，系统处于维护模式时，会停止执行后台的调度任务。\n导出数据：用于导出系统配置数据，用于系统升级或迁移。\n更改Admin密码：修改admin管理员登录密码。\n8.2 日志管理 日志管理子页面如下图所示，提供了导出系统调试信息的功能： 导出系统调试信息：系统默认保存30天的调试信息，支持按事件段导出调试信息，调试信息是当系统运行出现异常时，辅助维护人员排除故障的事件信息，导出的是csv格式的文本文件。\n8.3 License管理 License管理子页面如下图所示，包含了三个功能区：License文件信息、获取License文件、更新License文件。 License文件信息区域显示了当前系统License信息，DoraCloud安装后缺省带有试用版License授权，试用版授权不会对系统的功能做任何限制；用户在试用授权到期前，可以更新到商业授权。\n如果当前使用了商业版License，管理员可以点击“删除License”按钮，系统会把当前商业License替换成试用版License。\n注意：DoraCloud的商业License授权会和服务器硬件特征码绑定，如果用户更换了服务器硬件平台，可以先删除原商业License，启用试用版授权，在试用授权到期前重新申请商业授权。\n8.3.1 获取License文件 展开获取License文件页可以查看到license信息。 8.3.2 更新Licesne 更新License文件功能，用户按以下步骤更新License：\n加载License：点击【浏览】按钮，选择有效的License文件； 更新License：点击【更新License】，DoraCloud将上一步加载的License文件替换系统现有的License。 8.4 桌面云网关 如DoraCloud桌面管理系统可以结合DoraCloud的桌面网关产品，实施跨网络的远程桌面安全访问。详情说明请参考《DoraCloud桌面云网关指南》。\n8.5 升级和补丁 如下图 所示，DoraCloud桌面管理系统可以通过补丁包的形式，对系统进行缺陷修复。管理员通过上传补丁文件，系统自动完成补丁升级并且重启DoraCloud虚拟机。\n9．事件管理 9.1 事件查询 DoraCloud支持按条件显示指定类型的事件，如下图所示，指定按事件主体类型显示，包括：桌面、模板和服务器3种类型；也可以指定按事件级别显示，包括：普通、错误、警告和任务4种级别。\n9.2 事件详情 选中要查看的事件，点击状态内容，会弹出事件详情。\n9.3 事件导出 点击事件列表下方的导出，弹窗中输入起止时间可以导出事件内容\n10 集群的操作 详情请参考 配置对等集群.\n11 AD 详情请参考 启用AD域管理.\n12 网关 详情请参考 配置桌面云网关.\n13 补丁升级 如下图 所示，DoraCloud桌面管理系统可以通过补丁包的形式，对系统进行缺陷修复。管理员通过上传补丁文件，系统自动完成补丁升级并且重启DoraCloud虚拟机。\n14 授权 授权主要是分为两步\n第一步：获取本地特征码，发送给厂商。在“系统”-\u0026gt;\u0026ldquo;License管理中\u0026rdquo;-\u0026gt;\u0026ldquo;展开获取License文件\u0026rdquo;,复制本地特征码给厂商，如下图：\n第二步：更新厂商提供的licnese文件，用户按以下步骤更新License\n加载License：点击【浏览】按钮，选择有效的License文件； 更新License：点击【更新License】，DoraCloud将上一步加载的License文件替换系统现有的License。 15 备份恢复 15.1 模板备份 模板备份是指备份DoraCloud的桌面模板镜像文件；备份模板的步骤包括：\n第一步，在模板属性窗口中，获取模板文件的名称。\n第二步，在虚拟化管理系统中，导出相应的模板，并保存。请参考XenCenter、VMWare vSphere Client和Hyper-V Manager了解各种虚拟化平台的导出模板操作。\n15.2 模板导入 模板导入，是指管理员重新安装DoraCloud虚拟桌面系统（包括重新安装虚拟化平台）时， 利用备份的模板镜像文件，快速制作DoraCloud模板；模板导入的步骤包括：\n第一步，在虚拟化管理系统中，导入备份的DoraCloud模板文件。请参考XenCenter、VMWare vSphere Client和Hyper-V Manager了解各种虚拟化平台的模板导入操作\n第二步，请参考本手册关于DoraCloud创建模板快速流程的相关说明，执行快速模板制作流程。\n15.3 导出数据 导出数据是指将DoraCloud当前的数据库数据，以文件的形式保存，一般用于系统迁移前的数据准备，参考本手册第7章了解系统迁移。导出系统数据的步骤如下：\n第一步：在一台PC主机运行浏览器，打开DoraCloud的系统管理页面。\n第二步：在系统工具栏，点击【设置维护模式】按钮，让系统进入维护模式。\n第三步：在系统工具栏，点击【导出数据】按钮，将数据文件保存到PC主机。 第四步：在系统工具栏，点击【退出维护模式】按钮，让系统回到工作模式。\n16系统迁移 系统迁移是指原DoraCloud虚拟机的管理功能，需要被新的DoraCloud虚拟机替换的时候，实施的维护任务。系统迁移是指同一台服务器上两个DoraCloud虚拟机之间的管理功能迁移，不支持跨服务器的DoraCloud虚拟机之间的迁移。\n管理员按照以下步骤实施系统迁移：\n参考本手册15.3节所述，在原DoraCloud系统，执行“导出数据”操作，得到系统数据文件。 启动新（版本）的DoraCloud虚拟机，在系统初始化导航窗口，点击【执行系统迁移】，进入系统迁移任务导航。 系统迁移包含四个步骤：\n1、导入数据：管理员需要根据提示完成信息确认，选择需要导入的数据文件。该数据文件是从原DoraCloud系统上导出的，包含被导出时刻的系统配置数据、状态数据、日志和事件数据。\n注意：如果系统提示导入数据失败，请检查DoraCloud版本的兼容性，数据文件的完整性。\n2、修改配置：主要是完成新的DoraCloud虚拟机的网络配置，确保和被迁移的原DoraCloud虚拟机保持一致，包括IP地址、网络高级配置以及DHCP的MAC地址绑定等。\n注意：当前DoraCloud系统的IP地址被修改后，管理员需要使用新的IP地址，重新登录 DoraCloud，会回到修改配置阶段。完成其它信息项确认后，点击【下一步】。\n3、完成迁移：提示用户为了确保迁移后的系统能正常运行，需要完成的各项任务：对于原DoraCloud虚拟机需要确保它不会被重新启用；新的DoraCloud虚拟机需要退出维护模式才能正常提供服务。\n注意：在系统迁移过程中，点击导航窗口的【取消迁移】，当前DoraCloud虚拟机回到未初始化状态。\n4、退出维护模式: 在系统-》系统设置-》系统工具中，点击【退出维护模式】进入工作状态。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/doraosguide/",
+    "title": "DoraOS用户手册",
+    "description": "本手册是朵拉云瘦客户机软件系统 DoraOS 的用户手册，描述了 DoraOS 的安装和使用。",
+    "content": "1. DoraOS简介 DoraOS是朵拉云科技开发的瘦客户机软件系统。DoraOS支持ARM和x86处理器架构，朵拉云的云终端预装了DoraOS瘦客户机软件系统。DoraOS也提供x86架构的独立安装的版本，支持将x86电脑转化为专业的瘦客户机系统。\nDoraOS支持Deskpool、RDP、SPICE、oVirt、Citrix Receiver、VMware View、华为HDP等桌面连接。 DoraOS支持的常见的x86处理器包括：1037U、J1900、J1800、J3160、I3/I5/I7…等。\nDoraOS的x86版本基于CentOS 7开发。由于CentOS停止支持，最新的DoraOS版本（信创版）基于OpenEuler版本开发，满足信创要求。\n1.1 DoraOS的用户界面 DoraOS的主界面为配置中心(Control Center)。用于管理员对云终端进行管理和配置。 DoraOS还设计了连接窗口，供终端用户使用。避免用户修改终端配置。 启用连接窗口的方法是：进入【显示设置】，勾选【启动用户连接窗口】。然后关闭配置中心，这时会出现连接窗口。\n在【系统】【操作】【设置密码】中，设置管理员密码。 当管理员设置了管理密码后，云终端的使用者只能访问连接窗口，进行桌面连接和终端关机操作。如果需要进入配置中心，需要输入管理员密码。\n1.2 DoraOS支持的连接类型 DoraOS支持的连接类型参见如下界面截图：\nDoraOS的信创版本的配置中心界面如下，可以看到增加了对天翼云电脑、移动云电脑的支持。\n1.3 DoraOS的版本和授权 DoraOS 包括免费版本和标准版本。\nDoraOS免费版本 ：仅仅支持RDP和VNC协议。不支持USB重定向。不开放管理终端管理接口，不支持配套的管理软件。\nDoraOS标准版 ：支持全部协议。 支持配套的管理软件。\n2. DoraOS安装 2.1 下载DoraOS安装文件 进入朵拉云官网，或者联系朵拉云技术人员，购买或使用下载DoraOS系统。\nhttps://www.doracloud.cn/downloads/doraos.html\n最新的信创版本DoraOS https://www.doracloud.cn/downloads/doraos_xc.html\n2.2 制作DoraOS启动U盘 1）使用UltraISO制作启动盘\n2)单机文件文件，打开，选择刚刚下载的DoraOS系统：\n3)点击启动，下拉菜单中点击写入硬盘镜像：\n2.3 安装DoraOS瘦客户机系统 1)将做好的启动盘，设置好BIOS启动方式（注意不要用UEFI模式启动），首先看到的是这样的，直接回车继续下一步\n2)进入配置页面，需要选择磁盘，对磁盘进行分区。鼠标点击红色箭头位置，进入磁盘分区\n3)磁盘选择，系统安装会对磁盘格式化，注意选择好磁盘。\na：选择磁盘\nb：选择手动分区（自动分区是左边选项，选择自动分区的话可以跳过第2.3步建立分区步骤）\nc：选择Done\n4)建立分区\n选择标准分区\n5)添加启动分区/boot 1G 和根分区 / 6G\n注意：如果系统为UEFI模式启动，建议的分区方案为 /boot/efi 200MB，/boot 1G， 根分区 / 6G 。\n6)点击 Accept change\n7)点击begin installation 继续完成安装\n8)配置完成，第三步是安装软件，需要等待20分钟左右。\n9)系统安装完成后需要手动重启。\n系统重启后可以免费试用30天，如需要激活系统请联系深圳市朵拉云科技有限公司www.doracloud.cn获取激活码。看到下图信息，说明DoraOS系统安装成功。\n3.DoraOS 的使用 3.1 DoraOS的激活 安装完成后，点击小齿轮图标后，在左侧列表点击 \u0026ldquo;系统\u0026rdquo;-\u0026ldquo;操作\u0026rdquo;-\u0026ldquo;注册\u0026rdquo;\n在弹出的激活窗口输入激活码即可完成激活，如图\n3.2 修改语言和分辨率 在显示设置中分辨率调整为 \u0026ldquo;Auto\u0026rdquo; 选项，语言选择 \u0026ldquo;中文\u0026rdquo; 模式。\n3.3 配置网络和诊断 在网络设置中配置网络。\n网络配置完成后，在网络诊断中，测试配置的网络，保证跟服务器的是可以ping通的。\n3.4 配置桌面连接 3.4.1 配置Deskpool连接 点击【添加 Deskpool 连接】，可以设置一个 Deskpool 连接，如下图所示：\n连接名称：唯一标识该连接，不能重名。\n服务器地址：远端 Deskpool 服务器的 URL 或者 IP 地址。\n用户名：Deskpool 桌面虚拟化平台用户账户。\n密码：Deskpool 桌面虚拟化平台用户的登录密码。\n补充说明：\n在 Deskpool 登录界面或者用户界面，按 F6 可以返回到配置中心界面。\n连接到远程 Windows 桌面后，可以按 Shift+F12 快捷键断开连接，回到Deskpool 用户界面。\n3.4.2 配置RDP连接 点击【添加 Microsoft RDP 连接】，可以设置一个 RDP 连接，如下图所示：\n连接名称：唯一标识该连接，不能重名。\n服务器地址：远端的 Windows 主机或虚拟机的 IP 地址。\n用户名：远端 Windows 主机的用户账户。\n密码：远端 Windows 主机的登录密码。\n域名：如果是域用户账户，填写域信息。\n补充说明：\n远端 Windows 主机需要开启远程桌面功能，如果远端 Windows 主机开启了网\n络身份认证的远程桌面，需要在“选项”中选择对应的设置。\n每个 RDP 连接，都可以通过“选项”和“体验”页面设置多种连接特性。\n连接到远程 Windows 桌面后，可以按 Shift+F12 快捷键断开连接。\n部分型号支持 Microsoft RDS 连接类型，请参考微软的 RDS 产品说明。\n3.4.3 配置VMware连接 点击【新增 VMware View 连接】，可以设置一个 VMware View 连接\n连接名称：唯一标识该连接，不能重名。\n服务器地址：VMware View 登录服务器 URL 或 IP 地址。\n用户名：VMware View 桌面虚拟化平台的用户名。\n密码：VMware View 桌面虚拟化平台的用户登录密码。\n桌面：VMware 用户登录成功后，自动连接的桌面的名称。\n补充说明：\n在 VMware View 客户端，点击“关闭”菜单，可以返回到配置中心界面。\n连接到远程Windows桌面后，可以Windows桌面的开始菜单选择“断开连接”，返回 VMware View 客户端界面。\nVMware View 客户端的详细使用说明请参考思 VMware 方材料。\n3.4.4 配置Citrix连接 点击【新增 Citrix Receiver 连接】，可以设置一个 Citrix HDX 连接\n连接名称：唯一标识该连接，不能重名。\n网址：远端 Citrix 登录服务器的 URL 或者 IP 地址。\n用户名：Citrix 桌面虚拟化平台的用户名。\n密码：Citrix 桌面虚拟化平台的用户登录密码。\n补充说明：\n在 Citrix 登录界面或者用户界面，按 F6 可以返回到配置中心界面。\n连接到远程Windows桌面后，可以Windows桌面的开始菜单选择“断开连接”，返回 Citrix 桌面虚拟化平台的用户界面。\nCitrix Receiver 是思杰虚拟桌面解决方案的客户端，详细使用说明请参考思杰官方材料。\n3.4.5 配置华为HDP连接 点击【添加 HDP Client 连接】，可以设置一个 HDP Client 连接\n连接名称：唯一标识该连接，不能重名。\n网址：远端 HDP 登录服务器的 URL 或者 IP 地址。\n用户名：HDP 桌面虚拟化平台的用户名。\n密码：HDP 桌面虚拟化平台的用户登录密码。\n补充说明：\n在 HDP 登录界面或者用户界面，按 F6 可以返回到配置中心界面。\n连接到远程 Windows 桌面后，可以按 Shift+F12 快捷键断开连接，回到Deskpool 用户界面。\n3.5 系统重启、关机、开机 按 Shift+F12 快捷键断开连接，回到Deskpool 用户界面，右侧电源按钮，点击提示“重启”、“关机”。\n3.6 系统参数和配置 3.6.1 系统参数信息 右侧菜单，点击系统，可查看系统参数信息，包含硬件信息，和系统信息。\n2.6.2 系统亮度 在\u0026quot;系统\u0026quot;菜单，选择\u0026quot;显示器\u0026quot;，可调节显示器的亮度。\n3.6.3 音量和麦克风 在\u0026quot;系统\u0026quot;菜单，选择\u0026quot;声音\u0026quot;，可调节显示器的亮度。\n3.6.4 设置管理密码 设置管理密码，以及登录界面 输入管理密码。\n3.6.5 系统日志 3.6.6 恢复出厂设置 3.6.7 修改系统时间 4.DoraOS常见问题 4.1 找不到可用的资源 在此情况下，请检查服务器的桌面池中是否资源有空闲的桌面。\n4.2 找不到服务器 检查网线是否插好，确认网线正确连接后。检查服务器地址，网关等是否输入正确\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0006/",
+    "title": "KB0006.如何通过云终端的共享打印机",
+    "description": "如何通过云终端的共享打印机
+",
+    "content": "DoraCloud云终端内置打印服务器程序，可以通过高层重定向进行共享打印。\n安装的大致步骤如下：\n第一步、首先把云终端设置成固定IP地址，并把打印机通过USB接口与云终端进行连接。打印机通电。\n本文操作的云终端的固定IP地址配置成了192.168.1.151。 云终端打印服务的web管理地址为 http://192.168.1.151:631 。\n第二步、然后登陆云桌面，在windows内通过浏览器配置云终端的打印机。把打印机类型选择为 RAW，并且勾选允许共享。 记录打印机的 URL 地址。\n浏览器访问云终端打印机服务的后台 http://192.168.1.151:631， 选择添加打印机 选中云终端识别的打印机，类型为HP LaserJet Professional P1108 勾选 Share This Printer，然后继续 接下来注意，制造商选择 RAW 。表示透传打印机。然后添加打印机。 点击进入添加成功的打印机 HP_LaserJet_Professional_P1108 ，进入打印机页面。 最后我们这个打印机的页面地址（URL)复制下来。用于后续打印机的添加。 第三步、在Windows内安装打印机驱动。安装驱动后，打印安装程序会提示检测打印机的USB，这时可以退出。 启动已经安装成功。 第四步、通过Windows的添加网络打印机功能，添加打印机的URL。更具打印机的型号，选择正确的打印机的厂家和类型。即可完成打印驱动完成。\n在控制面板中，添加打印机，选择网络打印机，然后选择“我需要的打印机不在列表中”。 粘贴第二步获得的打印机的URL。 选择正确的打印机厂家和型号，然后打印机就添加完毕。 可以 测试一下打印。以确认打印机安装成功。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/installation-upgrade/sharestation/",
+    "title": "ShareStation工作站虚拟化部署",
+    "description": "ShareStation是朵拉云推出的工作站虚拟化方案。 本文描述了利用DoraCloud桌面虚拟化系统和Proxmox虚拟化平台部署ShareStation工作站虚拟化方案的过程。
+",
+    "content": "ShareStation®是朵拉云科技针对设计行业推出的高性价比3D桌面方案。ShareStation可以让工作站虚拟化后分配给多个用户使用。ShareStation®方案包括设计工作站、高性能云终端和DoraCloud桌面云软件。ShareStation可以为企业的设计人员提供虚拟的工作站，确保企业信息安全，并且支持远程设计和办公。\nProxmox virtualization environment，简称PVE，是一个开源免费的基于linux的企业级虚拟化方案，功能不输专业收费的VMware。简单的说，PVE是一个基于Debian的linux系统，内置了一套虚拟机管理工具，并提供了web管理页面，让我们可以非常简单的通过网页管理虚拟机。\nDoraCloud是一套多平台、一体化、分布式的桌面虚拟化方案。基于开放架构，支持多种虚拟化平台（Hyper-V，VMware，Proxmox，XenServer），多种桌面协议（RDP，PCoIP，SPICE）。采用All-in-One的设计模式和虚拟设备的部署方式。\nNVIDIA Tesla P4单精度运算能力将达到5.5FLOPS，每秒可进行22万亿次计算，其拥有2560个流处理器，搭配8GB GDDR5显存。\n准备条件 1、一台Dell T3640 工作站，配置 i7-10700，64G， 1TB SSD， Tesla P4卡。 2、一个启动U盘。 3、网络内有DHCP服务。\n本文描述在ShareStation工作站虚拟化方案的部署过程。 将服务器上部署 Proxmox、DoraCloud，并创建带有vGPU的虚拟桌面。\n1、下载安装Proxmox 7.4.1 推荐中科大（ USTC）的源下载 ISO。\nhttps://mirrors.ustc.edu.cn/proxmox/iso/\nU盘启动制作工具推荐 Rufus 或者 Ventoy。entoy作为新一代U盘启动工具，不需要反复对U盘进行格式化。只需要把ISO拷贝到Ventoy制作好的U盘上即可。\n工作站开机，按F12，选择U盘启动，进入Ventoy启动菜单。选择Proxmox VE 7.4.1 的ISO镜像启动。进入Proxmox的安装过程。\n2、安装显卡驱动，并部署DoraCloud桌面管理系统 1）修改Proxmox的安装源，并执行更新。安装 pve-headers、dkms等包。\ncurl -o- http://www1.deskpool.com:9000/software/gpu01.sh |bash\n2）启动IO-MMU\ncurl -o- http://www1.deskpool.com:9000/software/gpu02.sh |bash\n执行脚本后，会自动重启服务器。\n3）安装nvidia vGPU显卡驱动。\nNVIDIA vGPU的驱动有两个选择，以下脚本安装GRID 16.2(-535.129.03)的驱动\ncurl -o- http://www1.deskpool.com:9000/software/gpu03f.sh |bash\n以下脚本安装 GRID 13.6 ( 470.161.02)的驱动。\ncurl -o- http://www1.deskpool.com:9000/software/gpu03e.sh |bash\n执行脚本后，会自动重启服务器。\n4）安装DoraCloud 管理系统\n可以使用官网的在线安装脚本安装\ncd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl\n重启完毕后，然后浏览器登录 DoraCloud 管理后台，输入 账号 admin DoraCloud，登录后台。\n根据配置向导，完成DoraCloud的初始化配置。\n接下来，我们下载支持vGPU的桌面模板。 win10LTSC2019GPU。 然后创建桌面池，选择 win10LTSC2019GPU这个模板。 GPU型号选择 NVIDIA P4，vGPU类型选择 GRID P4-1Q\n配置桌面池内创建4个桌面。然后设置桌面池的绑定账号为 administrator 123456 。这样账号是windows7x64模板的Windows 账号。\n启用绑定账号后，终端可以识别这个绑定账号，登陆桌面windows。 桌面创建完毕后，可以在PVE中查看桌面虚拟的硬件配置，确认桌面虚拟机正常配置了 PCI device。\n接下来回到DoraCloud管理后台，添加用户，为用户分配桌面池。\n5、登录桌面，验证vGPU效果 DoraCloud有多种登录方式，我们选择网页登录DoraCloud，输入用户账号 user01，密码123456。 然后打开一个 RDP 文件，输入管理员账号 administrator 123456，即可登录 windows 桌面。\n进入桌面后，通过dxdiag，查看系统的显卡，显示为 NVIDIA GRID P4-1Q。\n接下来，可以进行3D性能的测试了。 推荐两个在线测试的网站。\n基于WebGL的水母 https://akirodic.com/p/jellyfish/\n基于WebGL的网页游戏　https://www.crazygames.com/\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/installation-upgrade/cloud-classroom/",
+    "title": "云教室部署安装指南",
+    "description": "本文以部署30用户云教室为范例，描述了朵拉云科技云教室的安装过程。本文档适用于使用朵拉云Deskpool桌面虚拟化系统部署云教室、电子阅览室、电子会议室等应用场景
+",
+    "content": "1. 概述 本文以部署30用户云教室为范例，描述了朵拉云科技云教室的安装过程。本文档适用于使用朵拉云Deskpool桌面虚拟化系统部署云教室、电子阅览室、电子会议室等应用场景。\n1.1 云教室构成 一个30用户云教室的组网如下图： 云教室硬件包括：\n30台学生机（云终端，显示器，键鼠）\n1台教师PC机\n一台服务器\n一台交换机\n一台路由器\n云教室的软件系统包括：\n朵拉云Deskpool桌面虚拟化系统。部署在服务器上。\n多媒体教学软件。部署在教师PC上。\n一个典型的30用户的云教室的配置清单如下：\n序号 产品名称 规格 数量 单位 1 服务器 CPU：E5-2620V42\n内存：128GB(16GB DDR4 * 8)\nSSD：240GB * 1 [Intel S4500/S3520]\n硬盘：2TB 7.2K * 1\n网卡：GE4\n电源：双电源 1 台 2 桌面云软件 朵拉云 Deskpool标准版：支持公用桌面、专用桌面； 30 用户授权 3 瘦终端 朵拉云 云终端 JC10, ARM 4核2.0Ghz/1G/4G;1000M RJ45;3.5mm音频input/output;5*USB2.0;三年质保;多协议\n配套显示器、键盘、鼠标。 30 台 4 教学软件 多媒体电子教学软件，支持屏幕广播，学生演示，文件收发，分组教学，作业提交 1 套 5 教师机 I3、4GB内存、500G硬盘、19寸显示器 1 台 6 交换机 48口千兆交换机 1 台 7 路由器 路由器，待机量在50-100用户 1 台 1.2 云教室配置规划 在开始云教室配置前，需要先做好配置的规划。云教室配置规划包括：网络规划、模板规划、其他规划。\n网络规划定义了云教室的组网，主要参考用户单位的网络管理员的意见。\n模板规划定义了云桌面使用的操作系统版本和应用软件清单，由云教室的用户需求决定。\n其他规划定义了桌面池、用户、终端的编号和配置策略，方便云教室的管理员进行日常管理。\n【网络规划】\n一个教室的云终端、虚拟桌面、教师机必须在同一个局域网，并位于同一个VLAN内。以便进行教学广播。 网络内的IP地址推荐采用DHCP动态分配。建议的DHCP IP地址池设置为学生数目的3倍。DHCP的周期，建议配置为30-60分钟。并且DHCP Server支持原IP地址续约。以免IP变化引起连接中断的问题。比如：30用户云教室，终端需?要30个地址，桌面虚拟机需要30个地址，再预留30个地址，作为备用。这样在重建桌面时有足够的空闲IP。 预留2个静态IP地址，分别留给物理服务器的Windows Server和 Deskpool管理系统。静态IP不应该出现在DHCP的IP地址池中。 在开始 Deskpool 软件安装前，请务必确认网络已经配置好，并且开启了DHCP服务。\n请就上述网络规划问题与云教室的管理员以及网络管理员沟通，并填写《云教室规划表》的相应内容，参见下图红框内的内容。\n【模板规划】\n模板规划是确定桌面模板的Windows操作系统版本，以及应用软件的清单。一个云教室可以有多个桌面模板。\n本文档作为范例的模板为Windows 7 64位操作系统，安装的应用软件有：Office、QQ、极域学生端。\n【其他规划】\nDeskpool桌面云系统中还有其他一些配置，包括桌面池、用户、缺省账号等。这些规划可以使用缺省配置，或者根据管理员的要求调整。下表是本文使用的云教室规划表。\n1.3 云教室部署前准备工作 在云教室部署过程中，需要准备一台笔记本电脑，最好有互联网连接，以便于朵拉云科技工程师进行远程协助的部署。\n在您开始云教室的软件部署前，需要检查【硬件准备】、【软件准备】、【网络准备】已经准备就绪。\n1.3.1 【硬件准备】 完成服务器的硬件安装。如果服务器放置在教室内，服务器与学生机（云终端、显示器）能够分别开关机。避免下课时关学生机，服务器也被断电的情况出现。 完成云终端的硬件安装。含显示器、键盘、鼠标的硬件安装。 完成教师机硬件安装，教师机预装了Windows操作系统。 一台笔记本电脑用于调试，一个空闲的U盘，容量在8G以上。 确认服务器的硬件配置足够满足30用户的云教室需求。\n30用户按照人均4G内存规划，典型硬件配置为： 内存： 128GB\nSSD ： 480G Intel S45xx/S35xx 企业级固态盘\nHDD ： 2TB SATA或者SAS\n1.3.2 【软件准备】 服务器虚拟化\n推荐使用 Windows Server 2012R2 或者 Windows Server 2016标准版\n下载mini迅雷\n使用迅雷下载Windows Server 2012R2\ned2k://|file|cn_windows_server_2012_r2_x64_dvd_2707961.iso|4413020160|010CD94AD1F2951567646C99580DD595|/\u0026gt; 下载Windows USB/DVD Download Tool\nWindows预安装脚本Pre-Setup\n驱动程序\nWindows Server必须安装硬件原厂的主板驱动程序和网卡驱动程序。\nDell R730 驱动 http://www1.deskpool.com:9000/software/R730Driver.zip\n如果是Dell R730服务器，我们建议您更新RAID卡的固件，并安装最新的RAID卡驱动程序。如果RAID卡固件与驱动程序版本不匹配，会出现磁盘IO错误的告警。在Dell R730服务的iDrac系统中，检查相关告警提示。\n兼容服务器驱动（E5-2600V3/V4系列，Intel网卡 I350 或者 I250网卡）\nhttp://www1.deskpool.com:9000/software/IntelDriver.zip\n也可以去Intel 官网下载服务器主板驱动\nhttps://downloadcenter.intel.com/download/28531\nIntel的网卡驱动链接如下：\nhttps://downloadcenter.intel.com/download/23073/Intel-Network-Adapter-Driver-for-Windows-Server-2012-R2-?product=36773\n桌面虚拟化\nDeskpool for Hyper-V V3.2下载\n云终端管理\nThinClientManager下载\n教学软件\nVDClass多媒体教学软件\n教学软件\n极域多媒体电子教室软件 请从附带的光盘下载安装程序\n桌面模板\nDoraCloud支持在线模板仓库。 如果项目现场不具备在线下载模板的条件，可以事先下载模板，到现场从本地恢复桌面模板。 模板的离线恢复方法参见\nhttps://docs.doracloud.cn/operation-maintenance/kb0007/\n应用软件\n具体请咨询用户的云教室管理员\n请云教室的管理员提供所需应用软件的安装程序 1.3.3 【网络准备】 将服务器、教师机、所有的云终端与交换机连接。 如果配置有路由器，将路由器的LAN口与交换机连接，并按照规划表的要求，设置路由器的LAN网络地址为：192.168.5.1；LAN网络内启用DHCP服务，IP地址范围为192.168.5.20-192.168.5.250，DHCP分配的网关为 192.168.5.1，分配的DNS为192.168.5.1。 路由器的WAN口，根据云教室的联网要求进行配置，比如设置为PPoE拨号到运营商的网络，或者DHCP Client模式直接接入校园网。 参见下图左侧。\n如果用户单位的网络可以在路由器或者三层交换机为云教室划出一个VLAN和子网，则直接把云教室配置的交换机与上行的端口连接。根据本文的规划，需要用户单位的管理员在上级网络设备上划出一个VLAN，并配置网关为192.168.5.1。 DHCP可以由上级交换机（路由器）提供。参见上图右侧。\n如果单位的网络可以提供VLAN和子网，但是不愿意为云教室启用DHCP，我们可以在服务器上启用DHCP服务。具体参见2.7节。还有一些云教室要求使用静态IP分配方式，具体参见TBD2。 将笔记本有线网口与交换机连接，有线网卡配置成DHCP。如果云教室的网络不能连接互联网，建议将笔记本通过手机热点连接互联网，以便于远程协助进行云教室的调测。如下图\n我们在笔记本上检查一下，是否获取到地址段为192.168.5.x动态IP地址。然后ping一下网关地址 192.168.5.1。如果云教室的网络可以连接互联网，ping一下 baidu.com，确认互联网连接正常。 如果云教室的网络不能连接互联网，请开启手机热点，笔记本通过手机热点联网，以便于远程协助进行云教室的部署。\n★注意1：开始部署前，请确保已经按照云教室的网络规划，预留了网段和IP资源，并开启DHCP服务。\n★注意2：为了提高远程支持的效率，请务必准备好互联网连接，以便于朵拉云工程师远程协助部署。 1.3.4 开始云教室的安装之旅 如果您已经确认按照上述要求完成了【硬件准备】、【软件准备】、【网络准备】，您可以开始下一步的安装过程。\n朵拉云云教室的安装过程包括以下几个环节，各环节的大致耗时如下表。\nID 内容 耗时 章节 备注 1 Windows Server 2012R2系统的安装 10分钟 第2章 2 安装Deskpool桌面虚拟化系统 5分钟 第3章 3 恢复备份档案 10分钟 第4章 4 编辑模板 不确定 第5章 在模板中安装应用软件是管理员例行维护工作之一。\n我们建议现场部署人员与云教室管理员一起安装应用软件。 5 配置桌面池 20分钟 第6章 正常情况下，10分钟可以创建30-60个桌面。 6 增加用户和终端自动配置 3分钟 第7章 7 安装教师机 5分钟 第8章 8 系统测试 30分钟 9 用户培训 120分钟 2. Windows Server 2012R2系统安装 安装Windows Server前，需要对服务器完成如下配置：\n在服务器的RAID卡中，把SSD硬盘设置成直通模式。HDD硬盘也建议配置成直通。如果有两块HDD，则配置成RAID1模式。 RAID卡中，把HDD硬盘设置为启动盘。如果不确定第一启动盘是HDD还是SSD，可以把SSD拔出后安装Windows。安装完毕再插入SSD硬盘。避免出现引导区在SSD盘，但是Windows系统安装在了HDD的情况。 建议把服务器的BIOS中设置为最大性能模式（CPU Power Management ：Maximum Performance） 建议更新服务器的BIOS和硬件的固件为最新版本。 建议配置服务器的远程管理。比如Dell服务器为iDrac系统。HP服务器为iLO系统。便于后续进行服务器远程维护。具体的配置，请参考服务器相关资料。 Windows Server 2012R2的安装要求如下：\nHDD盘作为启动盘，划分200GB空间，安装系统(C盘)，剩余空间划分为E盘。SSD划分为D盘。 必须安装服务器厂家提供的主板驱动、网卡驱动。推荐安装RAID卡驱动。 安装Hyper-V角色，创建外部虚拟交换机连接当前网卡，并把虚拟交换机命名为 vswitch。 安装Windows Server 2012R的更新，并把更新配置为：“自动下载，但是让我选择是否安装更新” 配置Windows Server的静态IP地址。 关闭“IE增强的安全配置”，以便IE浏览器能够正常访问 Deskpool。或者您可以选择安装 Chrome浏览器，或者Firefox浏览器，用于对Deskpool系统的管理。 最后强调一下，请勿使用激活工具或者破解工具对Windows Server进行破解或者激活。这类工具多带有病毒或者木马，会影响Windows Server运行的稳定性。我们推荐您购买正版Windows Server授权，或者使用免费的Hyper-V Server 2012R2、Hyper-V Server 2016作为服务器虚拟化系统。Hyper-V Server的安装，可以参考朵拉云官网技术支持板块的相关内容。\n如果您的项目购买了【朵拉云科技云教室的远程部署服务】，您可以在完成本章节内容后，请求朵拉云科技的工程师进行远程安装部署工作。远程部署时间约为1-2小时。\n下面描述实现上述要求的详细的安装过程。\n2.1 制作U盘启动盘 首先安装Windows USB/DVD Download Tool。安装时，如果提示需要 .NET Framework2.0，请在Windows的程序和功能中开启 .NET 2.0。\n启用Windows USB/DVD Download Tool程序，选择Windows Server 2012R2的ISO。\n然后选择U盘。\n确认U盘数据可以被删除后，即开始Windows Server启动U盘的制作。\n制作完成后拔出U盘，用于服务器的安装。\n除了使用本文推荐的工具，还可以使用UltraISO制作U盘，以及Rufus工具制作U盘。\nUltraISO 的下载位置 https://cn.ultraiso.net/\nRufus下载位置： http://rufus.ie/\n需要说明一下，UltraISO制作Windows Server 2016启动U盘会出错。原因是有个文件超出了4G，无法保存在FAT32文件系统中。\n另外，不要使用其他一些U盘制作工具制作U盘启动。有些工具制作的U盘启动会篡改IE启动选项，植入广告或者木马，存在技术风险。\n2.2 安装windows Server2012 R2 插入U盘，启动服务器。 按“启动选择”热键（F7，不同服务器可能有所不同，大致在F7，F9，F11，F12这几个功能键）选择U盘启动，如图所示。 选择安装语言，时间和键盘输入法。如图所示。\n选择带GUI的标准版的Windows Server 2012 R2，如图所示。\n接受协议，如图所示。\n选择自定义安装，如图所示。\n新建200GB分区，选择主分区。如图所示。\n开始安装，大约3~5分钟，安装过程会自动重启，如图所示。\n设置管理员账户密码（请根据云教室规划表中的账号信息填写），如图所示。\n2.3 设置Windows 磁盘分区 进入磁盘管理。如图所示。如果“系统保留”出现在了SSD盘，则属于安装错误。 把HDD硬盘剩余的空间分区为 E盘。\n把SSD硬盘配置为D盘。\n2.4 执行Windows Server预设置脚本 我们提供了Pre-Setup.PS脚本，完成如下工作：\n安装 Windows Server的Hyper-V角色，安装后服务器会自动重启。 Windows Server上启用远程桌面服务（RDP服务），并开启RDP（3389端口）的防火墙 远程桌面服务启用网络级安全认证（NLA） 在桌面创建 Hyper-V Manager 的快捷方式 配置Windows更新为自动下载，手工启用 禁用浏览器的增强安全特性\n由于安装Hyper-V角色后，服务器会自动重启，脚本的执行会中断。重启后需要再次运行该脚本。\n为了便于您了解上述修改的作用，我们给出手工修改上述配置的界面，供核对和检查。\nHyper-V角色\n远程桌面服务\nHyper-V 管理器快捷方式\nWindows更新的配置，建议安装一下Windows的补丁。\n关闭管理员的IE增强安全特性\n2.5 修改服务器IP地址 在服务器右下角右键点击网卡，选择“打开网络和共享中心”，选择网卡属性，Internet协议版本4，在TCP/IPv4属性对话框中设置服务器的静态IP。\n设置完毕后，可以ping 一下网关 192.168.5.1，以及互联网是否可以访问（比如ping baidu.com）\n2.6 安装服务器硬件驱动（网卡、主板、Raid卡） 2.6.1 Dell R730驱动安装 下载R730Driver.zip驱动包，解压，可以看到如下文件\n分别是显卡驱动、主板驱动、网卡驱动、iDrac本地管理程序、Raid卡驱动程序。驱动的安装过程不详细介绍了。\n在此提示一下，Dell R730的Raid卡（H330、H730）的固件和驱动存在匹配关系。如果版本不匹配会导致存储工作不稳定。可以通过iDrac管理系统查看到这些告警信息。\n2.6.2 其他服务器驱动安装 如果服务器厂家提供了驱动程序，请安装厂家提供主板驱动、网卡驱动。 如果找不到厂家的驱动，可以下载 IntelDriver.zip，解压。分别安装网卡驱动、主板驱动。其中的网卡驱动适用于 Intel I350,I250网卡。 驱动的安装过程不再详细介绍。\n2.7 【可选】在Windows Server上开启DHCP服务 如果云教室的网络设备无法提供DHCP，可以在Windows Server上添加 DHCP服务角色。通过Windows Server启用DHCP服务。 1、在Windows Server中，依次选择“服务器管理”、“添加角色和功能”、勾选“DHCP服务器”、“添加功能”，完成“DHCP服务器” 角色的安装。\n2、在服务器管理器中，点击DHCP，右键点击服务器名称，在菜单中选择“DHCP管理器”。\n3、在DHCP管理器中，添加作用域，并设置 DHCP的地址池范围，以及网关和DNS。\n4、配置完成后，可以看到作用域的情况如下：\n可以使用调测的笔记本电脑，或者教师机连接到交换机，看能否正常获得IP地址。 如果能够正常获得192.168.5.x的IP地址，表明DHCP成功配置。\n3. 安装Deskpool Deskpool for Hyper-V提供基于图形界面、向导化的安装程序。\nDeskpool安装的要点为：\n安装Deskpool时，需要为桌面配置选择存储池、网络池。存储池包括三个存储路径。 安装Deskpool后，可以通过驱动检查工具ServerChecker，检查Windows Server的硬件驱动安装是否合规。 如果您的服务器没有开启 CPU对硬件虚拟化的支持，安装可能会出错。请进入服务器的BIOS，开启CPU对于硬件虚拟化的支持。 Deskpool管理系统运行在一个VM中，该VM的网络设置为DHCP模式。如果网络中没有DHCP，也会导致Deskpool管理系统的VM无法得到IP地址，从而导致安装失败。 3.1 安装Deskpool 3.2 执行 Deskpool_Hyper-V_2012R2_V3_2_0.msi，选择安装目录。如图（3-1）所示。\n选择存储池和虚拟网络。Deskpool系统中，虚拟机、模板、数据盘可以分别放在不同的存储池中。安装程序会创建三个存储池，用于存放 虚拟机、模板和数据盘。具体的用途，会在Deskpool的初始化配置阶段指定。如图（3-2）所示。\n如果没有创建虚拟交换机，选择 连接了网线的网卡创建虚拟交换机，命名为 vswitch。\n然后选择存储池，网络池。\n完成安装。\n安装程序执行完毕后，如果安装成功，会出现如下两个窗口。一个窗口是 Deskpool 管理虚拟机的控制台。内有Deskpool 管理系统的IP。另外一个窗口是浏览器访问 Deskpool 的窗口。如图（3-3）所示。\n由于Deskpool初始化需要一定时间，可以稍后关闭浏览器，重新输入地址 http://192.168.5.9，访问Deskpool管理系统。 缺省的账号为： 用户 admin ，密码 deskpool\n为了便于后续访问快捷的访问，可以在桌面建立一个快捷方式，内容如下，命名为 deskpool 管理。后续可以直接点击链接，进入 Deskpool 管理系统 https://192.168.5.9/?username=admin\u0026amp;password=deskpool\n3.2 检查驱动的合规性 Deskpool安装程序带有一个 ServerChecker程序，可以检查Windows Server是否安装了远程驱动。如果服务器不安装原厂的主板驱动和网卡驱动，性能会很差。\n可以在应用界面，找到“serverchecker”，点击。如图（3-7）所示。\n也可以直接按 Windows热键+R，在“运行”窗口中，输入 serverchecker，启动该程序。\n进入“Hyper-V服务器检查工具”，点击“检查”。\n如果全部显示为白色，说明驱动都安装成功。如图（3-9）所示。 如果有黄色的项目，请确认一下这些黄色的项目是不是网卡和主板的硬件。如果不是，也没有关系。只需要保证主板驱动、网卡驱动使用硬件原厂驱动即可。\n4. 使用备份文档快速安装 Deskpool 桌面虚拟化系统提供了基于向导的系统初始化和配置过程，配置Deskpool系统的过程也相当简单，但是虚拟桌面的Windows模板的制作过程还是相对繁琐和耗时。为了提高云教室系统的部署效率，我们还是推荐采用使用备份档案恢复Deskpool桌面云系统的方式来部署云教室系统。\n备份档案是Deskpool备份工具（vdibackup）产生一个备份文件夹。包括了Deskpool桌面虚拟化环境的配置数据，以及桌面模板文件。Deskpool备份工具可以对桌面云环境进行备份、恢复。本章节是利用备份工具来快快速部署一个新的云教室环境。\n目前朵拉云科技提供包含Windows 7 32位模板的备份档案，以及包含Windows 7 64位模板的备份档案。您可以使用我们提供的备份档案进行本章节的安装过程。如果你之前搭建过其他云教室，您也可以使用之前云教室的备份档案来安装当前的云教室。如果需要其他的操作系统的桌面模板，还是需要现场制作。模板的制作方法参见朵拉云科技官网技术支持板块有关模板制作的内容。\n本章主要完成两个工作：\n1、使用备份恢复工具，恢复备份档，快速搭建一个云教室环境。\n2、登陆Deskpool的Web管理系统，设置Deskpool管理系统的IP为静态IP。\n4.1 启动恢复数据软件 解压backup008.7z.001、backup008.7z.002到磁盘。进入backup008目录，可以看到数据库备份文件 deskpool.tar.gz，以及桌面模板的备份目录 win7x64base 。如图所示。\n在backup008目录下，地址栏输入 vdibackup，按“Enter”键。如图所示。\n4.2 数据库恢复 进入桌面云备份和恢复工具页面，点击“恢复”，进入恢复功能。然后填写管理系统IP，点击“刷新”。勾选选择“恢复数据库”，“恢复桌面模板”，选择虚拟机、数据盘、镜像的存储池位置。\n根据云教室的规划，虚拟机和镜像的存储池使用SSD硬盘（D:\\Deskpool）,数据盘存储池使用HDD硬盘（E:\\Deskpool）。 如果存储池中的位置不可选，请点击“刷新”按钮。如果提示中显示无法连接桌面云服务器，请检查桌面管理虚拟机IP（即Deskpool管理系统IP）是否填写正确了。\n点击“恢复”按钮，开始恢复过程。如图所示。恢复过程耗时5-10分钟。\n下图是一次完成的恢复过程的日志。恢复大致包括：1）恢复数据库；2）重启动Deskpool；3）调整虚拟网络配置；4）调整存储池配置；5）恢复模板虚拟机；6）再次重启Deskpool。\n4.3 修改deskpool的IP地址 Deskpool 管理系统是一个基于CentOS 6的Linux 虚拟机。我们可以通过Deskpool的Web管理系统修改Deskpool的IP地址。在Deskpool管理系统中，依次选择“服务器”“属性”“Deskpool网络”“静态IP配置”即可对Deskpool管理系统的IP进行修改。修改IP后，以新的IP地址登陆Deskpool系统。 管理系统修改的IP地址仅限于当前网段的地址。如果需要更换其他网段，或者需要配置网关、DNS，则需要进入Linux系统。通过相关的命令进行修改。具体请了解 CentOS 6修改IP地址的相关知识。\n下图描述了修改 Deskpool IP的方法。 使用 putty 登陆 Deskpool VM，使用 vi编辑 /etc/sysconfig/network-scripts/ifcfg-eth0 文件。\n修改BOOTPROTO，IPADDR，NETMASK，GATEWAY参数。然后保存。\n然后输入 :wq! 退出后，重启这个Linux 虚拟机，以新的IP地址登陆 Deskpool即可。\n有关Linux vi 编辑命令的使用，请查询有关资料。\n5. 配制桌面模板 前一章节的通过恢复备份档案部署了一个Deskpool桌面云环境。备份档案中包括了一个win7x86base（或者win7x64base）的模板。本章通过拷贝win7x86base（或者win7x64base）模板到新的模板，然后在新的模板中安装多媒体教学软件和日常教学所需软件，最后保存新产生的模板。\n在模板中安装应用软件是云教室管理员的日常工作之一，不属于朵拉云科技云教室项目部署服务的内容。本章节主要目的是示范桌面模板的制作和编辑方法。在云教室的部署过程中，现场工程师负责提供一个包含Windows操作系统以及云教学软件学生端的基础模板。然后培训和指导云教室管理员安装教学所需的应用软件。\n一般情况下，我们不建议现场工程师独自帮客户安装应用软件。一方面现场工程师未必熟悉客户的应用软件的配置，另一方面云教室管理员在不参与模板制作过程，后续很难对桌面云系统的模板进行日常维护。\nDeskpool的模板支持“创建模板”、“编辑模板”“复制模板”操作。建议基于基础模板Win7x64base复制一个新模板出来作为云教室的模板。编辑模板并安装应用软件是一个比较繁琐的过程，如果模板制作出错，可以重新从基础模板复制一个新模板出来制作，不会破坏基础模板。\n模板的制作也建议按照循序渐进的原则，分多个版本制作模板。比如先制作win7x64v1包含软件A、B，win7x64v2包含软件A、B、C、D。这样如果某个软件的配置有问题，可以回退到上一个模板版本，而不必全部重新安装。另外杀毒软件、安全软件、防火墙等软件特别容易和桌面云平台产生冲突，建议单独做一个模板版本，安装验证这些软件。\n5.1 复制模板 登陆Deskpool桌面云管理系统，在模板菜单下，选择Win7x64base模板的复制操作。复制的新模板命名为 Win7x64stu，如图所示。\n在经过几分钟的模板复制操作后，模板的一个实例虚拟机被启动。\n启动完成后，系统开启了一个模板编辑向导。\n根据向导的提示，使用Windows远程桌面客户端软件 mstsc 登陆模板虚拟机，输入账户密码，即可登陆。\n我们提供的模板虚拟机的账户是 用户名 administrator 密码 123456。\n5.2 在模板中安装应用软件 5.2.1 安装极域2017教学软件学生端 如果模板中，已经包含极域教学软件的学生端，请忽略本节。\n极域学生端在朵拉云桌面云系统上的安装要求如下：\n安装学生端时，使用 noscreendriver参数安装。 不启用显卡驱动截屏。 学生端，不通过服务方式启动，而是改为通过自动运行程序的方式启动。\n本章节提供手工安装 和 工具辅助安装两种方法的说明。 手工安装模式\n第一步：以noscreendriver 模式安装学生端。\n在资源管理器中，找到极域2017的安装程序所在目录。进入cmd，执行\nStudent_2.7.13787 /verysilent /noscreendriver\n执行该命令后，模板虚拟机会自动重启动。\n重启动完毕后，重新登陆模板虚拟机。\n如果您需要对极域做一些设置，可以不加 verysilent 参数，但保留noscreendriver参数，进行交互式安装。可以设置一些参数，比如卸载口令。\n第二步：禁止极域学生端服务。\n进入cmd，如下命令。 注意=符号后有空格。\nsc stop studsrv\nsc config studsrv start= disabled\n第三步：设置为基于学生端为自动启动\n自动运行极域学生端有两种方法。一种为添加到程序菜单的“启动”项中。\n另一种为添加到注册表如下位置： [HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run] 工具辅助安装模式\n我们提供了一个批处理工具，可以自动化完成上述操作。\n以管理员身份运行该脚本得到如下菜单。\n第一次按1运行极域安装程序后，系统重启。第二次运行按2，执行学生端程序的服务和自动运行配置。\n5.2.2 安装QQ 找到QQ软件，点击完成安装。\n5.2.3 安装Microsoft Office 2010 找到Microsoft Office 2010软件，点击完成安装。\n5.3 保存模板 安装完成应用软件后，返回deskpool模板编辑界面，点击“确认”，全部选择“是”，点击下一步。\n如图（5-17）所示。\n进入准备模板，选择“专用和公用模板”，点击“准备模板”按钮。如图（5-18）所示。\n保存模板，完成模板配置。如图（5-19）所示。\n6. 配制桌面池 云教室的桌面虚拟机是通过配置桌面池自动创建的。桌面池定义了创建桌面所需要的模板，虚拟机规格，桌面创建策略等信息。在云教室中，桌面池类型配置为公用桌面。\n配置桌面池时，需要考虑服务器总的资源。云教室的资源配置为每个用户 2GB-4GB内存，处理器资源按照人均0.8 ~ 1.0个线程配置。云教室的总内存需求大致为： 8GB + 每桌面内存 * 用户数。\n6.1 创建桌面池 进入桌面池，点击“属性”。如图（6-1）所示。\n6.2 填写桌面池信息 填写基本信息。【桌面池名称：云教室】、【模板：win7x64stu】、【选择网络：vswitch】、【前缀：VM】、【后缀：01】、【内存：2048MB】、【虚拟机CPU数：1】。如图（6-2）所示。 配置策略，填写信息。【最大虚拟机数：30】、【预创建虚拟机：30】、【用户名：administrator】、【密码：123456】。选择公用桌面池。本步骤的自动绑定账号的用户名、密码，必须与模板中的Windows账号相同。否则桌面用户登陆会出现认证错误，导致无法登陆。如图（6-3）所示。\n配置存储，勾选“启用用户数据盘”。填写信息，【数据盘名：Data】、【容量：20GB】。点击“确定”完成。如图（6-4）所示。\n在桌面池配置后，Deskpool桌面虚拟化系统会自动创建桌面虚拟机。你可以在Deskpool管理系统的“桌面计算机”菜单中，查看“桌面计算机列表”，了解桌面计算机的创建情况。通常10分钟左右可以创建完成60个虚拟机。\n7. 创建桌面用户，启用终端自动配置 在配置Deskpool桌面虚拟化系统的用户账户前，需要先明确几个概念：\n【只能从桌面池分配桌面】\nDeskpool的用户是从桌面池自动分配桌面的。不需要也不能手动为每个用户分配桌面计算机。 用户在连接桌面池时，会自动从桌面池中分配可用的桌面计算机。\n方法1：用户具有桌面池权限，用户登录时，从桌面池中分配桌面。\n方法2：用户属于某个群组，群组具有桌面池权限，用户登录时，从桌面池中分配桌面。\n云教室中，我们采用方法2，把用户配置到一个群组中，为群组指定桌面池即可。\n由于桌面计算机是用户登陆时分配的，如何保证用户编号和桌面计算机编号的对应呢？比如用户stu01分配桌面vm01，stu02分配vm02。\nDeskpool的桌面池中有一个选项“强制后缀匹配”。该选项会确保在为用户分配桌面时，桌面计算机的后缀数字编号与用户名的数字编号后缀匹配。 【终端的两种认证方式】\n用户账号认证：终端在新建Deskpool连接的时候，保存用户账号。终端凭借用户账号进行用户认证。\n终端标识认证：终端在新建Deskpool连接的时候，把用户名设置为 @ ，表示使用终端标识认证。终端第一次连接时，Deskpool系统为自动为终端分配一个用户账号。我们称之为绑定账号。后续连接时，该终端会自动关联到该用户账号。\n终端侧的配置 Deskpool桌面云系统侧配置 如果Deskpool上有多个群组，可以在用户名中输入 @群组名，表示绑定该群组的用户。比如上图的终端配置可以修改为 @group1\n【云教室按照座位顺序编号】\n为了维护和管理的方便，管理员一般会希望按照云教室的用户和桌面编号与座位号对应。\n如果终端采用用户账号认证，那么只需要根据终端的座位编号设置用户账号即可。座位01的终端配置用户名为stu01，座位02的终端配置用户名为stu02，依次类推。我们可以手工配置每个终端的账号，实现云教室的顺序编号。\n如果终端采用终端标识认证，那么可以批量设置所有终端的连接的用户名为@，然后根据座位顺序依次把每个终端开机。这样终端会按照开机顺序依次绑定用户账号 stu01，stu02，stu03，依次类推，顺序编号。\n在云教室的场景下，为了简化对终端的管理，Deskpool系统集成了对云终端的批量自动化配置功能。可以根据策略对云终端进行自动配置，与终端ID认证机制相结合，可以实现云终端的即插即用。避免了对终端配置账号的繁琐操作。\n7.1 增加用户群组 还原的备份环境中，已经添加了群组 Group1，群组配置如下。一个群组代表一个教室。你可以参考下图，增加自己的云教室配置。\n认证方式：支持三种模式。用户名+密码、ID、ID+用户名+密码。其中的选择ID认证时，可以使用ID或者用户账号登陆。选择ID+用户名+密码时，系统会同时对ID和账号认证。该模式可以限定用户只能从特定的终端登录，提供更高的安全性。 云教室中，推荐采用ID认证，简化云终端的配置和管理。并勾选“自动绑定终端标识”、“禁止用户修改密码”。\n7.2 增加云教室的用户 还原的配置中，已经包括了60个用户账号。你也可以选择删除这些用户账号，批量新增用户账号。\n在用户管理界面中，点击“批量新增”，填写信息。【用户名：stu】、【后缀：01】、【数量：60】、【密码:****】。点击“提交”按钮。如图（7-2）所示。\n添加用户后，我们可以看到用户列表的界面。每个用户有一个终端属性，终端ID认证的机制是通过把终端ID与用户账号绑定实现的。我们可以手工编辑用户账号，把终端与用户绑定。前面的群组配置中，启用了自动绑定终端标识，可以实现终端登录的时候，自动绑定到用户账号。 在此复述一下终端启用自动绑定的要求：终端的Deskpool连接中，用户名填写@表示绑定到任何一个账号。填写@group1表示绑定到群组group1中用户账户。如果一个Deskpool系统支持多个教室，每个教室的云终端可以绑定到不同群组的用户。\n7.3 终端自动配置 在用户管理菜单下，有一个终端管理的功能，可以实现对终端的自动配置。还原的备份环境已经包含了对本网段终端的自动配置。\n编辑该策略，可以看到如下对话框，基本上是用缺省值，即可满足对云教室终端的自动配置需求。\n自动配置策略启用后，搜索范围内的云终端将会被自动配置。自动连接Deskpool系统。\n如果您的云教室内已经安装好了云终端，并且云终端已经上电联网，网络中有DHCP服务，您会观察到这些终端会在重启一次后，自动进入桌面云系统。\n8. 配置教师机和云终端 教师机上可以安装三套软件：极域多媒体教学软件（教师端）， VDClass多媒体教学软件，瘦客户机管理软件TCM。\n极域多媒体教学软件用于日常的教学。 VDClass用于对云终端进行开关机，以及广播教学。VDClass采用的是直接广播的云终端的模式进行屏幕广播，效果会比极域做屏幕广播效果好。 TCM主要用于对云终端进行管理和配置。如果启用了7.3节中的云终端自动配置策略功能，就不需要使用TCM对云终端进行管理了。如果没有启动7.3节的自动配置功能，可以通过TCM对云终端进行批量配置。\n8.1 配置教师机 8.1.1 安装VDClass 找到VDClass安装软件（VDClassTeacher.exe），在教师机上安装。\n8.1.2 安装TCM 找到TCM安装软件（TCManager_2.5.6.exe），在教师机上安装。\n8.1.3 安装极域教师端软件 朵拉云桌面的配套的极域课堂管理系统一般采用U-key授权的方式。发货的U-key内置的授权为试用授权，带有一定时间的试用时间。需要找销售索取序列号，转化为正式授权。也有部分发货的U-key已经内置了正式授权。\n点击Teacher_2.7.17218.exe，根据安装向导，完成安装，安装完毕会后重启机器。如图（8-1）所示。 将极域的U-key插入教师机，点击桌面的极域课堂管理系统，启动极域，根据提示创建老师账号。 在极域的右上角菜单中，选择“关于极域课堂管理系统V6.0” 进入“注册信息”页面，点击“更新注册信息”，如图（8-5）所示。 如果过期时间为“永不过期”，则表明发货的U-key已经正式激活了。 进入\u0026quot;产品注册\u0026quot;页面，如图（8-6）所示。 输入密码（密码咨询朵拉云员工），点击“注册”按钮，如图（8-7）所示。 激活成功后，会弹出说明，如图（8-8）所示。 8.2 配置云终端 云终端有三种配置方式：\n手工配置：直接在终端上操作，对单台终端进行配置。比如配置为每个终端配置固定IP，或者按照座位号顺序配置登陆账号时，需要用手工配置。 批量配置：通过TCM进行批量配置。批量配置一般对云终端的属性进行统一设置。 自动配置：通过Deskpool的终端管理功能，添加终端自动配置策略。可以实现终端的即插即用。具体参见本文7.3节。\n朵拉云云教室的应用场景中，我们推荐的云终端配置如下：\n【分辨率：自动】、【语言：中文】、【管理员密码：tcadmin】、【启用VNC：是】、【永远自动重连：是】\n云终端需要添加Deskpool桌面连接。云教室内的Deskpool连接一般终端ID认证方式。\n我们推荐云教室采用云终端自动配置的方式，可以大大减少云终端的管理工作。如果您的云教室已经采用自动配置模式，请忽略本章的内容。\n下面我们分别描述手工配置、批量配置的实现上述配置要求的方法。如果您已经按照7.3节启用了自动配置，请暂停7.3节的自动配置策略，然后进行后续的操作。 8.2.1 云终端用户界面介绍 在配置前，我们首先认识一下云终端的用户界面。云终端主要有两个界面，一个是【连接窗口】，一个是【控制中心】。当终端连接了Deskpool桌面云系统后，进入【桌面云用户门户】，也称【用户Portal】。这个界面的内容是由Deskpool系统决定的。\n连接窗口的界面如下，点击桌面连接的图标，可以进行连接。如果启用了自动连接，系统也会延迟3秒自动登陆。\n配置中心界面如下：\n当以用户账号登陆到Deskpool管理系统时，【桌面云用户门户】登陆前后的效果如下图。\n8.2.2 手工配置云终端 云终端出厂设置状态为英文界面。如果您的终端有管理密码，并且您已经遗忘密码，可以通过热键 Ctrl+Alt+Shift+F2，恢复出厂设置。可以参见第8.4章节。\n第一步设置语言为中文和分辨率为Auto，如图所示。设置后，云终端会重启动。 第二步：设置管理员密码。在终端的“系统”、“操作”、“设置密码”菜单中。可以设置密码为tcadmin。\n第三步：设置永远自动连接。\n第四步，增加Deskpool连接。设置服务器地址为 192.168.5.9，【用户名】如果是使用使用终端ID登陆，填写 @；如果有多个群组（班级），用户名填写@group1。如果是使用账号登陆，填写用户名。点击保存。连接保存后，勾选“自动连接”。\n第五步，验证Deskpool连接可以正常登陆桌面云。\n可以在连接窗口中，点击连接的图标，即可连接。 也可以在配置中心中，点击“连接”操作。\n登陆桌面后，应该会自动进入Windows。 我们选择断开，或者注销，或者按Shift + F12（退出桌面的快捷键），离开Windows，可以看到如下界面。\n接下来，我们登陆 Deskpool 管理系统后台，可以看到终端自动的绑定到了用户stu01。\n8.2.3 批量配置云终端 启动TCM，设置搜索区间，192.168.5.1\u0026ndash;192.168.5.254，点击搜索。如图（8-10）所示。\n点击“任务管理”，点击“云教室配置”。勾选“账号绑定”，填写信息。【填写服务器地址：192.168.5.9】、【用户名前缀：@】。如图（8-12）所示。此处我们假定终端是采用终端标识认证。\n除了桌面云连接账号外，还需要配置终端的分辨率、语言、管理员口令。配置界面如下。\n\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash; \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash; 最后选择“全选”，“执行任务”，执行上述的6个配置任务。即可完成云终端的批量配置。\n8.2.4 云终端的管理（VDClass） VDClass用于对云终端进行管理。在云教室中，我们主要使用VDClass的三个功能：云终端远程监控、屏幕广播、云终端的开机和关机。\n远程监控：右键菜单，选择“远程监控”，即可开启远程监控功能。 屏幕广播：选择云终端，点击广播按钮，即可开启广播。使用VDClass广播，可以直接广播到云终端。 云终端的开机和关机：搜索所有云终端，保存云终端列表。然后执行云终端的关机。执行开机，选择列表中的云终端，确认，即可对云终端开机。 9. 云教室验收测试 9.1 上课 开启服务器机柜电源开关。 按服务器电源开关，启动服务器。 开启学生机供电总开关。 使用VDClass进行远程上电。 观察学生终端，是否正常登陆了桌面Windows。 9.2 下课 按服务器电源按钮，将服务器关机。 关闭服务器机柜电源开关。 对学生机远程关机。 关闭学生机电源总开关。 9.3 桌面云系统还原 进入Deskpool管理系统，进入“桌面池”界面。 点击“还原”操作。 进入弹窗，点击“确定”按钮。完成还原。如图（9-4）所示。 在桌面列表中观察桌面状态，2-3分钟会完成还原，显示“正在运行”状态。重启云终端，即可登录。 9.4 桌面云系统修改模板 请参见本文 5.2 、5.3、5.4章节的内容。 对模板进行编辑，增加新的软件。 模板编辑完毕后，需要使用新的模板重建桌面池。\n9.5 桌面云系统重建 重建桌面池时，系统的处理负荷比较大。建议关闭云终端后进行桌面池的重建操作。如果不关闭云终端，云终端的反复重连操作，会消耗Deskpool的资源，影响桌面池的重建。\n进入Dekpool页面，在“桌面池”页面，点击“重建”。如图（9-5）所示。 进入重建桌面池虚拟机，点击“确定”按钮。完成重建。如图（9-8）所示。 在桌面列表中观察桌面状态，10分钟（按照10台虚拟机计算时间）会完成重建，显示“正在运行”状态。重启云终端，即可登录。 9.6 多媒体教学软件广播 启动极域课堂管理系统教师端，设置用户名、密码（可以设置为空）。如图（9-9）所示。 在极域课堂管理系统内观察上线的学生桌面，观察学生是否上线。 演示广播。点击“屏幕广播”按钮，完成演示。如图（9-10）所示。 10. 云教室的其他设置 10.1 终端上电模式的配置 朵拉云的JC10云终端支持三种开机模式：\n远程开机（Wake On LAN）、上电自启动、手动开机。\n10.1.1 远程开机 在教室机上安装vdclass软件。\n搜索所有云终端\n保存云终端列表\n将终端关机，然后选择开机，选中保存的终端列表，即可对云终端进行远程开机。 注意：远程开机依赖于广播，仅仅对于同一广播段内的终端有效。\n10.1.2 上电自启动 朵拉云JC10支持配置上电自启动。可以通过TCManager来启用上电自动开机功能。请使用最新TCManager。\nJ70、J90有上电自启动的拨码开关。\n10.2 如何保证终端和桌面按照顺序编号 为了实现顺序编号，一种方案是云终端按照座位编号配置，手工顺序配置每个云终端的用户账号。第一个终端用户名 stu01，依次类推。 云教室如果采用终端ID认证模式，可以快速实现云终端的顺序编号。操作步骤为：\n全部云终端采用终端ID认证模式（用户名设置为@，或者@Group1）登陆桌面云系统。 把所有云终端关机。 在Deskpool用户管理菜单中，清除用户的终端ID的绑定关系。 按照座位顺序，将云终端依次手工开机。第一个开机的为绑定用户 stu01，依次类推就实现了云终端的桌面的顺序编号。 10.3 如何防止学生修改云终端的配置 为云终端设置管理员密码。这样云终端本地进入控制中心时，会提示输入密码。\n10.4 云教室新换了一个云终端，如何配置这个云终端？ 如果云教室采用手工配置，或者批量配置方式，请参见8.2.2一节的配置。 如果云教室采用的是7.3节的自动配置模式。可以找到旧终端对应的用户，然后新终端的ID填写在用户属性中。如下图所示\n也可以清除旧终端与用户的绑定关系，新的终端连接时，会自动绑定该用户。参见10.3一节的内容，重新重新绑定一下。\n11. 高级课题 11.1 云教室采用静态IP分配模式 静态IP有两种模式：\n混合模式：网络中有DHCP。桌面虚拟机采用静态IP分配。云终端、模板虚拟机采用DHCP配置。\n全静态模式：网络中没有DHCP。桌面虚拟机，云终端，模板虚拟机，都采用静态IP配置。\n混合模式的配置比较简单。需要规划一段IP地址，不再DHCP池的范围内，把这段地址配置给桌面池即可。其他配置不需要改动。如下图，使用了 192.168.5.101 – 192.168.5.130的地址段为桌面池的静态IP。这一IP段就不能再用于DHCP地址段。混合模式下，模板虚拟的网卡可以配置为DHCP方式。创建出的虚拟机先获得一个动态地址，然后Deskpool管理系统根据桌面池的IP范围为桌面配置静态IP。如果编辑模板，模板虚拟机得到的是动态IP。\n全静态模式的配置相对复杂一些。\n首先，Deskpool安装时，选择静态IP安装。如果静态IP没有办法安装成功，可以考虑临时搭建一个dhcp安装Deskpool。\n其次，Deskpool制作模板时，需要为模板配置一个静态IP地址。否则无法正常的编辑模板，基于模板也无法正常创建桌面。\n另外，在Deskpool的桌面池内，启用“绑定IP”，并配置IP池。\n最后，由于没有DHCP，需要为每个云终端手工配置固定IP。该工作只能手工完成，比较费时。\n总体上讲，我们不推荐使用全静态IP分配模式。如果业务上有静态IP分配要求，可以考虑混合模式。\n11.2 使用Deskpool对等集群 Deskpool桌面虚拟化系统支持对等集群。配置对等集群时，先部署好第一个Deskpool系统，后续节点部署好后，加入集群即可。\n11.3 使用其他虚拟化系统（VMware、Proxmox） 请联系朵拉云科技技术支持\n12. 常见故障处理 12.1 终端无法开机（电源指示灯不亮） 故障现象：云终端电源指示灯不亮。\n排查方法：\n按云终端电源按键，看能否正常开机。 检查电源适配器与电源插座的连接是否正常。 更换其他电源适配器，检查电源适配器是否正常。 可能原因： 云终端电源适配器故障。 云终端故障。 12.2 屏幕没有显示（终端电源指示亮） 故障现象：云终端电源指示灯亮，屏幕没有显示。\n排查方法：\n检查云终端与显示器的连接是否正常。 检查显示器是否正常，可以把云终端连接到其他显示器。 将云终端断电，重新开机，看是否有显示。\n可能原因： 云终端故障。 云终端与显示器的连接线故障或者接触不良。 显示器故障。 12.3 终端网络故障 故障现象：云终端提示“等待网络”，或者提示“正在连接Deskpool”。 排查方法：\n退出到云终端的控制台界面，按F1，检查是否有IP地址。 检查云终端的网线连接是否正常。 可能原因： 云终端的网络物理连接不正常。 没有配置正确的IP地址，或者无法从DHCP分配到IP地址。 12.4 无法连接Deskpool 故障现象：云终端提示“正在连接Deskpool”。\n排查方法：\n检查Deskpool是否正常运行。 检查云终端到Deskpool的网络通信是否正常。 可能原因： Deskpool没有运行。 云终端到Deskpool的网络不可达。 12.5 无可用的桌面资源 三个可能原因：\n用户对应的桌面池内，没有空闲的桌面资源了。 桌面池选择了“强制后缀匹配”。没有与用户编号对应的虚拟机。比如stu03连接时，桌面池中没有vm03的虚拟机资源。 如果终端采用的是ID认证。终端连接Deskpool时，没有空闲的用户捆版到该终端。这种情况发生在一个云终端故障了，换了一个新的云终端。但是由于旧终端的ID还与用户绑定，新的终端登录时，无法分配到空闲用户。会出现无可用资源的提示。 12.6 登陆桌面密码错误 检查终端的账号是否在Deskpool桌面管理系统中存在。并且密码与终端上配置的账号密码一致。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/symmetric-clustering/",
+    "title": "配置DoraCloud对称集群",
+    "description": "介绍了DoraCloud对称集群的配置过程，包括 PVE 版本 和 Hyper-V版本。
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0007/",
+    "title": "KB0007.无法联网的情况下如何下载和恢复模板",
+    "description": "无法联网的情况下如何下载和恢复模板
+",
+    "content": "第一步、首先我们先找一个有网络的环境下载好模板拷贝到U盘里。（两个都需要下载）\n模板下载地址：模板下载地址 我们以windowsx64base为例进行模板的下载与恢复。\n1.win7x64base.zip下载地址:windows x64base.zip下载地址\n2.win7x64base.dr下载地址:windows x64base.dr下载地址\n第二步、拷贝模板\n1.把U盘插入需要模板的服务器，首先查看模板存储池的位置，图中模板位置是在C盘。 2.找到模板存储位置DoraCloud\n3.然后先建立一个【localImages】的目录，在里面继续建立一个【win7x86base】的目录，最后把刚下载好的win7x64base.zip和win7x64base.dr拷贝进去\n4.进入DoraCloud管理后台点击【模板】选择【本地镜像仓库】点击【刷新】，本地windowsx64base模板就会显示出来，最后点击恢复，等待进度条加载成功，模板就恢复好了。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/installation-upgrade/cloudclass/",
+    "title": "云教室部署安装指南（PVE版）",
+    "description": "本文以部署50用户云教室为范例，描述了朵拉云科技云教室的安装过程。本文档适用于使用朵拉云DoraCloud桌面虚拟化系统部署云教室、电子阅览室、电子会议室等应用场景
+",
+    "content": "1. 概述 本文以部署50用户云教室为范例，描述了朵拉云科技云教室的安装过程。本文档适用于使用朵拉云DoraCloud桌面虚拟化系统部署云教室、电子阅览室、电子会议室等应用场景。\n1.1 云教室构成 一个50用户云教室的组网如下图： 云教室硬件包括：\n50台学生机（云终端，显示器，键鼠）\n1台教师PC机\n一台服务器\n一台交换机\n一台路由器\n云教室的软件系统包括：\n朵拉云DoraCloud桌面虚拟化系统。部署在服务器上。\n多媒体教学软件。部署在教师PC上。\n一个典型的50用户的云教室的配置清单如下：\n序号 产品名称 规格 数量 单位 1 服务器 Intel Xeon Gold 6148 2.4Ghz 20C/40T * 2\n内存：156GB(DDR4-2666 32G * 8)\nSSD：1.92TB 企业级SSD * 1\n硬盘：2TB 7.2K * 1\n网卡：板载 2个1GbE LAN with Intel X722\n电源：双电源 1 台 2 桌面云软件 朵拉云 DoraCLoud标准版：支持公用桌面、专用桌面； 50 用户授权 3 瘦终端 朵拉云 云终端 DC20, ARM A55 四核2.0Ghz主频；内存1G DDR3；硬盘8G；VGA+HDMI（最大1920*1080）；1000M RJ45；3.5mm音频输入输出；4个USB2.0+2个USB3.0;三年质保;多协议\n配套显示器、键盘、鼠标。 50 台 4 教学软件 多媒体电子教学软件，支持屏幕广播，学生演示，文件收发，分组教学，作业提交 1 套 5 教师机 I3、4GB内存、500G硬盘、21.5寸显示器 1 台 6 交换机 48口千兆交换机 1 台 7 路由器 路由器，待机量在50-100用户 1 台 1.2 云教室配置规划 在开始云教室配置前，需要先做好配置的规划。云教室配置规划包括：网络规划、模板规划、其他规划。\n网络规划定义了云教室的组网，主要参考用户单位的网络管理员的意见。\n模板规划定义了云桌面使用的操作系统版本和应用软件清单，由云教室的用户需求决定。\n其他规划定义了桌面池、用户、终端的编号和配置策略，方便云教室的管理员进行日常管理。\n【网络规划】\n一个教室的云终端、虚拟桌面、教师机必须在同一个局域网，并位于同一个VLAN内。以便进行教学广播。 网络内的IP地址推荐采用DHCP动态分配。建议的DHCP IP地址池设置为学生数目的3倍。DHCP的周期，建议配置为30-60分钟。并且DHCP Server支持原IP地址续约。以免IP变化引起连接中断的问题。比如：50用户云教室，终端需要50个地址，桌面虚拟机需要50个地址，再预留50个地址，作为备用。这样在重建桌面时有足够的空闲IP。 预留2个静态IP地址，分别留给物理服务器的 Proxmox 和 DoraCloud 管理系统。静态IP不应该出现在DHCP的IP地址池中。 在开始 DoraCloud 软件安装前，请务必确认网络已经配置好，并且开启了DHCP服务。\n请就上述网络规划问题与云教室的管理员以及网络管理员沟通，并填写《云教室规划表》的相应内容，参见下图的内容。\n【模板规划】\n模板规划是确定桌面模板的Windows操作系统版本，以及应用软件的清单。一个云教室可以有多个桌面模板。\n本文档作为范例的模板为Windows 10 64位操作系统，安装的应用软件有：Office、QQ、极域学生端。\n【其他规划】\nDoraCloud桌面云系统中还有其他一些配置，包括桌面池、用户、缺省账号等。这些规划可以使用缺省配置，或者根据管理员的要求调整。\n1.3 云教室部署前准备工作 在云教室部署过程中，需要准备一台笔记本电脑，最好有互联网连接，以便于朵拉云科技工程师进行远程协助的部署。\n在您开始云教室的软件部署前，需要检查【硬件准备】、【软件准备】、【网络准备】已经准备就绪。\n1.3.1 【硬件准备】 完成服务器的硬件安装。如果服务器放置在教室内，服务器与学生机（云终端、显示器）能够分别开关机。避免下课时关学生机，服务器也被断电的情况出现。 完成云终端的硬件安装。含显示器、键盘、鼠标的硬件安装。 完成教师机硬件安装，教师机预装了Windows操作系统。 一台笔记本电脑用于调试，一个空闲的U盘，容量在8G以上。 确认服务器的硬件配置足够满足50用户的云教室需求。\n50用户按照人均4G内存规划，典型硬件配置为： 内存： 256GB\nSSD ： 1.92TB 企业级固态盘\n1.3.2 【软件准备】 服务器虚拟化\nproxmox 下载\n桌面虚拟化\nDoraCloud V3.4 for proxmox 下载\n云终端管理\n云终端管理软件 TCManager 下载\n教学软件\nVDClass 云教室管理软件 下载\n教学软件\n极域多媒体电子教室软件 请从附带的光盘下载安装程序\n桌面模板\nDoraCloud支持在线模板仓库。 如果项目现场不具备在线下载模板的条件，可以事先下载模板，到现场从本地恢复桌面模板。\n模板的离线恢复方法参见链接\n应用软件\n具体请咨询用户的云教室管理员。 请云教室的管理员提供所需应用软件的安装程序。 1.3.3 【网络准备】 将服务器、教师机、所有的云终端与交换机连接。 如果配置有路由器，将路由器的LAN口与交换机连接，并按照规划表的要求，设置路由器的LAN网络地址为：10.2.242.254；LAN网络内启用DHCP服务，IP地址范围为10.2.242.11-10.2.242.60，DHCP分配的网关为 10.2.242.254，分配的DN为114.114.114.114。 路由器的WAN口，根据云教室的联网要求进行配置，比如设置为PPoE拨号到运营商的网络，或者DHCP Client模式直接接入校园网。 参见下图左侧。 如果用户单位的网络可以在路由器或者三层交换机为云教室划出一个VLAN和子网，则直接把云教室配置的交换机与上行的端口连接。根据本文的规划，需要用户单位的管理员在上级网络设备上划出一个VLAN，并配置网关为10.2.242.254。 DHCP可以由上级交换机（路由器）提供。参见上图右侧。\n如果单位的网络可以提供VLAN和子网，但是不愿意为云教室启用DHCP，我们可以在服务器上启用DHCP服务。还有一些云教室要求使用静态IP分配方式。 3. 将笔记本有线网口与交换机连接，有线网卡配置成DHCP。如果云教室的网络不能连接互联网，建议将笔记本通过手机热点连接互联网，以便于远程协助进行云教室的调测。如下图\n我们在笔记本上检查一下，是否获取到地址段为10.2.242.x动态IP地址。然后ping一下网关地址 10.2.242.254。如果云教室的网络可以连接互联网，ping一下 baidu.com，确认互联网连接正常。 如果云教室的网络不能连接互联网，请开启手机热点，笔记本通过手机热点联网，以便于远程协助进行云教室的部署。\n★注意1：开始部署前，请确保已经按照云教室的网络规划，预留了网段和IP资源，并开启DHCP服务。\n★注意2：为了提高远程支持的效率，请务必准备好互联网连接，以便于朵拉云工程师远程协助部署。 1.3.4 开始云教室的安装之旅 如果您已经确认按照上述要求完成了【硬件准备】、【软件准备】、【网络准备】，您可以开始下一步的安装过程。\n朵拉云云教室的安装过程包括以下几个环节，各环节的大致耗时如下表。\nID 内容 耗时 章节 备注 1 proxmox系统的安装 10分钟 第2章 2 安装DoraCloud桌面虚拟化系统 5分钟 第3章 3 DoraCloud的初始化设置 5分钟 第4章 4 创建和编辑桌面模板 不确定 第5章 在模板中安装应用软件是管理员例行维护工作之一。\n我们建议现场部署人员与云教室管理员一起安装应用软件。 5 配置桌面池 20分钟 第6章 正常情况下，10分钟可以创建30-60个桌面。 6 用户和群组 3分钟 第7章 7 教师机和云终端 5分钟 第8章 8 云教室验收测试 30分钟 第9章 9 常见问题处理 120分钟 第10章 2. Proxmox系统安装 如果您的项目购买了【朵拉云科技云教室的远程部署服务】，您可以在完成本章节内容后，请求朵拉云科技的工程师进行远程安装部署工作。远程部署时间约为1-2小时。\n下面描述实现上述要求的详细的安装过程。\n2.1通过U盘启动盘安装proxmox Rufus/Venoty/UltraIOS制作Proxmox7.4.1系统U盘启动盘\n以Rufus为例：链接\n2.2通过ipmi安装proxmox 浏览器远程登录ipmi管理页面，挂载iso，进行安装 impi的登录账户密码询问服务器提供商 2.3修改默认存储方式 将缺省安装的 local-lvm 存储改成 目录机制，提升io性能\n1.登录 PVE web界面，在 数据中心-\u0026gt;存储中，选择 local-lvm，然后点击删除。 2.通过命令删除 lvm，新建lvm，并创建文件系统。\n# 一键复制即可\rumount /dev/pve/data\rlvremove /dev/pve/data -y\rvgdisplay pve | grep Free | awk \u0026#39;{print \u0026#34;lvcreate -l \u0026#34; $5 \u0026#34; -n data pve -y\u0026#34;}\u0026#39; |bash\rmkfs.ext4 /dev/pve/data\rmkdir /mnt/data\rmount /dev/pve/data /mnt/data\recho \u0026#34;/dev/pve/data /mnt/data ext4 defaults 0 0\u0026#34; \u0026gt;\u0026gt; /etc/fstab 3.在Proxmox 将注册目录为存储 在Proxmox后台，选择 DataCenter-\u0026gt;存储-\u0026gt;添加， ID填写 data， 目录填写 /mnt/data。 即可添加名为 Data 的存储 3. 安装DoraCloud 3.1 在线安装 DoraCloud cd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl 安装成功\n3.2 离线安装 DoraCloud proxmox默认开启ssh-server服务 ，直接用scp命令传DoraCloud安装文件即可\n1.上传安装包\nC:\\Users\\Administrator\u0026gt;scp vzdump-qemu-500-2023_08_01-17_18_58.vma.zst root@10.2.242.8:/var/lib/vz/dump/ 2.恢复DoraCloud虚拟机\n4. DoraCloud的初始化设置 1.启动DoraCloud虚拟机,启动完成后查看DoraCloud的IP 2.浏览器输入https://DoraCloudIP\n注：DoraCloud管理平台默认采用https安全访问协议，在首次访问DoraCloud URL时，需要根据不同的浏览器提示，设置对该链接的信任。\n默认的管理员登录账户为：用户名：admin 密码：DoraCloud 3.等待1分钟，浏览器输入新IP登录 5. 创建和编辑桌面模板 本章节主要目的是示范桌面模板的制作和编辑方法。 在云教室的部署过程中，现场工程师负责提供一个包含Windows操作系统以及云教学软件学生端的基础模板。然后培训和指导云教室管理员安装教学所需的应用软件。\n一般情况下，我们不建议现场工程师独自帮客户安装应用软件。一方面现场工程师未必熟悉客户的应用软件的配置，另一方面云教室管理员在不参与模板制作过程，后续很难对桌面云系统的模板进行日常维护。\nDoraCloud的模板支持“创建模板”、“编辑模板”“复制模板”操作。建议基于基础模板Win10x64复制一个新模板出来作为云教室的模板。编辑模板并安装应用软件是一个比较繁琐的过程，如果模板制作出错，可以重新从基础模板复制一个新模板出来制作，不会破坏基础模板。\n模板的制作也建议按照循序渐进的原则，分多个版本制作模板。比如先制作win10x64v1包含软件A、B，win10x64v2包含软件A、B、C、D。这样如果某个软件的配置有问题，可以回退到上一个模板版本，而不必全部重新安装。另外杀毒软件、安全软件、防火墙等软件特别容易和桌面云平台产生冲突，建议单独做一个模板版本，安装验证这些软件。\n5.1 在线下载模板 从远程仓库拉取需要模板\n5.2 离线上传模板(TBD) 1.联系朵拉云工程师，获取系统，模板scp命令上传到服务器\nC:\\Users\\Administrator\\Desktop\u0026gt;scp vzdump-qemu-702-2023_06_06-00_06_37.vma.zst root@192.168.1.145:/var/lib/vz/dump/ 2.promox 恢复模板\n3.管理系统添加本地模板 5.3 编辑模板 1.复制一个新模板进行编辑。\n2.添加软件 以添加极域教学软件为例。\n1）极域安装要做特殊处理。\n因为桌面云安装环境的特殊性，极域软件需要做特殊处理才能安装使用。 现场安装工程师需要联系 DoraCloud 原厂获得极域云桌面专属版本。\n2）执行安装脚本。\n两次都是以管理员权限操作，第1次执行操作1，执行完系统会自动重启，第2次执行操作2 6. 配置桌面池 云教室的桌面虚拟机是通过配置桌面池自动创建的。桌面池定义了创建桌面所需要的模板，虚拟机规格，桌面创建策略等信息。在云教室中，桌面池类型配置为公用桌面。\n配置桌面池时，需要考虑服务器总的资源。云教室的资源配置为每个用户 2GB-4GB内存，处理器资源按照人均0.8 ~ 1.0个线程配置。云教室的总内存需求大致为： 8GB + 每桌面内存 * 用户数。\n创建桌面池 2.填写基本信息\n【桌面池名称：云教室】、【模板：win10v1】、【选择网络：vmbr0】、【前缀：vm】、【后缀：01】、【内存：4096MB】、【虚拟机CPU数：1】、【每个CPU的核数：4】\n3.配置策略\n【最大虚拟机数：50】、【预创建虚拟机：50】、【用户名：administrator】、【密码：123456】。选择公用桌面池。本步骤的自动绑定账号的用户名、密码，必须与模板中的Windows账号相同。否则桌面用户登陆会出现认证错误，导致无法登陆。\n4.配置存储，勾选“启用用户数据盘”\n【数据盘名：data】、【容量：30GB】。 注意填写的DoraCloud VM ID，默认为100，如果不确定，返回proxmox查看即可。点击“确定”完成。\n5.在桌面池配置后，DoraCloud桌面虚拟化系统会自动创建桌面虚拟机。你可以在DoraCloud管理系统的“桌面计算机”菜单中，查看“桌面计算机列表”，了解桌面计算机的创建情况。通常10分钟左右可以创建完成60个虚拟机。\n7. 用户和群组 在配置DoraCloud桌面虚拟化系统的用户账户前，需要先明确几个概念：\n【只能从桌面池分配桌面】\nDoraCloud的用户是从桌面池自动分配桌面的。不需要也不能手动为每个用户分配桌面计算机。 用户在连接桌面池时，会自动从桌面池中分配可用的桌面计算机。\n方法1：用户具有桌面池权限，用户登录时，从桌面池中分配桌面。\n方法2：用户属于某个群组，群组具有桌面池权限，用户登录时，从桌面池中分配桌面。\n云教室中，我们采用方法2，把用户配置到一个群组中，为群组指定桌面池即可。\n由于桌面计算机是用户登陆时分配的，如何保证用户编号和桌面计算机编号的对应呢？比如用户user01分配桌面vm01，user02分配vm02。\nDoraCloud的桌面池中有一个选项“强制后缀匹配”。该选项会确保在为用户分配桌面时，桌面计算机的后缀数字编号与用户名的数字编号后缀匹配。 【终端的两种认证方式】\n用户账号认证：终端在新建DoraCloud连接的时候，保存用户账号。终端凭借用户账号进行用户认证。\n终端标识认证：终端在新建DoraCloud连接的时候，把用户名设置为 @ ，表示使用终端标识认证。终端第一次连接时，DoraCloud系统为自动为终端分配一个用户账号。我们称之为绑定账号。后续连接时，该终端会自动关联到该用户账号。\n【云教室按照座位顺序编号】\n为了维护和管理的方便，管理员一般会希望按照云教室的用户和桌面编号与座位号对应。\n如果终端采用用户账号认证，那么只需要根据终端的座位编号设置用户账号即可。座位01的终端配置用户名为user01，座位02的终端配置用户名为user02，依次类推。我们可以手工配置每个终端的账号，实现云教室的顺序编号。\n如果终端采用终端标识认证，那么可以批量设置所有终端的连接的用户名为@，然后根据座位顺序依次把每个终端开机。这样终端会按照开机顺序依次绑定用户账号 user01，user02，user03，依次类推，顺序编号。\n在云教室的场景下，为了简化对终端的管理，DoraCloud系统集成了对云终端的批量自动化配置功能。可以根据策略对云终端进行自动配置，与终端ID认证机制相结合，可以实现云终端的即插即用。避免了对终端配置账号的繁琐操作。\n7.1 创建群组 绑定创建的桌面池\n认证方式：支持三种模式。用户名+密码、ID、ID+用户名+密码。其中的选择ID认证时，可以使用ID或者用户账号登陆。选择ID+用户名+密码时，系统会同时对ID和账号认证。该模式可以限定用户只能从特定的终端登录，提供更高的安全性。 云教室中，推荐采用ID认证，简化云终端的配置和管理。并勾选“自动绑定终端标识”、“禁止用户修改密码”。\n7.2 创建云教室的用户 在用户管理界面中，点击“批量新增”，填写信息。【用户名：user】、【后缀：01】、【数量：50】、【密码:****】。点击“提交”按钮。\n7.3 终端自动配置 在用户管理菜单下，有一个终端管理的功能，可以实现对终端的自动配置。\n编辑该策略，可以看到如下对话框，基本上是用缺省值，即可满足对云教室终端的自动配置需求。\n自动配置策略启用后，搜索范围内的云终端将会被自动配置。自动连接DoraCloud系统。\n如果您的云教室内已经安装好了云终端，并且云终端已经上电联网，网络中有DHCP服务，您会观察到这些终端会在重启一次后，自动进入桌面云系统。\n8. 教师机和云终端 教师机上可以安装三套软件：极域多媒体教学软件（教师端）， VDClass多媒体教学软件，瘦客户机管理软件TCM。\n极域多媒体教学软件用于日常的教学。\nVDClass用于对云终端进行开关机，以及广播教学。VDClass采用的是直接广播的云终端的模式进行屏幕广播，效果会比极域做屏幕广播效果好。\nTCM主要用于对云终端进行管理和配置。如果启用了7.3节中的云终端自动配置策略功能，就不需要使用TCM对云终端进行管理了。如果没有启动7.3节的自动配置功能，可以通过TCM对云终端进行批量配置。\n8.1 配置教师机 8.1.1 安装VDClass 找到VDClass安装软件（VDClassTeacher.exe），在教师机上安装。\n8.1.2 安装TCM 找到TCM安装软件（TCManager_2.5.6.exe），在教师机上安装。\n8.1.3 安装极域教师端软件 朵拉云桌面的配套的极域课堂管理系统一般采用U-key授权的方式。发货的U-key内置的授权为试用授权，带有一定时间的试用时间。需要找销售索取序列号，转化为正式授权。也有部分发货的U-key已经内置了正式授权。\n点击Teacher_2.7.17218.exe，根据安装向导，完成安装，安装完毕会后重启机器。 将极域的U-key插入教师机，点击桌面的极域课堂管理系统，启动极域，根据提示创建老师账号。\n在极域的右上角菜单中，选择“关于极域课堂管理系统V6.0”\n进入“注册信息”页面，点击“更新注册信息”。 如果过期时间为“永不过期”，则表明发货的U-key已经正式激活了。\n进入\u0026quot;产品注册\u0026quot;页面,\n输入密码（密码咨询朵拉云员工），点击“注册”按钮.\n激活成功后，会弹出说明.\n8.2 配置云终端 云终端有三种配置方式：\n手工配置：直接在终端上操作，对单台终端进行配置。比如配置为每个终端配置固定IP，或者按照座位号顺序配置登陆账号时，需要用手工配置。 批量配置：通过TCM进行批量配置。批量配置一般对云终端的属性进行统一设置。 自动配置：通过DoraCloud的终端管理功能，添加终端自动配置策略。可以实现终端的即插即用。具体参见本文7.3节。\n朵拉云云教室的应用场景中，我们推荐的云终端配置如下：\n【分辨率：自动】、【语言：中文】、【管理员密码：tcadmin】、【启用VNC：是】、【永远自动重连：是】\n云终端需要添加DoraCloud桌面连接。云教室内的DoraCloud连接一般终端ID认证方式。\n我们推荐云教室采用云终端自动配置的方式，可以大大减少云终端的管理工作。如果您的云教室已经采用自动配置模式，请忽略本章的内容。\n下面我们分别描述手工配置、批量配置的实现上述配置要求的方法。如果您已经按照7.3节启用了自动配置，请暂停7.3节的自动配置策略，然后进行后续的操作。 8.2.1 云终端用户界面介绍 在配置前，我们首先认识一下云终端的用户界面。云终端主要有两个界面，一个是【连接窗口】，一个是【控制中心】。当终端连接了DoraCloud桌面云系统后，进入【桌面云用户门户】，也称【用户Portal】。这个界面的内容是由DoraCloud系统决定的。\n连接窗口的界面如下，点击桌面连接的图标，可以进行连接。如果启用了自动连接，系统也会延迟3秒自动登陆。\n配置中心界面如下：\n当以用户账号登陆到DoraCloud管理系统时，【桌面云用户门户】登陆前后的效果如下图。\n8.2.2 手工配置云终端 云终端出厂设置状态为英文界面。如果您的终端有管理密码，并且您已经遗忘密码，可以通过热键 Ctrl+Alt+Shift+F2，恢复出厂设置。可以参见第8.4章节。\n第一步设置语言为中文和分辨率为Auto，如图所示。设置后，云终端会重启动。\n第二步：设置管理员密码。在终端的“系统”、“操作”、“设置密码”菜单中。可以设置密码为tcadmin。\n第三步：设置永远自动连接。\n第四步，增加DoraCloud连接。设置服务器地址为 192.168.5.9，【用户名】如果是使用使用终端ID登陆，填写 @；如果有多个群组（班级），用户名填写@group1。如果是使用账号登陆，填写用户名。点击保存。连接保存后，勾选“自动连接”。\n第五步，验证DoraCloud连接可以正常登陆桌面云。\n可以在连接窗口中，点击连接的图标，即可连接。 也可以在配置中心中，点击“连接”操作。\n登陆桌面后，应该会自动进入Windows。 我们选择断开，或者注销，或者按Shift + F12（退出桌面的快捷键），离开Windows，可以看到如下界面。\n接下来，我们登陆 DoraCloud 管理系统后台，可以看到终端自动的绑定到了用户user01。\n8.2.3 批量配置云终端 启动TCM，设置搜索区间，192.168.1.162-192.168.1.162，点击搜索。 点击“任务管理”，点击“云教室配置”。勾选“账号绑定”，填写信息。【填写服务器地址：192.168.5.9】、【用户名前缀：@】。如图（8-12）所示。此处我们假定终端是采用终端标识认证。 除了桌面云连接账号外，还需要配置终端的分辨率、语言、管理员口令。配置界面如下。\n最后选择“全选”，“执行任务”，执行上述的配置任务。即可完成云终端的批量配置。\n8.2.4 云终端的管理（VDClass） VDClass用于对云终端进行管理。在云教室中，我们主要使用VDClass的三个功能：云终端远程监控、屏幕广播、云终端的开机和关机。\n远程监控：右键菜单，选择“远程监控”，即可开启远程监控功能。 屏幕广播：选择云终端，点击广播按钮，即可开启广播。使用VDClass广播，可以直接广播到云终端。 云终端的开机和关机：搜索所有云终端，保存云终端列表。然后执行云终端的关机。执行开机，选择列表中的云终端，确认，即可对云终端开机。 9. 云教室验收测试 9.1 上课 开启服务器机柜电源开关。 按服务器电源开关，启动服务器。 开启学生机供电总开关。 使用VDClass进行远程上电。 观察学生终端，是否正常登陆了桌面Windows。 9.2 下课 按服务器电源按钮，将服务器关机。 关闭服务器机柜电源开关。 对学生机远程关机。 关闭学生机电源总开关。 9.3 桌面云系统还原 进入DoraCloud管理系统，进入“桌面池”界面。 点击“还原”操作。 进入弹窗，点击“确定”按钮。完成还原。\n在桌面列表中观察桌面状态，2-3分钟会完成还原，显示“正在运行”状态。重启云终端，即可登录。\n9.4 桌面云系统修改模板 请参见本文 5.2 、5.3、5.4章节的内容。 对模板进行编辑，增加新的软件。 模板编辑完毕后，需要使用新的模板重建桌面池。\n9.5 桌面云系统重建 重建桌面池时，系统的处理负荷比较大。建议关闭云终端后进行桌面池的重建操作。如果不关闭云终端，云终端的反复重连操作，会消耗DoraCloud的资源，影响桌面池的重建。\n进入Dekpool页面，在“桌面池”页面，点击“重建”。 进入重建桌面池虚拟机，点击“确定”按钮。完成重建。\n在桌面列表中观察桌面状态，10分钟（按照10台虚拟机计算时间）会完成重建，显示“正在运行”状态。重启云终端，即可登录。\n9.6 多媒体教学软件广播 启动极域课堂管理系统教师端，设置用户名、密码（可以设置为空）。\n在极域课堂管理系统内观察上线的学生桌面，观察学生是否上线。\n演示广播。点击“屏幕广播”按钮，完成演示。\n10. 云教室的其他设置 10.1 终端上电模式的配置 朵拉云的DC20云终端支持三种开机模式：\n远程开机（Wake On LAN）、上电自启动、手动开机。\n10.1.1 远程开机 在教室机上安装vdclass软件。\n搜索所有云终端\n保存云终端列表\n将终端关机，然后选择开机，选中保存的终端列表，即可对云终端进行远程开机。 注意：远程开机依赖于广播，仅仅对于同一广播段内的终端有效。\n10.1.2 上电自启动 朵拉云DC20支持配置上电自启动。可以通过TCManager来启用上电自动开机功能。请使用最新TCManager。\nJ70、J90有上电自启动的拨码开关。\n10.2 如何保证终端和桌面按照顺序编号 为了实现顺序编号，一种方案是云终端按照座位编号配置，手工顺序配置每个云终端的用户账号。第一个终端用户名 user01，依次类推。\n云教室如果采用终端ID认证模式，可以快速实现云终端的顺序编号。操作步骤为：\n全部云终端采用终端ID认证模式（用户名设置为@，或者@Group1）登陆桌面云系统。 把所有云终端关机。 在DoraCloud用户管理菜单中，清除用户的终端ID的绑定关系。 按照座位顺序，将云终端依次手工开机。第一个开机的为绑定用户 user01，依次类推就实现了云终端的桌面的顺序编号。 10.3 如何防止学生修改云终端的配置 为云终端设置管理员密码。这样云终端本地进入控制中心时，会提示输入密码。\n10.4 云教室新换了一个云终端，如何配置这个云终端？ 如果云教室采用手工配置，或者批量配置方式，请参见8.2.2一节的配置。 如果云教室采用的是7.3节的自动配置模式。可以找到旧终端对应的用户，然后新终端的ID填写在用户属性中。如下图所示\n也可以清除旧终端与用户的绑定关系，新的终端连接时，会自动绑定该用户。参见10.3一节的内容，重新重新绑定一下。\n11. 高级课题 11.1 云教室采用静态IP分配模式 静态IP有两种模式：\n混合模式：网络中有DHCP。桌面虚拟机采用静态IP分配。云终端、模板虚拟机采用DHCP配置。\n全静态模式：网络中没有DHCP。桌面虚拟机，云终端，模板虚拟机，都采用静态IP配置。\n混合模式的配置比较简单。需要规划一段IP地址，不再DHCP池的范围内，把这段地址配置给桌面池即可。其他配置不需要改动。如下图，使用了 10.2.242.11-10.2.242.60的地址段为桌面池的静态IP。这一IP段就不能再用于DHCP地址段。混合模式下，模板虚拟的网卡可以配置为DHCP方式。创建出的虚拟机先获得一个动态地址，然后DoraCloud管理系统根据桌面池的IP范围为桌面配置静态IP。如果编辑模板，模板虚拟机得到的是动态IP。\n全静态模式的配置相对复杂一些。\n首先，DoraCloud安装时，选择静态IP安装。如果静态IP没有办法安装成功，可以考虑临时搭建一个dhcp安装DoraCloud。\n其次，DoraCloud制作模板时，需要为模板配置一个静态IP地址。否则无法正常的编辑模板，基于模板也无法正常创建桌面。\n另外，在DoraCloud的桌面池内，启用“绑定IP”，并配置IP池。\n最后，由于没有DHCP，需要为每个云终端手工配置固定IP。该工作只能手工完成，比较费时。\n总体上讲，我们不推荐使用全静态IP分配模式。如果业务上有静态IP分配要求，可以考虑混合模式。\n11.2 使用DoraCloud对等集群 DoraCloud桌面虚拟化系统支持对等集群。配置对等集群时，先部署好第一个DoraCloud系统，后续节点部署好后，加入集群即可。\n11.3 使用其他虚拟化系统（VMware、Proxmox） 请联系朵拉云科技技术支持\n12. 常见故障处理 12.1 终端无法开机（电源指示灯不亮） 故障现象：云终端电源指示灯不亮。\n排查方法：\n按云终端电源按键，看能否正常开机。 检查电源适配器与电源插座的连接是否正常。 更换其他电源适配器，检查电源适配器是否正常。 可能原因： 云终端电源适配器故障。 云终端故障。 12.2 屏幕没有显示（终端电源指示亮） 故障现象：云终端电源指示灯亮，屏幕没有显示。\n排查方法：\n检查云终端与显示器的连接是否正常。 检查显示器是否正常，可以把云终端连接到其他显示器。 将云终端断电，重新开机，看是否有显示。\n可能原因： 云终端故障。 云终端与显示器的连接线故障或者接触不良。 显示器故障。 12.3 终端网络故障 故障现象：云终端提示“等待网络”，或者提示“正在连接DoraCloud”。 排查方法：\n退出到云终端的控制台界面，按F1，检查是否有IP地址。 检查云终端的网线连接是否正常。 可能原因： 云终端的网络物理连接不正常。 没有配置正确的IP地址，或者无法从DHCP分配到IP地址。 12.4 无法连接DoraCloud 故障现象：云终端提示“正在连接DoraCloud”。\n排查方法：\n检查DoraCloud是否正常运行。 检查云终端到DoraCloud的网络通信是否正常。 可能原因： DoraCloud没有运行。 云终端到DoraCloud的网络不可达。 12.5 无可用的桌面资源 三个可能原因：\n用户对应的桌面池内，没有空闲的桌面资源了。 桌面池选择了“强制后缀匹配”。没有与用户编号对应的虚拟机。比如user03连接时，桌面池中没有vm03的虚拟机资源。 如果终端采用的是ID认证。终端连接DoraCloud时，没有空闲的用户捆版到该终端。这种情况发生在一个云终端故障了，换了一个新的云终端。但是由于旧终端的ID还与用户绑定，新的终端登录时，无法分配到空闲用户。会出现无可用资源 的提示。 12.6 登陆桌面密码错误 检查终端的账号是否在DoraCloud桌面管理系统中存在。并且密码与终端上配置的账号密码一致。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0008/",
+    "title": "KB0008.修改终端机桌面的分辨率",
+    "description": "KB0008.修改终端机桌面的分辨率
+",
+    "content": "修改终端机桌面的分辨率，先进入DoraCloud的管理后台，找到【终端】，点击新增，然后我们找到分辨率选择合适的进行设置。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0009/",
+    "title": "KB0009.DoraCloud桌面云播放视频卡顿",
+    "description": "KB0009.DoraCloud桌面云播放视频卡顿
+",
+    "content": "可能原因1：Hyper-V虚拟化平台下，没有安装硬件原厂网卡驱动和主板驱动。 Windows安装时，一般会加载微软默认的网卡和主板驱动。默认驱动只能保证系统的基本工作，可能存在网络丢包，CPU性能差的问题。从而导致云终端连接桌面虚拟机播放视频出现卡顿。 问题的检测方法为，在Windows Server中运行 ServerChecker，可以直接命令行输入 serverchecker，或者通过 应用程序图标启动。 ServerChecker会给出驱动程序的检查结果。黄色部分的驱动，是需要重新安装驱动的。\n可能原因2：桌面模板没有安装RDP加速包。 朵拉云官方提供的模板都已经安装了RDP加速包。如果您是自己制作的模板，有可能没有安装RDP加速包，导致视频播放性能差。 RDP加速包的下载地址为 http:///downloads/ 。 安装RDP加速包时，请使用管理员角色安装。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0010/",
+    "title": "KB0010.Windows 10开启远程桌面H264/AVC硬件编码",
+    "description": "Windows 10开启远程桌面H264/AVC硬件编码
+",
+    "content": "RDP10支持H264/AVC硬件编码。采用硬件编码时，可以使用GPU（集成显卡或者独立显卡)的硬件H264编码能力对屏幕进行编码，该模式可以降低远程桌面协议时的CPU占用，降低操作延时，提供更好的远程桌面体验。 开启H264/AVC硬件编码的方法为\n打开组测略管理器（gpedit.msc)，找到 【计算机设置】【管理模板】【Windows组件】【远程桌面服务】【远程会话环境】。 然后启用【为远程桌面连接设置H264/AVC 444 图形模式的优先级】、【配置远程桌面连接的H264/AVC 硬件编码】\n如图所示 为了启用H264/AVC444，在客户端（DoraOS或者朵拉云云终端）的RDP连接设置中，需要勾选 【启用AVC/H264编码】。\n在启用AVC/H264硬件编码后，远程桌面连接的视频体验会较好。\n确认AVC/H264硬件编码生效的方式有两种：\n方法1：在windows主机的任务管理器中查看 GPU的编码器的占用率。 如果GPU编码的占用率不是0，说明启用了硬件编码。\n方法2：查看Windows的时间日志。 在 【应用和程序服务日志】【Windows】【RemoteDesktopServices RdpCoreTS】目录下，查看 162、170的日志。 162表示启用了 AVC 444编码，170显示了所使用的H264编码器。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0015/",
+    "title": "KB0016. 云终端如何加载补丁程序？",
+    "description": "云终端如何加载补丁程序？
+",
+    "content": "朵拉云科技的云终端有两种方法可以加载补丁。\n方法1：通过U盘升级补丁\n第一阶段，升级准备：\n下载相应主机的补丁包（名称为update.jytc）；\n准备 U盘，并且格式化为FAT32格式，如果U盘已经格式化，请确认U盘为FAT或者FAT32格式；\n将 update.jytc 拷贝到U盘的根目录。\n启动主机，进入\u0026lt;系统设置\u0026gt;界面，查看“系统信息”中的“镜像发布时间”，记住升级前的版本信息。\n第二阶段，系统升级：\n把U盘插入主机的USB接口中，如果主机USB接口不足，请外接USB HUB，扩展USB端口；\n进入\u0026lt;系统设置\u0026gt;界面，点击【系统更新】，在确认出对话框中点击【确认】；\n系统给出提示“系统正在升级，请耐心等待\u0026hellip;” 大约几分钟后，系统完成升级并重新启动；\n待主机重启后，进入\u0026lt;系统设置\u0026gt;界面，查看“系统信息”下的“镜像发布时间”，如果比之前记录版本新，说明系统升级成功。\n注意，在升级过程中，请勿对主机进行断电、复位等操作。否则会导致系统无法启动。\n方法2：通过TCmanager加载补丁 1）下载TCmanager，并安装在一台Windows 计算机上.\nhttps://www.doracloud.cn/downloads/11-cn.html\n2）启动TCmanager，设置终端的IP地址范围，搜索终端。\n3）选择“任务管理”、“系统设置”、“升级系统”，选择需要加载的补丁文件，然后勾选需要升级的终端，然后按“执行任务”。\n重新搜索终端，查看终端的固件日期是否发生变化。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/",
+    "title": "参考指南",
+    "description": "参考指南提供了《Deskpool用户指南》、《Deskpool管理员指南》、《DoraOS用户手册》
+",
+    "content": "Deskpool用户指南：适用于桌面云用户。\nDeskpool管理员指南：适用于桌面云系统管理员。\nDoraOS用户手册：描述了 DoraOS 瘦客户机软件系统的安装和使用。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/",
+    "title": "操作维护",
+    "description": "操作维护描述了 DoraCloud 的常见操作
+",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0011/",
+    "title": "KB0011. VDClass如何对云终端进行开机",
+    "description": "VDClass如何对云终端进行开机
+",
+    "content": "VDClass 通过网络唤醒(Wake-on-LAN,WOL)来对云终端进行开机。\n1、确认云终端开启了网络唤醒。\n2、手工将云终端开机，通过VDClass搜索到所有终端，然后在VDClass的终端菜单中保存终端列表。\n3、然后通过VDClass的终端菜单进行开机。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0012/",
+    "title": "KB0012. DoraCloud系统无法启动，如何进行恢复？",
+    "description": "DoraCloud系统无法启动，如何进行恢复？
+",
+    "content": "DoraCloud系统运行在Linux虚拟机内。如果遇到异常断电，重启，有可能导致 DoraCloud 系统的数据库损坏，DoraCloud的 Web 管理后台，无法进入.\n这种情况下，可以进行数据库的恢复。DoraCloud会在每天凌晨备份的数据库。会将数据库导出到一个配置文件中。大约会保存1-2周的每日数据库。备份的目录在 DoraCloud VM Linux 系统的 ~\\backup 目录下。\n1）.登陆 Linux VM， 用户名 root， 缺省密码 dora@cloud，将 jy 目录备份。\n2）.回到Windows 界面，将 ~\\backup 目录下的文件拷贝到Windows 机器。\n3）. 再回到 Linux VM，将Linux 重启，输入管理后台IP地址，系统进入初始化状态，然后选择一个备份数据进行恢复.\n4）.最后退出维护模式。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0013/",
+    "title": "KB0013. DoraCloud如何使用虚拟声卡？",
+    "description": "DoraCloud如何使用虚拟声卡？
+",
+    "content": "如果遇到应用程序无法兼容音频重定向的情况，可以考虑启用虚拟声卡。\n虚拟声卡（Virtual Voice）需要专用的通道来传送声音。 需要在Windows 内安装虚拟声卡驱动，并且终端和VM必须在同一个IP网络内。无法穿越防火墙和RDP网关。\n启用虚拟声卡有如下要求：\n1）终端开启“虚拟声卡”的开关,开机完毕批量重启虚拟机。\n2）编辑模板在Windows内安装虚拟声卡驱动（首先安装补丁KB3033929,再安装虚拟声卡驱动）。\n虚拟声卡驱动：联系厂家获取\n3）DoraCloud桌面池勾选虚拟声卡,网络层面要求终端和桌面虚拟机的IP可以互通.\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0014/",
+    "title": "KB0014.Proxmox下如何创建数据盘？",
+    "description": "Proxmox下如何创建数据盘？
+",
+    "content": "1.填写DoraCloud VM的ID，在DoraCloud上创建虚拟磁盘，在用户登录时，会自动将虚拟磁盘分配给用户，DoraCloud虚拟机切勿删除，否则用户磁盘会丢失。\n2.等待虚拟机创建成功之后登录，登录完成会显示挂载数据盘成功。\n3.检查虚拟机挂载的数据盘是否正常，因为磁盘是动态分配，因此我们要登录虚拟机才能检查数据盘，登录成功，打开磁盘管理，可以看到数据盘创建成功。\n4.如图所示，朵拉云管理后台中也可以查看用户数据盘状态。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0016/",
+    "title": "KB0016. DoraCloud管理系统没有IP地址，内部只有eth1网卡",
+    "description": "DoraCloud管理系统没有IP地址，内部只有eth1网卡
+",
+    "content": "DoraCloud 管理系统的Linux VM的mac地址如果发生改变。会导致会导致虚拟机内的网卡变成了eth1，DoraCloud管理系统无法正常启动。 出现这个问题的原因时，CentOS Linux会将mac地址和eth0、eth1绑定。这样老的mac绑定了eth0，新的mac绑定eth1，从而无法得到正确的ip配置。\n问题的解决方案为，进入 DoraCloud 管理系统的Linux 。缺省账号 root dora@cloud 然后执行一下操作\nrm vi /etc/udev/rules.d/70-persistent-net.rules\rreboot 重启 Linux 后，观察IP是否正常。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0017/",
+    "title": "KB0017. 戴尔服务器R7525启用支持NVIDIA GPU，开启vGPU",
+    "description": "戴尔服务器R7525启用支持NVIDIA GPU，开启vGPU
+",
+    "content": "戴尔服务器R7525启用NVIDIA GPU，服务器的BIOS需要做如下设置：\n1、启用BIOS中，处理器设置的 Virtualization Technology 和 IOMMU Support 2、启用BIOS中，集成外设（Integrate Devices)的 SR-IOV Global Enable。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0018/",
+    "title": "KB0018. 如何修改DoraCloud桌面云的RDP服务端口",
+    "description": "如何修改DoraCloud桌面云的RDP服务端口
+",
+    "content": "在一些应用场景中，不允许开放3389端口。这种情况下，我们可以修改RDP服务的端口。\n1、启用BIOS中，处理器设置的 Virtualization Technology 和 IOMMU Support 2、启用BIOS中，集成外设（Integrate Devices)的 SR-IOV Global Enable。 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0019/",
+    "title": "KB0019. 使用ceph作为数据盘存储池时，用户数据盘无法创建",
+    "description": "使用ceph作为数据盘存储池时，用户数据盘无法创建&#34;
+",
+    "content": "Proxmox VE 最新版本 7.4.3 已经修复了改bug。可以通过 apt dist-upgrade 升级proxmox 到最新版本解决\nProxmox 的API在处理 ceph 存储时，有bug。需要要修改一下proxmox 中的脚本。执行如下命令\ncp /usr/share/perl5/PVE/Storage/RBDPlugin.pm /usr/share/perl5/PVE/Storage/RBDPlugin.pm.org sed -i \u0026#34;s/return \\$size;/return wantarray ? (\\$size, \u0026#39;raw\u0026#39;, 0, undef) : \\$size;/g\u0026#34; /usr/share/perl5/PVE/Storage/RBDPlugin.pm 上述命令会完成如下操作：\n将文件/usr/share/perl5/PVE/Storage/RBDPlugin.pm 的volume_size_info 函数从如下内容\nsub volume_sizeinfo {\rmy ($class, $scfg, $storeid, $volname, $timeout) = @;\rmy ($vtype, $name, $vmid) = $class-\u0026gt;parse_volname($volname);\rmy ($size, undef) = rbd_volume_info($scfg, $storeid, $name);\rreturn $size;\r} 修改成\nsub volume_sizeinfo {\rmy ($class, $scfg, $storeid, $volname, $timeout) = @;\rmy ($vtype, $name, $vmid) = $class-\u0026gt;parse_volname($volname);\rmy ($size, undef) = rbd_volume_info($scfg, $storeid, $name);\rreturn wantarray ? ($size, \u0026#39;raw\u0026#39;, 0, undef) : $size;\r} "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0020/",
+    "title": "KB0020. 使用ZFS作为数据盘存储池时，用户数据盘无法创建",
+    "description": "使用ZFS作为数据盘存储池时，用户数据盘无法创建&#34;
+",
+    "content": "**最新的Proxmox VE版本（7.4.3)已经修复了这个bug。 执行 apt dist-upgrade 即可。 2023-06-04 **\nProxmox 的API在处理 ZFS 存储时，有bug。\n首先执行如下命令，备份需要修改的文件 ZFSPoolPlugin.pm\ncp /usr/share/perl5/PVE/Storage/ZFSPoolPlugin.pm /usr/share/perl5/PVE/Storage/ZFSPoolPlugin.pm.origin 找到/usr/share/perl5/PVE/Storage/ZFSPoolPlugin.pm 的 volume_size_info 函数，内容如下\nsub volume_size_info {\rmy ($class, $scfg, $storeid, $volname, $timeout) = @_;\rmy (undef, $vname, undef, undef, undef, undef, $format) =\r$class-\u0026gt;parse_volname($volname);\rmy $attr = $format eq \u0026#39;subvol\u0026#39; ? \u0026#39;refquota\u0026#39; : \u0026#39;volsize\u0026#39;;\rmy $value = $class-\u0026gt;zfs_get_properties($scfg, $attr, \u0026#34;$scfg-\u0026gt;{pool}/$vname\u0026#34;);\rif ($value =~ /^(\\d+)$/) {\rreturn $1;\r}\rdie \u0026#34;Could not get zfs volume size\\n\u0026#34;;\r} 修改成如下内容\nsub volume_size_info {\rmy ($class, $scfg, $storeid, $volname, $timeout) = @_;\rmy (undef, $vname, undef, undef, undef, undef, $format) =\r$class-\u0026gt;parse_volname($volname);\rmy $size = 0;\rmy $used = 0;\rmy $attr = $format eq \u0026#39;subvol\u0026#39; ? \u0026#39;refquota\u0026#39; : \u0026#39;volsize,used,origin,name\u0026#39;;\rmy $value = $class-\u0026gt;zfs_get_properties($scfg, $attr, \u0026#34;$scfg-\u0026gt;{pool}/$vname\u0026#34;);\rif ($value =~ /^(\\d+)$/) {\r$size = $1;\r}\rif ($value =~ /^(\\d+)$/) {\r$used = $1;\r}\rreturn wantarray ? ($size,$format,$used,0,undef) : $size;\r} "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0021/",
+    "title": "KB0021. 如何设置朵拉云的绑定账号",
+    "description": "朵拉云在使用本地用户账号时，可以通过设置windows的绑定账号，避免二次输入桌面账号。
+",
+    "content": "朵拉云桌面系统支持两种用户认证方式：1、本地用户数据库。 2、AD认证。\n当采用本地用户数据库认证时，用户登陆桌面windows，需要经过两次认证。第一次是朵拉云桌面的账号认证。第二次是桌面windows的登陆认证。 两个账号是独立的。 第二次Windows认证时，使用的是Windows桌面的本地账号。Windows桌面创建时，桌面的账号就是模板的默认账号。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0022/",
+    "title": "KB0022.极域广播时云桌面出现延时和卡顿",
+    "description": "极域广播时云桌面出现延时和卡顿，通过调整极域的设置，可以降低CPU占用，提供更流畅的广播效果
+",
+    "content": "在云桌面环境下，极域的电子教学软件的缺省配置占用的网络带宽较高。可能会带来卡顿，延时大，黑屏等问题。 我们可以对极域电子教学软件教师端的程序进行配置，降低广播的带宽，实现更好的体验。配置方法如下：\n1、启动极域电子教学软件 教师程序。\n2、在程序的右上方，打开下拉菜单，进入“选项”。\n3、在选项中，选择“网络”。在屏幕广播帧数率中，选择 “15fps”；把网络滞后时间配置成 3秒。 点击确定，保存配置。\n4、重新进行屏幕广播，观察学生机显示的延时。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0023/",
+    "title": "KB0023.pve直接编辑磁盘内容的两种方式",
+    "description": "直接编辑磁盘内容的两种方式
+",
+    "content": "方法一：libguestfs 安装libguestfs工具集 #安装libguestfs工具集\rapt install libguestfs-tools 2.编辑虚拟机磁盘文件\n#虚拟机关机状态操作\r#如果是windows虚拟机，如果开机过一次，就需要关闭电源管理里的快速启动选项（快速启动会把内存数据写入磁盘保存，导致虚拟机磁盘无法编辑）\r#创建挂载点\rmkdir /kk\r#挂载磁盘\rguestmount -a /mnt/data/images/103/vm-103-disk-1.qcow2 -i --rw /kk 编辑模板磁盘文件 #解除模板磁盘文件锁定\rchattr -i base-114-disk-1.qcow2\r#创建挂载点\rmkdir /kk\r#挂载磁盘\rguestmount -a base-114-disk-1.qcow2 -i --rw /kk 编辑磁盘内容 #进入挂载点\rcd /kk\r#编辑磁盘内容 移除挂载\numount /kk\n方法二：qemu-nbd 安装qemu-utils（pve自带，不用安装）,安装nfts-3g #安装qemu-utils\rapt install qemu-utils\r#安装ntfs-3g\rapt install ntfs-3g 2.创建nbd网络块设备\n#加载nbd内核模块，并创建8个nbd块设备\rmodprobe nbd max_part=8\r3.将磁盘导出为网络块设备\n#将磁盘导出为网络块设备\rqemu-nbd --connect=/dev/nbd0 /mnt/data/images/102/vm-102-disk-1.qcow2 查看nbd块分区情况 #查看nbd块分区情况\rfdisk -l /dev/nbd0\r#windows分区一般有3个\rroot@pve:/kk# fdisk -l /dev/nbd0\rDisk /dev/nbd0: 100 GiB, 107374182400 bytes, 209715200 sectors\rUnits: sectors of 1 * 512 = 512 bytes\rSector size (logical/physical): 512 bytes / 512 bytes\rI/O size (minimum/optimal): 512 bytes / 512 bytes\rDisklabel type: gpt\rDisk identifier: EA0D45E0-A220-4547-8D89-7B1E34142D39\rDevice Start End Sectors Size Type\r/dev/nbd0p1 2048 206847 204800 100M EFI System\r/dev/nbd0p2 206848 239615 32768 16M Microsoft reserved\r/dev/nbd0p3 239616 62910494 62670879 29.9G Microsoft basic data 挂载虚拟机磁盘和模板磁盘文件 ##虚拟机关机状态操作\r#如果是windows虚拟机，如果开机过一次，就需要关闭电源管理里的快速启动选项（快速启动会把内存数据写入磁盘保存，导致虚拟机磁盘无法编辑\r#挂载虚拟机磁盘，nbd00p3为windows系统分区\rmount -t ntfs /dev/nbd0p3 /kk\r#挂载模板磁盘（同理）\r#解除模板磁盘文件锁定\rchattr -i /mnt/data/images/114/base-114-disk-1.qcow2 qemu-nbd --connect=/dev/nbd0 /mnt/data/images/114/base-114-disk-1.qcow2 mount -t ntfs /dev/nbd0p3 /kk 编辑磁盘内容 #进入挂载点\rcd /kk\r#编辑磁盘内容 7.移除挂载\n#移除/kk挂载点\rumount /kk\r#移除块设备挂载\rqemu-nbd --disconnect /dev/nbd0 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0024/",
+    "title": "KB0024.rdp远程连不上排查步骤",
+    "description": "rdp远程连不上排查步骤
+",
+    "content": " 确认目标计算机的状态 #在虚拟化平台pve或winserver查看虚拟机是否开机，正常运行\r#虚拟化平台能否获取到虚拟机ip 检查网络连接 #windows虚拟机开启ping功能\rnetsh firewall set icmpsetting 8 #此命令已经被官网弃用，但是依然有效\r#windows虚拟机开启ping功能\rnetsh advfirewall firewall add rule name=\u0026#34;ICMP Allow Incoming V4 Echo Request\u0026#34; protocol=icmpv4:8,any dir=in action=allow #推荐使用\r#验证是否能平通虚拟机\rping + 虚拟机ip\r#能ping通的状态\rC:\\Users\\kk\u0026gt;ping 192.168.1.173\rPinging 192.168.1.173 with 32 bytes of data:\rReply from 192.168.1.173: bytes=32 time\u0026lt;1ms TTL=128\rReply from 192.168.1.173: bytes=32 time\u0026lt;1ms TTL=128\rReply from 192.168.1.173: bytes=32 time\u0026lt;1ms TTL=128\rReply from 192.168.1.173: bytes=32 time\u0026lt;1ms TTL=128\rPing statistics for 192.168.1.173:\rPackets: Sent = 4, Received = 4, Lost = 0 (0% loss),\rApproximate round trip times in milli-seconds:\rMinimum = 0ms, Maximum = 0ms, Average = 0ms 检查rdp的3389端口是否被放行 #管理员权限打开cmd\rnetstat -an | find \u0026#34;3389\u0026#34;\r#如果3389端口正在监听（LISTENING），那么它是开启的\rC:\\Users\\Administrator\u0026gt;netstat -an | find \u0026#34;3389\u0026#34;\rTCP 0.0.0.0:3389 0.0.0.0:0 LISTENING\rTCP [::]:3389 [::]:0 LISTENING\rUDP 0.0.0.0:3389 *:*\rUDP [::]:3389 *:* 确认远程桌面服务状态 #Windows + R 组合键来打开运行对话框。\r#输入 services.msc 并按下回车键\r#检查服务应用程序，确保这两个服务正在运行：\r远程桌面服务：Remote Desktop Services\r远程桌面服务端口重定向程序：Remote Desktop Services UserMode Port Redirector\r#如果一个或两个服务未运行，请启动它们 允许远程连接到此计算机 #在虚拟机上，右键点击 \u0026#34;此电脑\u0026#34; 或 \u0026#34;计算机\u0026#34;，选择 \u0026#34;属性\u0026#34;，然后点击 \u0026#34;远程设置\u0026#34;。\r#确保 \u0026#34;允许远程连接到此计算机\u0026#34; 选项已经选中。\r#如果使用的是特定的用户或组进行 RDP 连接，请确保他们已经被授权远程访问 防火墙和安全软件 #如果目标计算机有第三方防火墙或安全软件，确保它们没有阻止 RDP 连接。\r#暂时禁用防火墙或安全软件进行测试，但请注意安全风险，并在测试完成后立即重新启用它们 RDP 客户端 尝试从另一台计算机或设备使用 RDP 连接到目标计算机，以排除客户端特定的问题 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/operation-maintenance/kb0025/",
+    "title": "KB0025.DoraCloud服务器配置SSL证书",
+    "description": "DoraCloud管理系统增加SSL证书
+",
+    "content": "通过浏览器访问DoraCloud云桌面系统时，浏览器会给出安全提示， DoraCloud管理系统采用Java开发，运行在Tomcat容器中。整个管理打包在一个Linux虚拟机中。\n给DoraCloud管理系统添加证书包括以下几个步骤：\n1. 获取证书文件和对应的口令。 可以从相应的证书签发机构获得证书。\n比如从腾讯云获得的免费SSL证书，选择适用于 tomcat 的pfx格式的证书，包括如下两个文件：\nkeystorePass.txt\rvdi.doracloud.cn.pfx 2. 登陆DoraCloud Linux VM，默认的账号是 root dora@cloud\n3. 拷贝证书文件到 /home/jieyun/deskpool/tomcat/cert 目录\nmkdir /home/jieyun/deskpool/tomcat/cert\rcp vdi.doracloud.cn.pfx /home/jieyun/deskpool/tomcat/cert 4. 修改配置文件\n进入 /home/jieyun/deskpool/tomcat/conf/ ，编辑 server.xml ，修改Connector的定义为如下内容\n\u0026lt;Connector SSLEnabled=\u0026#34;true\u0026#34; acceptCount=\u0026#34;100\u0026#34; clientAuth=\u0026#34;false\u0026#34;\rdisableUploadTimeout=\u0026#34;true\u0026#34; enableLookups=\u0026#34;false\u0026#34; maxThreads=\u0026#34;25\u0026#34;\rport=\u0026#34;443\u0026#34; keystoreFile=\u0026#34;cert/vdi.doracloud.cn.pfx\u0026#34; keystorePass=\u0026#34;73xfg573dnhn1\u0026#34;\rprotocol=\u0026#34;org.apache.coyote.http11.Http11NioProtocol\u0026#34; scheme=\u0026#34;https\u0026#34;\rsecure=\u0026#34;true\u0026#34; sslProtocol=\u0026#34;TLS\u0026#34; /\u0026gt; 注意，主要是修改 keystoreFile 和 keystorePass 两个属性的内容。 keystorePass的密码请从keystorePass.txt文件中复制过来。\nkeystoreFile=\u0026quot;cert/vdi.doracloud.cn.pfx\u0026quot; keystorePass=\u0026quot;73xfg573dnhn1\u0026quot;\n然后重启 DoraCloud Linux VM。\n5. 重启完毕后，通过浏览器访问 DoraCloud管理系统，验证SSL前面已经启用。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/categories/",
+    "title": "Categories",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/doracloud/",
+    "title": "DoraCloud",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/",
+    "title": "Tags",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/%E5%85%8D%E8%B4%B9%E7%89%88/",
+    "title": "免费版",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/categories/%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B/",
+    "title": "应用案例",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/%E4%BA%91%E5%8A%9E%E5%85%AC/",
+    "title": "云办公",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/",
+    "title": "DoraCloud产品介绍",
+    "description": "DoraCloud是一个多平台、多协议、分布式、一体化的桌面云管理系统，支持Hyper-V、Proxmox、VMware、XenServer等虚拟化环境",
+    "content": "\n朵拉云桌面方案包括DoraCloud桌面管理系统和系列终端。它基于开放架构，支持多种虚拟化平台（Hyper-V、VMware、XenServer、Proxmox/KVM），多种桌面协议（RDP、SPICE、PCoIP），采用了一体化的设计模式和虚拟设备的部署方式。具有简单、易用、灵活的特点。适用于教育、政企办公、3D设计、信息安全等多种应用场景。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/%E4%B8%9C%E8%8E%9E%E6%A1%8C%E9%9D%A2%E4%BA%91/",
+    "title": "东莞桌面云",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/%E6%B7%B1%E5%9C%B3%E6%A1%8C%E9%9D%A2%E4%BA%91/",
+    "title": "深圳桌面云",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tags/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6/",
+    "title": "中山大学",
+    "description": "",
+    "content": ""
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/downloads/",
+    "title": "",
+    "description": "",
+    "content": "Deskpool配套终端 Deskpool配套终端 我们推荐使用瘦客户机连接Deskpool桌面云系统。\n[瘦客户机 JC10][URL_JC10_taobao]\n[瘦客户机 JC30][URL_JC30_taobao]\n也可以选择下载和安装 DoraOS，将把旧PC改造成瘦客户机。\n[DoraOS瘦客户机软件系统][URL_DoraOS_V10]\n"
+  }
+
+
+
+
+
+
+
+
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case3/images/",
+    "title": "",
+    "description": "",
+    "content": ""
+  }
+
+
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case4/images/",
+    "title": "",
+    "description": "",
+    "content": ""
+  }
+
+
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/examples/cloud-classroom/case5/images/",
+    "title": "",
+    "description": "",
+    "content": ""
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/reference/doraosguide/images/",
+    "title": "",
+    "description": "",
+    "content": ""
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/kylin%E5%92%8Cuos/",
+    "title": "创建Kylin桌面模板和UOS桌面模板",
+    "description": "介绍了创建Kylin桌面模板和UOS桌面模板的制作过程。
+",
+    "content": " 本文描述在 DoraCloud for proxmox 平台下，安装 kylin和uos虚拟机，并制作桌面模板的过程。完成整个文档的操作需要30分钟。\n如果您仅仅需要一个DoraCloud的桌面模板，用于测试DoraCloud的功能，建议您根据参考《DoraCloud快速部署指导书》，完成DoraCloud的安装，以及演示环境的搭建。\nDoraCloud提供在线模板库功能，可以在线下载本文制作的模板。\n准备工作 1.镜像文件\nKylin安装镜像：Kylin-Desktop-V10-SP1-HWE-Release-2303-X86_64.iso\nUOS安装镜像：uos-desktop-20-professional-1060-amd64.iso\n2.proxmox服务器已经完成虚拟化系统的安装，以及DoraCloud的初始配置\nKylin 步骤一、安装Kylin虚拟机 pve新建kylin虚拟机，选择bios安装，具体如图所示 增加usb设备，音频设备，调整显示模式，具体如果所示 全盘安装kylin选择lvm模式，方便后续虚拟机扩容 配置账户信息，临时配置8位密码，等安装完成再改 完成安装 步骤二、配置Kylin系统 自定义密码策略，修改密码，建议设置为123456，后续由管理平台统一管控 1.1 打开安全中心，自定义密码策略\n1.2 打开设置，修改密码\n配置防火墙和安全策略 2.1 启用专用网络，关闭公用网络，高级配置，添加一条全通过的策略,关闭联网控制，此操作是为了保证云桌面服务正常运行\n关闭所有应用保护，此操作是为了保证云桌面服务正常运行 关闭设备安全，此操作是为了保证云桌面服务正常运行 联网安装云桌面服务需要的包，启动所需服务 #更新系统\rsudo apt update\r#安装qemu-guest-agent服务包\rsudo apt install qemu-guest-agent\r#安装rdp服务包\rsudo apt install xrdp\r#安装spice服务包\rsudo apt intall spice-vdagent\r#安装ssh服务包（选做）\rsudo apt install openssh-server\r#安装cloud-init服务包，用于快速配置系统user，ip和hostname信息\rsudo apt install cloud-init\r#配置开机自启xrdp和ssh服务\rsudo systemctl enable xrdp\rsudo systemctl enable ssh #选做\r#配置ssh登录（选做）\r#编辑/etc/ssh/sshd_config，配置PermitRootLogin yes #配置账户连接权限 #虚拟机环境，银河麒麟远程登录会新开一个工作区,导致产生了两个桌面\r#原因：kylin-mate桌面工作区设置和云桌面rdp策略不兼容\r#解决办法：修改管理权限\rsudo echo \u0026#34;greeter-show-manual-login=true\u0026#34; \u0026gt;\u0026gt; /usr/share/lightdm/lightdm.conf.d/95-ukui-greeter.conf\r#银河麒麟开机提示色彩管理配置弹窗\rsudo sed -i \u0026#34;8c User=administrator\u0026#34; /lib/systemd/system/colord.service 关闭虚拟机，添加cloud-init硬件 添加cloud-init硬件后，即可快速配置系统user，ip和hostname信息\n步骤三、虚拟机导入为模板 1.管理系统启动linux系统支持\n2.创建模板，虚拟机开机后，根据向导完成模板制作\n步骤四、kylin 磁盘扩容 虚拟机关闭状态下，在proxmox中调整磁盘大小 开机后，使用终端扩容 2.1 查看分区情况，发现sda磁盘已扩容，但是系统本身并未自动扩容\nadministrator@pc:~$ sudo lsblk\rNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT\rsda 8:0 0 150G 0 disk\r├─sda1 8:1 0 2G 0 part /boot\r├─sda2 8:2 0 1K 0 part\r└─sda5 8:5 0 98G 0 part\r├─kylin--vg-root 253:0 0 57.4G 0 lvm /\r├─kylin--vg-data 253:1 0 38.3G 0 lvm /data\r└─kylin--vg-swap 253:2 0 2.3G 0 lvm [SWAP]\rsr0 11:0 1 4M 0 rom\rsr1 11:1 1 1024M 0 rom 2.2 新建分区，此处不能使用fdisk，只能使用cfdisk\nadministrator@pc:~$ sudo cfdisk /dev/sda 2.3 创建物理卷\nadministrator@pc:~$ sudo pvcreate /dev/sda3\rPhysical volume \u0026#34;/dev/sda3\u0026#34; successfully created. 2.4 扩容vg卷\nadministrator@pc:~$ sudo vgextend kylin-vg /dev/sda3 #此处kylin-vg为安装系统时新建lvm时vg卷组名称，可通过lsdisplay查看具体信息，也可通过lsblk查看\rVolume group \u0026#34;kylin-vg\u0026#34; successfully extended 2.5 查看vg扩容情况\nadministrator@pc:~$ sudo vgs\rVG #PV #LV #SN Attr VSize VFree\rkylin-vg 2 3 0 wz--n- \u0026lt;147.99g \u0026lt;50.00g 2.6 将data逻辑卷增加49G，因为数值换算原因，无法实际增加50G（此处也可以给根分区扩容，按照需求选）\nadministrator@pc:~$ sudo lvextend -L +49G /dev/kylin-vg/root\rSize of logical volume kylin-vg/root changed from 57.41 GiB (14697 extents) to 106.41 GiB (27241 extents).\rLogical volume kylin-vg/root successfully resized. 2.7 查看文件系统格式，使用不同的扩容命令，此处是ext4\nadministrator@pc:~$ sudo blkid\r/dev/mapper/kylin--vg-root: LABEL=\u0026#34;SYSROOT\u0026#34; UUID=\u0026#34;0716acbc-349d-4acb-904d-990e48327aa4\u0026#34; TYPE=\u0026#34;ext4\u0026#34;\r/dev/sr0: BLOCK_SIZE=\u0026#34;2048\u0026#34; UUID=\u0026#34;2023-12-25-11-54-48-00\u0026#34; LABEL=\u0026#34;cidata\u0026#34; TYPE=\u0026#34;iso9660\u0026#34;\r/dev/sda1: LABEL=\u0026#34;SYSBOOT\u0026#34; UUID=\u0026#34;30a31150-b812-4da2-b7d2-22e4aef7d45e\u0026#34; TYPE=\u0026#34;ext4\u0026#34; PARTUUID=\u0026#34;8a81ce02-01\u0026#34;\r/dev/sda5: UUID=\u0026#34;4UIVfp-USBW-xP74-QHbe-bYdh-1tMt-CBHbsI\u0026#34; TYPE=\u0026#34;LVM2_member\u0026#34; PARTUUID=\u0026#34;8a81ce02-05\u0026#34;\r/dev/mapper/kylin--vg-data: LABEL=\u0026#34;DATA\u0026#34; UUID=\u0026#34;875eccf5-0e88-45f8-a537-6b6d1767e681\u0026#34; TYPE=\u0026#34;ext4\u0026#34;\r/dev/mapper/kylin--vg-swap: LABEL=\u0026#34;SWAP\u0026#34; UUID=\u0026#34;46d9c09d-bee1-4200-ae4e-bdc894b9ed44\u0026#34; TYPE=\u0026#34;swap\u0026#34;\r/dev/sda3: UUID=\u0026#34;rewdBZ-mC5B-LbZF-NePe-3TG1-764Z-9OGpWX\u0026#34; TYPE=\u0026#34;LVM2_member\u0026#34; PARTUUID=\u0026#34;8a81ce02-03\u0026#34;\r#注意ext4文件系统使用resize2fs命令\r#注意xfs文件系统使用xfs_growfs命令 2.8 给系统分区扩容\nadministrator@pc:~$ sudo resize2fs /dev/kylin-vg/root\rresize2fs 1.45.5 (07-Jan-2020)\r/dev/kylin-vg/root 上的文件系统已被挂载于 /；需要进行在线调整大小\rold_desc_blocks = 8, new_desc_blocks = 14\r/dev/kylin-vg/root 上的文件系统现在为 27894784 个块（每块 4k）。 2.9 查看扩容结果\nadministrator@pc:~$ lsblk\rNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT\rsda 8:0 0 150G 0 disk\r├─sda1 8:1 0 2G 0 part /boot\r├─sda2 8:2 0 1K 0 part\r├─sda3 8:3 0 50G 0 part\r│ └─kylin--vg-root 253:0 0 106.4G 0 lvm /\r└─sda5 8:5 0 98G 0 part\r├─kylin--vg-root 253:0 0 106.4G 0 lvm /\r├─kylin--vg-data 253:1 0 38.3G 0 lvm /data\r└─kylin--vg-swap 253:2 0 2.3G 0 lvm [SWAP]\rsr0 11:0 1 4M 0 rom\rsr1 11:1 1 1024M 0 rom UOS 步骤一、安装UOS虚拟机 pve新建uos虚拟机，选择bios安装，具体如图所示 增加usb设备，音频设备，调整显示模式，具体如果所示 全盘安装uos选择lvm扩容模式，方便后续虚拟机扩容 取消初始化备份 完成安装 步骤二、配置UOS系统 登录开发者模式，获取管理员权限 配置防火墙和安全策略 2.1 防火墙添加自定义规则\n2.2 应用安全策略修改\n联网安装云桌面服务需要的包，启动所需服务 #更新系统\rsudo apt update\r#安装qemu-guest-agent服务包\rsudo apt install qemu-guest-agent\r#安装rdp服务包\rsudo apt install xrdp\r#安装spice服务包\rsudo apt intall spice-vdagent\r#安装ssh服务包（选做）\rsudo apt install openssh-server\r#安装cloud-init服务包，用于快速配置系统user，ip和hostname信息\rsudo apt install cloud-init\r#配置开机自启xrdp和ssh服务\rsudo systemctl enable xrdp\rsudo systemctl enable ssh #选做\r#配置ssh登录（选做）\r#编辑/etc/ssh/sshd_config，配置PermitRootLogin yes 配置ssh登录（选做） #编辑/etc/ssh/sshd_config，配置PermitRootLogin yes\rPermitRootLogin yes 编辑账户权限 #提示弹框“系统策略阻止网络连接的控制”\r#编辑/usr/share/polkit-1/actions/org.freedesktop.NetworkManager.policy第556行的auth_admin改为 yes 关闭虚拟机，添加cloud-init硬件 步骤三、虚拟机导入为模板 1.管理系统启动linux系统支持\n2.创建模板，虚拟机开机后，根据向导完成模板制作\n步骤四、uos磁盘扩容 关闭状态下调整磁盘大小 开机后，使用终端扩容 2.1 查看分区情况，发现sda磁盘已扩容，但是系统本身并未自动扩容\nadministrator@pc:~$ sudo lsblk\rNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT\rsda 8:0 0 150G 0 disk\r├─sda1 8:1 0 1.5G 0 part /boot\r└─sda2 8:2 0 98.5G 0 part\r├─group1-SWAP 254:0 0 2G 0 lvm [SWAP]\r├─group1-Roota 254:1 0 15G 0 lvm /\r├─group1-Backup 254:2 0 12G 0 lvm /recovery\r├─group1-Rootb 254:3 0 15G 0 lvm\r└─group1-_dde_data 254:4 0 54.5G 0 lvm /data\rsr0 11:0 1 4M 0 rom\rsr1 11:1 1 1024M 0 rom 2.2 新建分区\nadministrator@pc:~$ sudo fdisk /dev/sda\rWelcome to fdisk (util-linux 2.33.1).\rChanges will remain in memory only, until you decide to write them.\rBe careful before using the write command.\rCommand (m for help): p ##查看当前分区\rDisk /dev/sda: 150 GiB, 161061273600 bytes, 314572800 sectors\rDisk model: QEMU HARDDISK\rUnits: sectors of 1 * 512 = 512 bytes\rSector size (logical/physical): 512 bytes / 512 bytes\rI/O size (minimum/optimal): 512 bytes / 512 bytes\rDisklabel type: dos\rDisk identifier: 0x61c5c2a3\rDevice Boot Start End Sectors Size Id Type\r/dev/sda1 2048 3147775 3145728 1.5G 83 Linux\r/dev/sda2 3147776 209713152 206565377 98.5G 83 Linux\rCommand (m for help): n #新建分区\rPartition type\rp primary (2 primary, 0 extended, 2 free)\re extended (container for logical partitions)\rSelect (default p): #回车，默认新建主分区\rUsing default response p.\rPartition number (3,4, default 3): #回车，默认第三分区\rFirst sector (209713153-314572799, default 209715200): #回车\rLast sector, +/-sectors or +/-size{K,M,G,T,P} (209715200-314572799, default 314572799): #回车\rCreated a new partition 3 of type \u0026#39;Linux\u0026#39; and of size 50 GiB.\rCommand (m for help): w #写入当前操作\rThe partition table has been altered.\rSyncing disks. 13.3 创建物理卷\nadministrator@pc:~$ sudo pvcreate /dev/sda3\rPhysical volume \u0026#34;/dev/sda3\u0026#34; successfully created. 2.4 扩容vg卷\nadministrator@pc:~$ sudo vgextend group1 /dev/sda3 #此处group1为安装系统时新建lvm时vg卷组名称，可通过lsdisplay查看具体信息，也可通过lsblk查看\rVolume group \u0026#34;group1\u0026#34; successfully extended 2.5 查看vg扩容情况\nadministrator@pc:~$ sudo vgs\rVG #PV #LV #SN Attr VSize VFree\rgroup1 2 5 0 wz--n- 148.49g \u0026lt;50.00g 2.6 将root逻辑卷增加49G，因为数值换算原因，无法实际增加50G（此处也可以给data数据盘扩容，按照需求选）\nadministrator@pc:~$ sudo lvextend -L +49G /dev/group1/Roota #此处的Roota为根目录的逻辑卷名称，可通过lsblk查看。如果扩容数据盘，则为_dde_data\rSize of logical volume group1/Roota changed from 15.00 GiB (3840 extents) to 64.00 GiB (16384 extents).\rLogical volume group1/Roota successfully resized. 2.7 查看文件系统格式，使用不同的扩容命令，此处是ext4\nadministrator@pc:~$ sudo blkid\r/dev/sda1: LABEL=\u0026#34;Boot\u0026#34; UUID=\u0026#34;5d6267f5-760b-4928-be68-3f582fdc8ebe\u0026#34; TYPE=\u0026#34;ext4\u0026#34; PARTUUID=\u0026#34;61c5c2a3-01\u0026#34;\r/dev/sda2: UUID=\u0026#34;h3Q712-0Ji2-tIyK-tr70-qH2U-zj8s-qRyqbD\u0026#34; TYPE=\u0026#34;LVM2_member\u0026#34; PARTUUID=\u0026#34;61c5c2a3-02\u0026#34;\r/dev/sr0: UUID=\u0026#34;2023-12-25-10-48-15-00\u0026#34; LABEL=\u0026#34;cidata\u0026#34; TYPE=\u0026#34;iso9660\u0026#34;\r/dev/mapper/group1-SWAP: LABEL=\u0026#34;SWAP\u0026#34; UUID=\u0026#34;45256fd9-d004-47cd-8dc3-2a986787840a\u0026#34; TYPE=\u0026#34;swap\u0026#34;\r/dev/mapper/group1-Roota: LABEL=\u0026#34;Roota\u0026#34; UUID=\u0026#34;50a7f088-7284-4e19-a48f-02e3c6e09844\u0026#34; TYPE=\u0026#34;ext4\u0026#34; ## exit文件系统\r/dev/mapper/group1-Backup: LABEL=\u0026#34;Backup\u0026#34; UUID=\u0026#34;22b7f007-ad69-4cbe-b378-7d3d0690f9f0\u0026#34; TYPE=\u0026#34;ext4\u0026#34;\r/dev/mapper/group1-Rootb: LABEL=\u0026#34;Rootb\u0026#34; UUID=\u0026#34;d63a5fe7-86e4-4076-86c5-2f21d27713a2\u0026#34; TYPE=\u0026#34;ext4\u0026#34;\r/dev/mapper/group1-_dde_data: LABEL=\u0026#34;_dde_data\u0026#34; UUID=\u0026#34;c989624d-2b70-4f8e-9e7d-5a14425890fb\u0026#34; TYPE=\u0026#34;ext4\u0026#34;\r/dev/sda3: UUID=\u0026#34;uKK4c4-9o3M-3kvj-9n43-Ds8v-0rkl-tmMuT7\u0026#34; TYPE=\u0026#34;LVM2_member\u0026#34; PARTUUID=\u0026#34;61c5c2a3-03\u0026#34;\r#注意ext4文件系统使用resize2fs命令\r#注意xfs文件系统使用xfs_growfs命令 2.8 给系统分区扩容\nadministrator@pc:~$ sudo resize2fs /dev/group1/Roota\rresize2fs 1.44.5 (15-Dec-2018)\rFilesystem at /dev/group1/Roota is mounted on /; on-line resizing required\rold_desc_blocks = 2, new_desc_blocks = 8\rThe filesystem on /dev/group1/Roota is now 16777216 (4k) blocks long. 2.9 查看扩容结果\nadministrator@pc:~$ lsblk\rNAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT\rsda 8:0 0 150G 0 disk\r├─sda1 8:1 0 1.5G 0 part /boot\r├─sda2 8:2 0 98.5G 0 part\r│ ├─group1-SWAP 254:0 0 2G 0 lvm [SWAP]\r│ ├─group1-Roota 254:1 0 64G 0 lvm /\r│ ├─group1-Backup 254:2 0 12G 0 lvm /recovery\r│ ├─group1-Rootb 254:3 0 15G 0 lvm\r│ └─group1-_dde_data 254:4 0 54.5G 0 lvm /data\r└─sda3 8:3 0 50G 0 part\r└─group1-Roota 254:1 0 64G 0 lvm /\rsr0 11:0 1 4M 0 rom /media/administrator/cidata\rsr1 11:1 1 1024M 0 rom "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/ubuntu/",
+    "title": "创建Ubuntu桌面模板",
+    "description": "介绍了Ubuntu 20.4 LTS模板的制作过程。
+",
+    "content": " 本文描述在 DoraCloud for Hyper-V 平台下，安装 Ubuntu 20.04.3虚拟机，并制作桌面模板的过程。完成整个文档的操作需要30分钟。\n如果您仅仅需要一个DoraCloud的桌面模板，用于测试DoraCloud的功能，建议您根据参考《DoraCloud快速部署指导书》，完成DoraCloud的安装，以及演示环境的搭建。\nDoraCloud提供在线模板库功能，可以在线下载本文制作的Ubuntu模板。\n准备工作 1、Ubuntu 20.04.03 版本ISO ubuntu-20.04.3-desktop-amd64.iso\n2、服务器已经完成虚拟化系统的安装，以及DoraCloud的初始配置。\n步聚一、在Hyper-V管理器界面中，创建Ubuntu虚拟机 1、Hyper-V 中新建虚拟机，选择第1代，内存4G，硬盘127G，网络未连接，ISO选择 ubuntu-20.04.3-desktop-amd64.iso ，下图属性供参考 2、启用虚拟机，安装Ubuntu 20.04，选择中文界面，shanghai时区，本地账号设置为 administrator 123456 。 安装完毕后重启动。 步聚二、修改Ubuntu的软件安装源，并安装集成服务 1、修改虚拟机的虚拟网卡设置，允许外网访问，登录Ubuntu图形界面后，修改Ubuntu的源为中科大源。然后终端中执行命令更新源。 如果不修改源，后续操作执行会非常慢。 先通过图形界面，修改软件和更新的源 然后通过命令更新\nsudo apt-get update 2、在Ubuntu 虚拟机中安装 Hyper-V的集成服务\nsudo apt-get install linux-azure 安装Hyper-V集成服务后，在Hyper-V管理器中查看Ubuntu虚拟机的IP地址。 步聚三、在Ubuntu中安装xrdp服务，便于通过rdp协议访问 1、在Ubuntu 虚拟机中，通过 xrdp-installer-1.3.zip的脚本，安装 xrdp 组件。 wget https://c-nergy.be/downloads/xRDP/xrdp-installer-1.3.zip\runzip xrdp-installer-1.3.zip\rchmod +x xrdp-install-1.3.sh\r./xrdp-installer-1.3.sh 上述xrdp-installer的脚本会自动做一些配置。此外，这个脚本还有一些其他功能，其Help命令显示的功能，供参考。\n--help or -h =\u0026gt; will display a basic help menu\r--sound or -s =\u0026gt; will enable sound redirection --loginscreen or -l =\u0026gt; will customize the xRDP login screen --remove or -r =\u0026gt; will remove the xrdp package --custom or -c =\u0026gt; will perform a custom installation (i.e. compiled from sources) 2、重启一下虚拟机。不要本地登录虚拟机。 然后在windows中，用 mstsc 登录虚拟机。 mstsc -v 192.168.3.187 确认可以正常登录，登录界面如下。 输入账号 administrator 123456，即可登录Ubuntu 桌面。 如果本地登录了虚拟机，再用rdp登录虚拟机，会出现黑屏问题。\n步聚四、通过DoraCloud管理后台的模板制作向导，制作模板 1、进入DoraCloud管理系统，在【系统】-》【系统设置】菜单中，勾选 Linux 桌面支持。\n2、在DoraCloud管理系统，模板菜单中导入模板，选择 Ubuntu20.04的虚拟机。在【是否Linux系统】上打勾。 然后根据向导完成模板制作。\n根据上述教程制作的模板已经上传模板库。\n仓库地址 ： http://repo.deskpool.com:9000/repo\n模板名称 ： Ubuntu2004LTS\n发布日期 ： 2021-11-07\n说明一下，勾选【是否Linux系统】后，DoraCloud会采用简单流程对模板进行处理，不会对模板的主机名、IP地址进行修改。根据模板创建的桌面会具有相同的主机名，并且无法配置静态IP。这方面需要注意这方面。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/windows10/",
+    "title": "创建Windows10桌面模板",
+    "description": "介绍了Windows 10模板的制作过程。
+",
+    "content": " 本文描述在 Deskpool for Hyper-V 平台下，安装 Windows 10 虚拟机，并制作桌面模板的过程。完成整个文档的操作需要30分钟。\n如果您仅仅需要一个Deskpool的桌面模板，用于测试Deskpool的功能，建议您根据参考《Deskpool快速部署指导书》，完成Deskpool的安装，以及演示环境的搭建。演示环境内包含有供测试的Windows的模板。\n准备工作： 1、Windows 10 LTS 2019 的安装光盘 ISO文件。 ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso|4478906368|E7C526499308841A4A6D116C857DB669|/\n2、服务器已经完成虚拟化系统的安装，以及Deskpool的初始配置。\n步聚一、创建Windows 虚拟机： 1、启动Hyper-V 管理器，创建一个新的虚拟机 win10x64base，选择 Windows 10的ISO作为可启动的安装盘。\n2、Windows 10支持第二代Hyper-V虚拟机，可以选择第二代。修改虚拟磁盘的空间。建议设置成100GB。\n3、选择 Windows 10的ISO映像文件。\n步聚二、完成 Windows 10 的系统安装。 安装Windows10系统有一些注意事项和技巧。\n1、在选择磁盘分区的时候，建议选择20GB。之所以不选择全部磁盘空间，是为了防止虚拟磁盘文件膨胀的太快。等后续应用程序安装完毕后，在扩充Windows系统的磁盘空间。\n2、在创建账号时，选择“改为域加入”，接下来，输入【用户名】，【密码】，以及安全问题。 为了测试，我们把用户名设置为：test，密码 123456\n3、Windows 10需要激活后再制作模板。\n请用KMS方式激活。不要用激活工具激活。\n可以参考如下激活方法：\n首先以管理员身份运行命令提示符\n快捷键 WIN+X 然后弹出的菜单选择 命令提示符（管理员）\n然后输入如下命令：\nslmgr.vbs -xpr\rslmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D\rslmgr -skms kms.03k.org\rslmgr -ato 如果是Windows 10 Pro版本，可以用如下命令激活\nslmgr.vbs /upk\rslmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX\rslmgr /skms zh.us.to\rslmgr /ato 如果是Windows 10 21H1版本，可以用如下命令激活\nslmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX\rslmgr /skms kms.03k.org\rslmgr /ato 步聚三、安装RDP加速包和桌面云代理程序 Windows 10内置了Hyper-V集成服务。因此不再需要手工安装Hyper-V集成服务。\n1、下载RDP加速包和桌面云代理程序\n在Windows 10内打开浏览器，通过浏览器从 Deskpool 管理系统下载 RDP加速包 和 桌面云代理程序。地址为：http://\u0026lt;Deskpool_IP\u0026gt;/downloads。\n比如Deskpool IP为 192.168.1.166，那么输入地址： http://192.168.1.166/downloads\n2、安装 桌面云代理程序 DpAgent\n3、安装 RDP 加速包\n步聚四、创建Deskpool桌面模板： 1、登陆 Deskpool，选择【模板】菜单中的新建模板，系统进入“创建模板”状态。\n2、选择名为 “win10x64base”的虚拟机，系统提示虚拟机可以被导入。命名 模板名称为：win10x64\n然后输入 Windows 虚拟机的管理员账户，完成验证。\n3、系统开始复制虚拟机，复制完成后，进入编辑状态。模板在该状态可以添加软件。\n在当前的操作计算机上，通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装。\n以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板，选择“专用和公用桌面”，使得模板能够用于 专用桌面池 和 公用桌面池。\n5、测试和保存模板\n模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。然后选择保存模板。\n如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n保存模板后，即完成了模板创建。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/windows7/",
+    "title": "创建Windows7桌面模板",
+    "description": "介绍了Windows 7模板的制作过程。
+",
+    "content": " 本文描述在 Deskpool for Hyper-V 平台下，安装 Windows 7 虚拟机，并制作桌面模板的过程。完成整个文档的操作需要1-2个小时。\n如果您仅仅需要一个Deskpool的桌面模板，用于测试Deskpool的功能，建议您根据参考《Deskpool快速部署指导书》，完成Deskpool的安装，以及演示环境的搭建。演示环境内包含有供测试的Windows的模板。\n准备工作： 1、Windows 7 的安装光盘 ISO文件。\n2、服务器已经完成虚拟化系统的安装，以及Deskpool的初始配置。\n步聚一、创建Windows 虚拟机： 1、启动Hyper-V 管理器，创建一个新的虚拟机 Windows7Template，选择 Windows 7的ISO作为可启动的安装盘。\n注意修改虚拟磁盘的空间。建议设置成30-60GB。\n选择 Windows 7的ISO映像文件。\n步聚二、完成 Windows 7 的系统安装。 步聚三、安装Hyper-V 集成服务。 注意：\n1）Windows Server 2016、Hyper-V Server 2016、Windows 10 的Hyper-V集成服务的发行模式发生了变化。不再随 Hyper-V发布，而是通过 Windows Update 发布。\n2）Windows 7 支持 Windows Server 2016的集成服务还没有推出，也许不会推出了。推荐使用 Windows Server 2012R2中的集成服务，在 vmguest.iso 文件中。 3）建议对 Windows Server 2012R2、Hyper-V Server 2012R2 进行Update。 Update会更新 集成服务到较新的版本，然后进行安装。 如果虚拟化平台是 Windows 2012R2或者 Hyper-V Server 2012R2， 在Hyper-V Manager中，连接到虚拟机，在操作中选择 ”插入集成服务安装盘“。\n如果是 Windows 10 或者 2016，没有该菜单，请从Windows Server 2012R2获取 vmguest.iso ，然后选择“媒体”“DVD驱动器”“插入磁盘”，选择 vmguest.iso\n进入Windows，执行 DVD驱动器中的 Hyper-V 集成服务。\n4、启用 Administrator 账户，并设置密码。\n5、以Administrator登陆，安装 RDP 加速包，并运行模板检查工具。\n为了方便模板制作， 有一个模板设置工具的脚本（ VdiTemplateTool.vbs ），可以自动完成上述的要求的检查和修改。\nVdiTemplateTool 可以从 Deskpool 系统的页面下载。 比如 Deskpool 的地址为 192.168.5.10， 下载的地址为 https://192.168.5.10/downloads\n运行 RDP性能优化包。\n运行模板设置工具。\n如果模板检查工具检查结果为通过。则虚拟机就准备好了，可以用于制作Deskpool模板。\n步聚四、创建Deskpool桌面模板： 1、登陆 Deskpool，系统处于“创建模板”状态。\n2、选择 Windows7Template 虚拟机，系统提示虚拟机可以被导入。命名 模板名称为： Windows7Image\n然后输入 Windows 虚拟机的管理员账户，完成验证。\n系统开始复制虚拟机，并自动安装 Agent。\n3、编辑桌面模板，安装所需的应用程序。\n在当前的操作计算机上，通过 mstsc -v ipaddress ，可以访问当前的模板虚拟机，完成应用程序的安装。 以下信息只是一个 CheckList。请逐一确认。然后按下一步，开始准备模板。\n4、准备模板，选择“专用和公用模板”，使得模板能够用于 专用桌面池 和 公用桌面池。\n5、测试和保存模板\n模板准备完成后，系统会自动创建一个测试桌面。 你可以连接该桌面测试一下模板是否正常。然后选择保存模板。\n如果创建的测试桌面不正确，或者还需要对模板进行修改，可以选择“上一步”，重新编辑模板。\n保存模板后，系统进入“创建桌面池” 向导环节。\n"
+  }
+
+
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/symmetric-clustering/hyperv/",
+    "title": "配置对等集群（Hyper-V)",
+    "description": "介绍了对等集群的配置。
+",
+    "content": "安装前准备\n1.一台物理服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。\n2.安装了Windows Server 2012R2 或者 Windows Server 2016 或者 Windows Server 2019\n3.一台交换机或者路由器，和三台服务器连接起来。\n4.三台服务器，依次命名为server1,server2,server3,并且参照快速部署文档配置成功server1。\n5.安装了Hyper-V服务角色，配置虚拟交换机名称为vswitch\n6.服务器可以访问互联网，并且下载速度不低于5MB/s。\n7.安装集群之前熟悉配置表。\n**\n步骤1：按照快速部署文档配置命名server1的服务器. **\n提前处理好配置规划问题，这里我们把物理服务器ip设置为：192.168.5.11\nDoraCloud的ip设置为：192.168.5.21\n1.如图所示，设置server1的物理服务器ip。\n2.如图所示，安装DoraCloud的过程中设置ip。\n3.按照快速部署文档配置server1的服务器。\nDoraCloud快速部署文档地址：https://docs.doracloud.cn/docs/getting-started/quickstart/\n**\n步骤2：把server2服务器加入server1服务器的集群. **\n1.如图所示，设置server2的物理服务器ip。\n2.如图所示，安装DoraCloud的过程中设置ip。\n3.DoraCloud安装后，我们刚才设置的地址为192.168.5.22，在浏览器访问这个地址。 进入DoraCloud管理页面。\n4.登陆DoraCloud管理系统后，系统会启动配置向导，如下图所示。 DoraCloud的配置大致包括四个步骤：系统初始化、创建模板、创建桌面池、创建群组和用户。选择【开始】，进入系统初始化配置。\n5.配置虚拟化。 DoraCloud系统会自动检测到所在服务器的配置，并与之建立连接。\n6.配置资源池。 包括桌面存储池、数据盘存储池、镜像存储池。其中桌面存存储池、镜像存储池最好使用SSD介质的存储，或者高速的RAID磁盘阵列。 网络资源池是 DoraCloud默认所在的网络。\n7.配置集群，选择加入到已有的DoraCloud集群\n集群地址就是配置server1的DoraCloud的ip\n用户名：admin\n密码：DoraCloud\n输入完成点击下一步，系统就会自动加载完成加入集群。 server1服务器保持开启状态。\n8.加载完成以后点击服务器就会看到加入集群已经成功，服务器列表展示server1，server2。\n**\n步骤3：把server3服务器加入server1服务器的集群. **\n1.如图所示，设置server3的物理服务器ip。\n2.如图所示，安装DoraCloud的过程中设置ip。\n3.按照刚才server2加入server1的方式把server3也加入server1\n4.加载完成以后点击服务器就会看到加入集群已经成功，服务器列表展示server1，server2,server3。\n注意：集群常用设置以及常见问题. 1.在系统【管理界面】找到【集群管理】，设置一个浮动ip。\n2.更改服务器最大负载的原因，就是能充分利用服务器的现有资源来进行创建虚拟机。\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/symmetric-clustering/proxmox/",
+    "title": "配置对等集群（Proxmox)",
+    "description": "介绍了对等集群的配置。
+",
+    "content": "安装前准备\n1.2台物理服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。\n2.安装了proxmox 7.4\n3.1台交换机或者路由器，2台服务器连接起来。\n4.服务器可以访问互联网，并且下载速度不低于5MB/s。\n5.安装集群之前熟悉配置表。\n步骤1：所有服务器都修改存储方式 1.从Proxmox Web界面，删除 local-lvm\n2.通过命令删除 lvm，新建lvm，并创建文件系统\n#一键复制，粘贴后回车执行\rumount /dev/pve/data\rlvremove /dev/pve/data -y\rvgdisplay pve | grep Free | awk \u0026#39;{print \u0026#34;lvcreate -l \u0026#34; $5 \u0026#34; -n data pve -y\u0026#34;}\u0026#39; |bash\rmkfs.ext4 /dev/pve/data\rmkdir /mnt/data\rmount /dev/pve/data /mnt/data\recho \u0026#34;/dev/pve/data /mnt/data ext4 defaults 0 0\u0026#34; \u0026gt;\u0026gt; /etc/fstab 3.在Proxmox 将注册目录为存储 在Proxmox后台，选择 DataCenter-\u0026gt;存储-\u0026gt;添加， ID填写 data， 目录填写 /mnt/data。 即可添加名为 Data 的存储。\n步骤2：集群ssh免密登录 1.修改默认主机名\n1.1修改服务器1的主机名，服务器2同理\nhostnamectl set-hostname pve1 1.2编辑服务器1的/etc/hosts，并添加服务器2的iP和主机名，服务器2同理\n127.0.0.1 localhost.localdomain localhost\r192.168.1.5 pve1.pc pve1 #pve改为pve1\r# The following lines are desirable for IPv6 capable hosts\r::1 ip6-localhost ip6-loopback\rfe00::0 ip6-localnet\rff00::0 ip6-mcastprefix\rff02::1 ip6-allnodes\rff02::2 ip6-allrouters\rff02::3 ip6-allhosts\r192.168.1.6 pve2 #添加服务器2的iP和主机名 2.ssh免密配置\n2.1服务器1生成密钥，服务器2同理\n#只输入yes和回车\rssh-keygen 2.2复制密钥到其他服务器，服务器2同理\nssh-copy-id pve2 2.3ssh登陆其他服务器，测试\nssh pve2 步骤3：服务器1部署Doracloud 1.pve的shell执行联网一键安装脚本\ncd /var/lib/vz/dump; wget -qO- https://dl.doracloud.cn/dpinstall.pl --referer https://doracloud.cn | perl 在这个页面不要做别的操作，直到安装完成\n安装完成\n2.登录上面的地址，配置DoraCloud管理系统\n3.等待1分钟，登录新ip的管理系统\n4.设置集群IP\n在系统【管理界面】找到【集群管理】，设置一个浮动ip\n步骤4：服务器2部署DoraCloud，并加入服务器1集群 1.加集群\n1.1服务器2部署DoraCloud基本上一样，只是需要选择加入集群\n1.2注意 1.3这里选择加入集群 2.配置第二个DoraCloud的ip\n步骤5：下载，同步模板 1.从仓库拉取需要的模板\n2.等待两台服务器模板同步完成\n步骤6：创建桌面池 步骤7：创建用户组和用户 1.创建用户组\n2.批量创建用户\n3.等待创建完成\n步骤8：终端连接使用 注意：集群常用设置以及常见问题. 1.集群服务器的主机名不要一样\n2.模板同步完成之前不要复制，编辑模板\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/gateway/",
+    "title": "配置桌面云网关",
+    "description": "",
+    "content": "DoraCloud for windows20012R2远程桌面网关配置手册\n一、简介 终端服务网关（TS 网关）是一个终端服务子角色，允许经授权的远程用户通过 Internet 连接到企业网络中的终端服务器和工作站，RDP连接程序基于HTTPS实现客户端与终端服务器之间的通讯。这样，组织可轻松又安全地使远程用户或外出工作 的人员无需使用 VPN 连接就能访问所选的服务器和工作站。\n二、TS 网关的一些主要好处如下：\n使远程用户能通过 Internet 安全连接到企业网络资源，而无需复杂的虚拟专用网络 (VPN) 连接。 利用 HTTPS 协议的安全性和可用性提供终端服务，无需进行客户端配置。 提供了一个全面的安全配置模型，管理员可使用此模型控制对网络中特定资源的访问。 使用户可穿过防火墙和网络地址转换器 (NAT) 远程连接到终端服务器和远程工作站。 提供了一个更加安全的模型，此模型允许用户仅访问所选的服务器和工作站，而不是通过 VPN 访问整个企业网络。 终端服务网关为组织提供了一种安全、轻松的方法，使远程用户无需安装和配置 VPN 连接即可访问网络中的服务器和工作站。使用全面的安全功能，管理员还可以控制对特定资源的访问。\n三、在外网与内网不通信的情况下，本文利用网关服务器来进行外网连接内网桌面。这类连接方式通常会信息安全、远程办公、网络隔离等场景使用。\n本文以192.168.5.x为外网，192.168.4.x为内网。 云终端IP地址为外网/ DoraCloud（192.168.4.167），虚拟桌面为内网/ 网关服务器为两个网卡，分别是192.168.5.17；192.168.5.17\n组网图如下\n步骤一、安装 Windows Server 2012 R2 的步骤 1、使用 Windows Server 2012 R2 产品 CD 启动计算机。\n2、当提示输入计算机名称时，键入 2012RDG。\n3、按照屏幕上显示的其他说明完成安装。\n步骤二、设置静态IP 1、使用 2012RDG\\Administrator 帐户登录到 2012RDG。两个网卡，同时插入内网和外网，内网（192.168.4.17）外网（192.168.5.17） 依次单击「开始」、\u0026ldquo;控制面板\u0026rdquo;、\u0026ldquo;网络和 Internet\u0026rdquo;、\u0026ldquo;网络和共享中心\u0026rdquo;、\u0026ldquo;更改适配器设置\u0026rdquo;，右键单击\u0026quot;本地连接\u0026quot;，然后单击\u0026quot;属性\u0026quot;。 如图下\n2、使用 2012RDG\\Administrator 帐户登录到 2012RDG。 有域环境先加入域。 3、检测IP静态IP是否修改正确。\n步骤三、安装远程桌面网关服务 若要安装和配置远程桌面网关 服务器，必须添加远程桌面网关 角色服务。Windows Server 2012 R2 包含通过 服务器管理器 安装远程桌面网关 角色服务的选项。\n1、以 2012RDG\\Administrator 身份登录到 2012RDG。\n2、点击左下角服务器图标，打开“服务器管理器”。\n3、点击\u0026quot;添加角色\u0026quot;，如下图 4、在\u0026quot;添加角色向导\u0026quot;中，如果显示\u0026quot;开始之前\u0026quot;，“安装类型”，“服务器选择”页，默认点击\u0026quot;下一步\u0026quot;。 5、在\u0026quot;服务器角色\u0026quot;页上选择“选择桌面服务”，点击下一步。 6、在“功能”，“远程桌面服务器”页面上默认点击“下一步”，进入到“角色服务”页面 7、在\u0026quot;角色服务\u0026quot;页上，选择“远程桌面网关”，选中时会弹窗框，点击“添加功能”即可。\n全部安装完点击下一步,如下图：\n8、后续操作一直点击“下一步”，一直到“确认”页面点击“安装”即可，等进度条完成后，重启服务器。\n步骤四、RD网关管理器配置 进去到“服务器管理器”,选中“所有服务器”-\u0026gt;选中服务器列表中的服务器右键点击-》点击“RD网关管理器”，如下图 给服务器安装证书\na) RD网关管理器-\u0026gt;服务器-\u0026gt;\u0026ldquo;查看或修改证书属性\u0026rdquo;。 b)创建并导入证书，完成后点击“应用”，注意，一定要是ip为证书名称，不然不会解析，例如外网ip192.168.5.17。在点击“确定”关闭弹窗，并备份证书用于windows远程连接。 c)在服务器场选项，添加服务器场，输入外网IP地址，例如192.168.5.17.然后点“添加”按提示点“应用”等系统验证后，如图所示。 创建连接授权\na)点击“创建连接授权策略”，如下图 b)设置策略名称。如下图\nc)添加组成员或域用户组 注意！一定要添加登录用户组或添加域用户组。如下图： 注意：本文为了方便是直接添加管理员。项目可根据需要添加\nd)可根据项目实际情况需要设置设备重定向跟超时。本文不设置。\n创建“资源授权策略”\n定义策略名称\n用户组添加用户组成员或域用户组，注意！一定要添加登录用户组或添加域用户组。如下图\n指定网络资源，可根据项目实际设置。本文是设置\u0026quot;允许用户连接到任务网络资源（可根据项目具体设置）\u0026quot;\n步骤五、网关端口映射 a)这一步很重要，在网关服务器上做端口映射。将deskpool的443端口映射到网关的943端口。例如网关服务器为192.168.5.17，deskpool，服务器为 192.168.4.167，如下图： b)输入命令后检查一下端口映射，如下图 步骤六、DoraCloud连接配置网关 1、登录Deskpool系统，进入“系统”-\u0026gt;\u0026ldquo;网关\u0026quot;填写网关，完成后点击设置 2、本文环境是需要经过网关。如果内网不需要经过网关，可以设置过滤网段，如下过滤192.168.4.*的IP不需经过网关。\n步骤七、通过网关连接内网桌面 方法1：云终端通过网关连接内网 云终端连接是不需要安装证书，所以直接进行连接\n1、点击连接deskpool，输入服务器与账户密码。如下图 2、连接进入桌面 方法2：DoraCloud客户端通过网关登录 1、首先将网关服务器创建的证书拷贝到windows内安装。证书的路径一般会创建在/我的电脑、文档的目录下。如图 2、将证书安装在windows上，如图下步骤 3、打开DoraCloud客户端，输入服务器地址和用户名及密码。如图下步骤 4、会自动弹出RDP连接，点击是，进入桌面。如图下 方法3：浏览器通过网关连接内网 1、首先也是先将证书安装完成 2、安装完成后在浏览器输入DoraCloud服务器。如https://192.168.5.17:943,并点击转入此网页。如图下 3、输入用户及密码，会自动下载RDP连接包。步骤如图所示 4、再次弹出输入密码，如图下操作进入桌面 "
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/active-directory/",
+    "title": "启用AD域管理",
+    "description": "",
+    "content": "1.前言 本手册用于指导管理员实施Deskpool使用域用户管理的快速安装部署手册，管理员需要具备基本的Deskpool和Windows操作系统安装维护经验，拥有AD域管理使用经验，对于理解本手册内容有很大帮。\n本手册只适用于已有域环境的操作，且域控制器与DNS服务都能正常运行。\n2.Deskpool与Active Directory deskpool支持与Active Directory域用户管理的无缝集成。\n当需要使用域管理服务，Deskpool可以无缝的集成AD域管理服务，用户登录Deskpool虚拟桌面系统和虚拟桌面，只需一次AD域用户认。\n3.实施准备 3.1\tDeskpool能正常运行，模板工作正常。\n3.2\t已有Active Directory域环境，且域控制器与DNS服务都能正常运行。\n**注：**如需搭建Deskpool模板，请参考《Deskpool创建Windows7模板快速部署手册》\nActive Directory域环境搭建，请查找参考相关文档\n4.创建域用户以及安全组 4.1\t创建组织单位\n登录AD域，选择”域名”-\u0026gt;”新建”-\u0026gt;”组织单位”。（本文组织单位为云办公，可根据实际情况设置组织结构,可设置多级）\n4.2\t创建安全组\n选择新建的组织单位 “云办公”-\u0026gt;”新建”-\u0026gt;”组” （本文为vdiuser ）\n4.3\t创建域用户\n选择4.2新建的组织单位 ”云办公”-\u0026gt;”新建”-\u0026gt;”用户” （用户名根据实际情况配置，本文以office01-office03为例 新建用户后设置密码时记得勾选“密码永不过期”）如下图：\n4.4\t新建用户添加到组\n选择新建用户-\u0026gt;“添加到组”（vdiuser）\n5.同步Deskpool域用户数据 5.1\t配置用户数据库\n登录Deskpool 选择”用户”-\u0026gt;“配置用户数据库”→选择“使用Microsfot Active Directory”选项，输入“域名称”，域管理员用户密码，新增域服务器IP地址。如下图\n5.2\t新增群组\n选择 “用户”-\u0026gt;”群组”-\u0026gt;”新增”-\u0026gt;”查找群组”-\u0026gt;输入群组名称-\u0026gt;”查找”，选择域创建的安全组点击“添加”。如下图 5.3\t新增用户\n选择“用户”-\u0026gt;”用户列表”-\u0026gt;”批量新增”-\u0026gt;“查找用户”-\u0026gt;输入用户前缀 ，点击查询，选中创建的域用户点击“添加”。如下图\n5.4\t同步域用户\n当配置了有效的域认证服务器时，【同步】按钮变为有效。点击【同步】按钮，Deskpool会将本地存储的用户信息和域服务器同步，如果用户信息在域服务器上发生改变，Deskpool会更新本地的用户信息；如果域用户在服务器上被删除，Deskpool也会清理相应的本地存储的用户信息。在域用户数据库模式下，Deskpool不存储用户的登录密码信息。 在用户表和群组表格的“操作”列，提供了【编辑】和【删除】按钮，可以用于编辑和删除对应的用户或群组。如下图 注意：\n删除用户是指删除Deskpool本地缓存的域用户数据信息，不会删除域服务器上的用户账户，用户删除后，原先分配给该用户的虚拟机的分配状态为“无效”。\n删除群组是指删除Deskpool本地缓存的域群组数据信息，不会删除域服务器上的群组。\n6.模板加入域 6.1\t编辑模板或新增模板\n进入Deskpool管理界面\na)如果已有模板 ，选择要加入域的模”→编辑→创建临时副本→点击确定继续。如下图\nb)如果不存在模板点击“+”新增模板 ，创建新模板\n6.2\t远程登录模板虚拟机 使用提示的地址，远程登录连接到模板虚拟机。如下图 6.3\t配置虚拟机DNS\n如果DHCP分配的DNS不是指向 AD，需要在模板中把DNS配置为AD的IP地址。否则创建虚拟机后加入AD会失败。如果DHCP分配的DNS已经指向AD，则不需进行该配置，使用DHCP配置的DNS即可。 控制面板→网络和Internet→网络和共享中心→选定网卡→右键“属性”输入首选DNS服务器的IP。如下图 6.4\t将模板虚拟机加入域\n“控制面板”→“系统和安全”→“系统”→“计算机名”→点击“更改”→隶属于“域”输入域名，然后单击下一步继续，输入拥有域管理员权限的帐户和密码，确认加入域。如下图 6.5\t本地用户添加域组\n重启系统后，登录模板虚拟机，右键“计算机”→“管理”进入计算机管理，选择“本地用户和组”→“组”选择“Administrators”属性添加“vdiuser”。vdiuser为4.2创建的组 注意：\n一般情况，您可以将域服务器的“vdiuser”组加入到模板计算机的本地“Administrator”群组。如果希望做到更加精细的远程桌面域用户管理，管理员可以将特定的域用户群组（或者域用户）添加到模板计算机的本地“Administrators”群组（或者“Remote Desktop Users”群组）。\n6.6\t在Windows AD 服务器配置组策略\n1、按WIN+R键 ，输入“gpmc.msc ”进入“组策略管理”\n2、进入到 域 - \u0026lt;域名\u0026gt;，选择云办公-\u0026gt;”“在这个域中创建GPO并在此处链接”（名称云办公组策略，可根据自己情况命名 ）\n3、选择新建的组策略（云办公）编辑\n4、在组策略编辑器内，选择 “用户配置”-\u0026gt;“策略”-\u0026gt;“Windows设置”-\u0026gt; “脚本（登录/注销）”，然后双击“登录”，再点击“添加”, 选择“浏览”\n点击上方的 地址栏，拷贝出路径。 5、在拷贝的路径下，新增 admin.bat 文件，内容如下：（请注意把 DomainName 用实际的Domain名字替换）\nnet localgroup \u0026ldquo;Administrators\u0026rdquo; /add \u0026ldquo;DomainName\\%username%\u0026rdquo;\nnet localgroup \u0026ldquo;Administrators\u0026rdquo; /delete \u0026ldquo;DomainName\\vdiuser\u0026rdquo; 上述脚本表示 把当前登录用户 加入本机的 Administrators 组内。 同时把 vdiuser 从Administrators 内删除。\n前面的编辑模板把vdiuser 组增加到了本地管理员组，此脚本将vdiuser组从Administrators组中删除了。\n6、回到浏览路径的页面，选择 admin.bat 打开，确认。如下。 再回到 “组策略管理”可以在“用户配置（已启用）”下方看到 登录时需要指定的批处理脚本。 6.7\t完成模板虚拟机编辑\n确认所有信息后，单击“下一步”继续，完成模板虚拟机编辑。\n选择“专用和公用桌面”点击准备模板后续按提示操作，一直到模板创建完成。\n6.8\t配置桌面池并创建桌面\n加入指定OU ，如果组织机构有多级，可以写多个OU（级别最小的在最前面。如公司-\u0026gt;华南分部为OU=华南分部,OU=公司,dc=域名前缀,dc=域名后缀）。注分隔符号为英文逗号。\n桌面创建完成（桌面进入正在运行） “桌面计算机”-\u0026gt; “桌面计算机列表”\n群组分配桌面 点击“用户”-\u0026gt;“群组”选择群组点击编辑\n7.验证 1、\t虚拟机是否跟OU设置的位置一致\n进入AD服务器，按WIN+R 输入dsa.msc 查看虚拟机是否跟OU设置一致\n2、\t域用户是否可以登录\n使用新增的域用户登录，是否能进入虚拟机\n8.配置文件夹重定向 8.1配置文件共享服务器\na）搭建一个Windows Server 2012R2的服务器。\nb）服务器加入AD\nc）启用文件和存储服务，操作步骤如下：\n1-在“服务器管理器”中，点击”添加角色和功能”进入向导，默认点击下一步一直到服务器角色\n2-进入“服务器角色”选择，勾选存储服务器跟文件服务器（下图中红色勾选），完成后点击下一步，如下图\n3、后续操作一直为默认操作。一直到到结束，如下图，完成后后重启服务器。\nd）使用服务器管理器创建SMB文件共享。操作如下\n1-在“服务器管理器”的左侧，点击“文件和存储服务”。\n2-单击“任务”，然后单击“新建共享”以打开“新建共享向导”。 3-选择SMB共享- 应用程序，然后单击下一步。\n4-选择“键入自定义路径”，本文为c:\\share 。如下图：\n5-指定新共享的名称（名称后加$ 本文共享名称为share），然后单击“下一步”。\n6-在“其他设置”页面中点击“下一步”\n7-在“权限”项中，点击“自定义权限”。\n8-点击“添加”，单击“选择主体”。 9-在 输入要选择的对象名称 下 输入”vdiuser” 点击检查名称，按照提示输入域账号信息，检查无误点击“确定”（注：vdiuser为AD创建的组）\n10-基本权限中设置成完全控制，点击确定\n10-在确认中点击“创建”如下图\n11 创建完成后 “打开共享” ，记住共享目录 e）验证文件夹重定向权限配置正确\n8.2 在AD服务器配置文件夹重定向\n1-进入AD服务器，按Win+R键输入“gpmc”进入组策略管理\n2-进入到 域 - \u0026lt;域名\u0026gt;，选择云办公-\u0026gt;”“在这个域中创建GPO并在此处链接“\n3-选择创建的“文件重定向组策略” 点击 “编辑”\n4-给桌面、文档配置重定向，此文以桌面为例，文档操作跟桌面类似。（文档同理配置）\na)\t“用户配置”-\u0026gt;“策略”-\u0026gt;“windows设置”-\u0026gt;”文件夹重定向”-\u0026gt;”桌面” 点属性。如下图\nb)\t选择“基本-将每个人的文件夹重定向同一个位置”根目录为8.1创建的共享文件路径，点击确定\n5）文档按照上面的一样设置，也可以增加其他地方的文件重定向。\n8.3 验证文件夹重定向。\n1、登录桌面，在 桌面和我的文档创建文件夹，打开文件查看路径为共享目录下。下图为桌面创建文件夹。 2、用office02登录，进入office01的共享目录下，删除、打开office01创建的文件均提示无权限。\n3、在桌面和我的文档， c盘根目录存放文件。 然后删除桌面重新登录。\n桌面和我的文档的内容还在。 C盘根目录文件不存在。\n9.常见问题 1、\t创建桌面出现“服务中断”\n原因：桌面加入域失败，有以下三种可能 a、模板未执行加入域操作，如果未执行第6步，请按照第6步\nb、域服务器断开 检测域服务器是否正常\nc、桌面池OU设置错误 特别上分隔符,应该上英文逗号\n2、连接桌面虚拟机，提示没有登录权限 .\n原因:\na、Deskpool用户跟域用户不一致\nb、域用户未加入安全组\n"
+  }
+
+,
+  {
+    "url": "https://banbu1118.github.io/docs/tasks/create-template/win10new/",
+    "title": "使用模板工具制作Windows10桌面模板",
+    "description": "介绍了使用了DoraCloud_Template_tools制作Windows 10模板的过程。
+",
+    "content": "模板制作是桌面云部署时的一项重要工作。模板的质量直接影响到虚拟桌面业务运行的稳定性、安全性和用户体验。制作模板需要完成如下一些工作：\n安装Windows桌面操作系统。 安装虚拟化平台相关的半虚拟化驱动。 完成Windows桌面的初始账号和用户偏好设置。 对Windows系统进行优化，使之适合桌面云环境。 安装桌面云相关的Agent程序。 如果手工完成上述的工作，一方面需要部署人员有丰富的经验积累，另一方面需要耗费大量的时间。比如花费几个工作日甚至一周的时间进行模板的制作、测试和优化。\n朵拉云一方面推出了在线模板仓库功能，可以提供成熟的模板供用户下载。另一方面也推出了模板制作工具（DoraCloud Template Tools），便于用户便捷的制作Windows的模板。 https://www.doracloud.cn/downloads/DoraCloud_Template_Tools-cn.html\n准备 以DoraCloud for Hyper-V为例，需要如下软硬件系统：\n一套 DoraCloud for Hyper-V 环境。 包括服务器硬件，Windows Server 2019，按照好的DoraCloud系统。\nWindows 10镜像。 选用 Windows 10 LTSC 2021的ISO。为了避免安装后进行在线更新，我们对ISO进行了预处理，已经集成了最新的Windows更新。\n模板制作工具 DoraCloud_Template_Tools.ISO。 操作步骤 下面的操作步骤是模板库 win10LTSC2021R2的创建过程。模板库的模板一般使用 administrator 123456作为缺省账号。 DoraCloud_Template_Tools.ISO中的脚本会自动启动\nadministrator账号并把密码设置成 123456。 下面的模板制作过程会先在安装 windows 是，手工创建一个 test 用户账号，然后执行模板制作工具。接下来登录administrator 账号，然后删除test账号。接下来通过DoraCloud后台制作这个模板。 如果您自己制作模板，可以直接在运行DoraCloud_Template_Tools中的StartPrepareImage.bat。你可以选择启用 administrator，也可以直接使用您当前的账号作为模板的缺省账号。\n由于模板工具会缺省创建administrator账号（密码123456)，在你使用当前账号时，记得禁用 administrator账号。\nDoraCloud模板制作过程包括【导入】【安装代理】【编辑模板】【准备模板】【测试模板】几个过程。\n第一步的【导入】是对待制作的模板的虚拟机进行复制。比如对 win10LTSC2021base这个虚拟机制作模板时，DoraCloud会在【导入】这个操作中对win10LTSC2021base进行复制。因此制作模板过程不会破坏当前的虚拟机。\n【安装代理】这一步时安装 DeskpoolAgent。模板工具运行时，已经自动安装好了DeskpoolAgent以及RDP加速包。\n【编辑模板】这一环节可以为增加需要的应用软件。我们建议先制作一个干净的基础模板（仅仅包括桌面系统），然后根据不同业务需求，复制这个基础的模板安装软件。并且软件需要采用步步为营的方式安装。\n1、创建Windows10的虚拟机，并使用模板工具进行相关设置 1）创建一个Windows 10 LTSC 2021的虚拟机 在Hyper-V中，创建一个虚拟机win10LTSC2021base，安装 Windows 10 LTSC 2021。\n2）创建本地账号 test 123456 选择创建本地账号， 不要使用在线账号。在安装界面的左下方选择【改为域加入】，然后创建本地账号 test 123456\n3）执行模板制作工具的启动程序 StartPrepareImage.bat 安装完毕 Windows后，将 DoraCloud_Template_Tools.iso 插入虚拟光驱，打开StartPrepareImage.bat程序运行。\n运行完毕后，重启虚拟机。\n模板制作工具会自动创建一个 administrator 123456的账号。\n4）删除 test 账号 重启后，以administrator 123456登录桌面，删除 test 账号\n然后删除 test 123456账号。\n同时对桌面图标进行设置，把常见的图标显示在桌面上。\n2、进入DoraCloud桌面云管理系统，根据向导制作模板。 1）选择导入虚拟机 win10LTSC2021base 进行模板的制作 选择创建模板，选择前面创建的虚拟机 win10LTSC2021base。填写【模板名称】、【描述】，然后导入\n2）进行模板的编辑，然后启动模板制作（准备模板操作） 在编辑模板状态，可以远程登录桌面模板，增加应用程序，然后点击确认，对5条信息进行确认。进入模板准备操作中。\n3）完成模板制作，进行模板测试 系统进行模板制作，并模拟一次模板的创建过程，产生一个测试虚拟机。\n见到下图，模板基本制作成功了。提示你测试根据模板创建的虚拟桌面。如果你测试发现有遗漏，可以选择【上一步】，重新编辑模板。\n4）选择【保存模板】，模板制作成功。 到这里模板就创建成功了。可以在模板菜单中看到已经创建的模板。该模板就是在在线模板库中win10LTSC2021R2的制作过程。耗时大约30分钟。\n模板的使用 用户自己创建的模板，可以进行备份。以便于后续其他项目的部署。Hyper-V环境下，对模板执行备份操作，会在【模板存储池】 localImages目录下，产生模板的备份文件。 比如上述模板，选择备份操作后，产生的模板备份文件位于如下位置：\n您可以将模板备份文件拷贝到其他DoraCloud桌面云环境的 相同目录下。注意，需要目录win10LTSC2021R2也拷贝过去。不能直接把两个文件放在 localImages目录下。\n然后可在 DoraCloud的本地模板库中进行恢复。如下图所示，在另一个环境的DoraCloud管理后台，选择【本地镜像仓库】【刷新】，即可看到模板文件。然后可以选择恢复。\n如果您是通过远程镜像仓库下载的模板，模板文件位于 DoraCloud\\RemoteImages\\win10LTSC2021R2目录下。\nDoraCloud的远程镜像仓库是一个web server。如果您希望建立自己的镜像仓库，可以咨询技术支持。\n"
+  }
+
+]

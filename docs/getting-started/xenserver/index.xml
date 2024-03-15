@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装指南【XenServer平台】 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/getting-started/xenserver/</link>
+    <description>Recent content in 安装指南【XenServer平台】 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/getting-started/xenserver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/getting-started/xenserver/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/getting-started/xenserver/readme/</guid>
+      <description>Deskpool 是一款桌面虚拟化管理软件，支持Hyper-V、XenServer等虚拟化平台。Deskpool采用一体化设计理念，把桌面虚拟化所需的组件打包在一个虚拟机镜像中，极大的简化了虚拟桌面部署的难度。&#xA;Deskpool 3.1 for Hyper-V 提供vdibackup工具，可以用于Deskpool的快速部署。本文描述了下载Deskpool备份档案，并快速部署 Deskpool桌面云环境的过程。&#xA;安装前准备&#xA;1.一台服务器，配置为 :CPU i5 以上，内存 ≥16GB，硬盘为SSD或者RAID。在BIOS中开启CPU的虚拟化支持“Intel VirtualTechnology”&#xA;2.网络中开启了 DHCP 服务。&#xA;3.Windows Server 2012 R2 ISO镜像 官方下载地址： http://technet.microsoft.com/zh-cn/evalcenter/dn205286.aspx 另外msdn.itellyou.cn网站也提供了P2P下载Windows Server安装包的地址。 Windows Server 2012R2的 ISO文件：cn_windows_server_2012_r2_vl_x64_dvd_3316795.iso ed2k://|file|cn_windows_server_2012_r2_x64_dvd_2707961.iso|4413020160|010CD94AD1F2951567646C99580DD595|/&#xA;4.下载并安装 Deskpool 3.2。&#xA;Deskpool 3.2 for Hyper-V 的下载地址为：Deskpool下载地址&#xA;5.下载 Demo 环境的备份档案，并使用 Demo 镜像恢复桌面云环境。&#xA;Demo备份档（3.1GB）下载地址&#xA;Backup001备份档案：地址一&#xA;Backup001备份档案：地址二&#xA;U盘制作：&#xA;1）使用UltraISO制作Windows Server启动U盘。&#xA;2）使用Windows 7 USB DVD Download Tool制作Windows Server启动U盘。&#xA;** 步骤一：安装Windows Server 2012R2 和原厂网卡、主板驱动程序**&#xA;安装 Windows Server 2012R2的过程比较简单，注意几点：&#xA;1.选择标准版（带有GUI的服务器）或者 数据中心版本（带有GUI的服务器）。&#xA;2.选择自定义安装，如果有分区，则删除已有的分区。</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>创建Windows10桌面模板 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/tasks/create-template/windows10/</link>
+    <description>Recent content in 创建Windows10桌面模板 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <atom:link href="https://banbu1118.github.io/docs/tasks/create-template/windows10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/tasks/create-template/windows10/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/tasks/create-template/windows10/readme/</guid>
+      <description>本文描述在 Deskpool for Hyper-V 平台下，安装 Windows 10 虚拟机，并制作桌面模板的过程。完成整个文档的操作需要30分钟。&#xA;如果您仅仅需要一个Deskpool的桌面模板，用于测试Deskpool的功能，建议您根据参考《Deskpool快速部署指导书》，完成Deskpool的安装，以及演示环境的搭建。演示环境内包含有供测试的Windows的模板。&#xA;准备工作： 1、Windows 10 LTS 2019 的安装光盘 ISO文件。 ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso|4478906368|E7C526499308841A4A6D116C857DB669|/&#xA;2、服务器已经完成虚拟化系统的安装，以及Deskpool的初始配置。&#xA;步聚一、创建Windows 虚拟机： 1、启动Hyper-V 管理器，创建一个新的虚拟机 win10x64base，选择 Windows 10的ISO作为可启动的安装盘。&#xA;2、Windows 10支持第二代Hyper-V虚拟机，可以选择第二代。修改虚拟磁盘的空间。建议设置成100GB。&#xA;3、选择 Windows 10的ISO映像文件。&#xA;步聚二、完成 Windows 10 的系统安装。 安装Windows10系统有一些注意事项和技巧。&#xA;1、在选择磁盘分区的时候，建议选择20GB。之所以不选择全部磁盘空间，是为了防止虚拟磁盘文件膨胀的太快。等后续应用程序安装完毕后，在扩充Windows系统的磁盘空间。&#xA;2、在创建账号时，选择“改为域加入”，接下来，输入【用户名】，【密码】，以及安全问题。 为了测试，我们把用户名设置为：test，密码 123456&#xA;3、Windows 10需要激活后再制作模板。&#xA;请用KMS方式激活。不要用激活工具激活。&#xA;可以参考如下激活方法：&#xA;首先以管理员身份运行命令提示符&#xA;快捷键 WIN+X 然后弹出的菜单选择 命令提示符（管理员）&#xA;然后输入如下命令：&#xA;slmgr.vbs -xpr&#xD;slmgr -ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D&#xD;slmgr -skms kms.03k.org&#xD;slmgr -ato 如果是Windows 10 Pro版本，可以用如下命令激活&#xA;slmgr.vbs /upk&#xD;slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX&#xD;slmgr /skms zh.us.to&#xD;slmgr /ato 如果是Windows 10 21H1版本，可以用如下命令激活</description>
+    </item>
+  </channel>
+</rss>

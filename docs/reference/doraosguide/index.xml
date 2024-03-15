@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DoraOS用户手册 on DoraCloud产品文档</title>
+    <link>https://banbu1118.github.io/docs/reference/doraosguide/</link>
+    <description>Recent content in DoraOS用户手册 on DoraCloud产品文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>版权所有 &amp;copy; 2020  [深圳市朵拉云科技有限公司](https://www.doracloud.cn)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://banbu1118.github.io/docs/reference/doraosguide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://banbu1118.github.io/docs/reference/doraosguide/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://banbu1118.github.io/docs/reference/doraosguide/readme/</guid>
+      <description>1. DoraOS简介 DoraOS是朵拉云科技开发的瘦客户机软件系统。DoraOS支持ARM和x86处理器架构，朵拉云的云终端预装了DoraOS瘦客户机软件系统。DoraOS也提供x86架构的独立安装的版本，支持将x86电脑转化为专业的瘦客户机系统。&#xA;DoraOS支持Deskpool、RDP、SPICE、oVirt、Citrix Receiver、VMware View、华为HDP等桌面连接。 DoraOS支持的常见的x86处理器包括：1037U、J1900、J1800、J3160、I3/I5/I7…等。&#xA;DoraOS的x86版本基于CentOS 7开发。由于CentOS停止支持，最新的DoraOS版本（信创版）基于OpenEuler版本开发，满足信创要求。&#xA;1.1 DoraOS的用户界面 DoraOS的主界面为配置中心(Control Center)。用于管理员对云终端进行管理和配置。 DoraOS还设计了连接窗口，供终端用户使用。避免用户修改终端配置。 启用连接窗口的方法是：进入【显示设置】，勾选【启动用户连接窗口】。然后关闭配置中心，这时会出现连接窗口。&#xA;在【系统】【操作】【设置密码】中，设置管理员密码。 当管理员设置了管理密码后，云终端的使用者只能访问连接窗口，进行桌面连接和终端关机操作。如果需要进入配置中心，需要输入管理员密码。&#xA;1.2 DoraOS支持的连接类型 DoraOS支持的连接类型参见如下界面截图：&#xA;DoraOS的信创版本的配置中心界面如下，可以看到增加了对天翼云电脑、移动云电脑的支持。&#xA;1.3 DoraOS的版本和授权 DoraOS 包括免费版本和标准版本。&#xA;DoraOS免费版本 ：仅仅支持RDP和VNC协议。不支持USB重定向。不开放管理终端管理接口，不支持配套的管理软件。&#xA;DoraOS标准版 ：支持全部协议。 支持配套的管理软件。&#xA;2. DoraOS安装 2.1 下载DoraOS安装文件 进入朵拉云官网，或者联系朵拉云技术人员，购买或使用下载DoraOS系统。&#xA;https://www.doracloud.cn/downloads/doraos.html&#xA;最新的信创版本DoraOS https://www.doracloud.cn/downloads/doraos_xc.html&#xA;2.2 制作DoraOS启动U盘 1）使用UltraISO制作启动盘&#xA;2)单机文件文件，打开，选择刚刚下载的DoraOS系统：&#xA;3)点击启动，下拉菜单中点击写入硬盘镜像：&#xA;2.3 安装DoraOS瘦客户机系统 1)将做好的启动盘，设置好BIOS启动方式（注意不要用UEFI模式启动），首先看到的是这样的，直接回车继续下一步&#xA;2)进入配置页面，需要选择磁盘，对磁盘进行分区。鼠标点击红色箭头位置，进入磁盘分区&#xA;3)磁盘选择，系统安装会对磁盘格式化，注意选择好磁盘。&#xA;a：选择磁盘&#xA;b：选择手动分区（自动分区是左边选项，选择自动分区的话可以跳过第2.3步建立分区步骤）&#xA;c：选择Done&#xA;4)建立分区&#xA;选择标准分区&#xA;5)添加启动分区/boot 1G 和根分区 / 6G&#xA;注意：如果系统为UEFI模式启动，建议的分区方案为 /boot/efi 200MB，/boot 1G， 根分区 / 6G 。&#xA;6)点击 Accept change&#xA;7)点击begin installation 继续完成安装</description>
+    </item>
+  </channel>
+</rss>
